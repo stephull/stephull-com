@@ -1,0 +1,21 @@
+{
+    "appName": "stephullcom",
+    "roleName": "pinpointLambdaRolececeb3c3",
+    "cloudformationPolicyName": "cloudformationPolicyceceb3c3",
+    "cloudWatchPolicyName": "cloudWatchPolicyceceb3c3",
+    "pinpointPolicyName": "pinpointPolicyceceb3c3",
+    "authPolicyName": "pinpoint_amplify_ceceb3c3",
+    "unauthPolicyName": "pinpoint_amplify_ceceb3c3",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}

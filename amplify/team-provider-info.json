@@ -1,0 +1,32 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-stephullcom-dev-172857-authRole",
+      "UnauthRoleArn": "arn:aws:iam::353462908506:role/amplify-stephullcom-dev-172857-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::353462908506:role/amplify-stephullcom-dev-172857-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
+      "UnauthRoleName": "amplify-stephullcom-dev-172857-unauthRole",
+      "StackName": "amplify-stephullcom-dev-172857",
+      "StackId": "arn:aws:cloudformation:us-east-1:353462908506:stack/amplify-stephullcom-dev-172857/00491210-f5c3-11ed-b7ec-0aac9dae0fc3",
+      "AmplifyAppId": "d3hw4f4clwc0rb"
+    },
+    "categories": {
+      "hosting": {
+        "S3AndCloudFront": {}
+      },
+      "auth": {
+        "stephullcom": {}
+      },
+      "api": {
+        "stephullcom": {}
+      },
+      "analytics": {
+        "stephullcom": {}
+      },
+      "storage": {
+        "s3stephullcomstorageecac3f19": {}
+      }
+    }
+  }
+}

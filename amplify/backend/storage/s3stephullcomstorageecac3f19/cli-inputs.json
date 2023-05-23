@@ -1,0 +1,14 @@
+{
+  "resourceName": "s3stephullcomstorageecac3f19",
+  "bucketName": "stephullcom-storage-ecac3f19",
+  "policyUUID": "e6fd591e",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}
