@@ -83,7 +83,7 @@ const ProjectsPage = () => {
                       skills.map((s, i) => {
                         return (
                           <PageText key={i} edits={{
-                            color: colors.persimmonOrange
+                            color: colors.lightOrange
                           }}>
                             <li style={{
                               listStyleType: 'disc',
@@ -169,7 +169,7 @@ const ProjectsPage = () => {
                       skills.map((s, i) => {
                         return (
                           <PageText key={i} edits={{
-                            color: colors.persimmonOrange
+                            color: colors.lightOrange
                           }}>
                             <li style={{
                               listStyleType: 'disc',

@@ -84,7 +84,7 @@ const Card = ({ id, post, content }) => {
 
     return (
       <FlexColumn edits={{ 
-        backgroundColor: colors.faintPink,
+        backgroundColor: colors.cherryRed,
         padding: '0.5em',
         maxWidth: '585px',
       }}>
@@ -97,11 +97,11 @@ const Card = ({ id, post, content }) => {
                 height: '20px',
                 marginLeft: '0.125em',
                 marginRight: '0.625em',
-                backgroundColor: colors.darkOrange
+                backgroundColor: colors.brightOrange
               }} />
               <span
                 style={{
-                  color: colors.darkOrange
+                  color: colors.brightOrange
                 }}
               >
                 {desc}

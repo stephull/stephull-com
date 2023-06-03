@@ -78,14 +78,14 @@ const ResumePage = () => {
                 <PageContainer key={index} edits={{
                   marginLeft: '-0.5em',
                 }}>
-                  <PageText bold edits={{ color: colors.darkOrange }}>
+                  <PageText bold edits={{ color: colors.brightOrange }}>
                     {title}
                   </PageText>
-                  <PageText edits={{ color: colors.persimmonOrange }}>
+                  <PageText edits={{ color: colors.lightOrange }}>
                     {sub1}
                   </PageText>
                   <PageText edits={{ 
-                    color: colors.persimmonOrange, 
+                    color: colors.lightOrange, 
                     fontSize: '16px' 
                   }}>
                     {sub2}
@@ -97,7 +97,7 @@ const ResumePage = () => {
                           <PageText
                             bullet
                             edits={{ 
-                              color: colors.persimmonOrange,
+                              color: colors.lightOrange,
                               paddingBottom: '0.125em'
                             }}
                             key={index}
@@ -131,8 +131,8 @@ const ResumePage = () => {
         }}>
           <ToggleButton
             border
-            color={colors.persimmonOrange}
-            hoverColor={colors.darkOrange}
+            color={colors.lightOrange}
+            hoverColor={colors.brightOrange}
             firstButton="Text"
             secondButton="PDF"
             toggle={togglePDFView}

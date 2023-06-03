@@ -6,9 +6,11 @@ import { Amplify } from 'aws-amplify';
 import awsconfig from './aws-exports.js';
 
 Amplify.configure(awsconfig);
-const rootElement = document.getElementById('root'),
-    created = createElement(App, null);
+
+const rootElement = document.getElementById('root');
+const created = createElement(App, null);
 
 const root = createRoot(rootElement);
 root.render(created);
+
 module.hot.accept();

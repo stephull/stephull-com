@@ -6,8 +6,11 @@ import FlexColumn from "../flex-column";
 
 const ColorScheme = () => {
   const [clickColor, setClickColor] = useState(false);
-  const [currColor, setCurrColor] = useState('');
-  const [currColorName, setCurrColorName] = useState('');
+  const [current, setCurrent] = useState({
+    name: "",
+    primary: "",
+    complementary: ""
+  });
 
   // each block shows color, name, and hex
   const ColorSample = ({element}) => {
@@ -24,12 +27,18 @@ const ColorScheme = () => {
         }}
         onClick={() => {
           if (clickColor) {
-            setCurrColor('');
-            setCurrColor('');
+            setCurrent({
+              ...current, 
+              primary: '',
+              complementary: ''
+            });
           }
           setClickColor(true);
-          setCurrColor(hex);
-          setCurrColorName(name);
+          setCurrent({
+            name: name,
+            primary: hex,
+            complementary: fgColor
+          });
         }}
       >
         <span style={{ 
@@ -65,7 +74,7 @@ const ColorScheme = () => {
       </FlexColumn>
       {
         clickColor &&
-        <PhotoGenerate query={currColorName} color={currColor} />
+        <PhotoGenerate info={current} />
       }
     </FlexRow>
   )

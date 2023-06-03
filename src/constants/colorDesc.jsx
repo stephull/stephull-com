@@ -32,23 +32,33 @@ export const COLOR_DESCS = [
       fgColor: colors.snowWhite
     },
     {
-      name: "Dark Orange",
-      hex: colors.darkOrange,
+      name: "Bright Orange",
+      hex: colors.brightOrange,
       fgColor: colors.snowWhite
     },
     {
-      name: "Persimmon Orange",
-      hex: colors.persimmonOrange,
+      name: "Light Orange",
+      hex: colors.lightOrange,
       fgColor: colors.jetBlack
     },
     {
-      name: "Salmon Pink",
-      hex: colors.salmonPink,
+      name: "Cherry Red",
+      hex: colors.cherryRed,
       fgColor: colors.jetBlack
     },
     {
-      name: "Faint Pink",
-      hex: colors.faintPink,
+      name: "Golden Yellow",
+      hex: colors.goldenYellow,
+      fgColor: colors.jetBlack
+    },
+    {
+      name: "Jaded Green",
+      hex: colors.jadedGreen,
+      fgColor: colors.jetBlack
+    },
+    {
+      name: "Herbal Green",
+      hex: colors.herbalGreen,
       fgColor: colors.jetBlack
     }
 ];
