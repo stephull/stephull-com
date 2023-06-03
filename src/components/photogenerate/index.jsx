@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { createApi } from "unsplash-js";
 import { apiKeyUnsplash } from '../../utils/envConfig';
+
 import FlexColumn from '../flex-column';
 import colors from '../../constants/colors';
 
@@ -42,13 +43,8 @@ const PhotoGenerate = ({info: { name, primary, complementary }}) => {
   const [photoResponse, setPhotoResponse] = useState(null);
 
   useEffect(() => {
-    api.photos.getRandom({
-      query: name
-    })
-      .then((res) => {
-        console.log(res);
-        setPhotoResponse(res.response);
-      })
+    api.photos.getRandom({ query: name })
+      .then((res) => setPhotoResponse(res.response))
       .catch((err) => console.error(err));
   }, [name]);
 

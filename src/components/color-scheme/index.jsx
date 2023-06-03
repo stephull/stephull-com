@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { COLOR_DESCS } from '../../constants/colorDesc';
 import PhotoGenerate from '../photogenerate';
 import FlexRow from "../flex-row";
@@ -73,8 +73,7 @@ const ColorScheme = () => {
         }
       </FlexColumn>
       {
-        clickColor &&
-        <PhotoGenerate info={current} />
+        clickColor && <PhotoGenerate info={current} />
       }
     </FlexRow>
   )

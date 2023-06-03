@@ -22,17 +22,10 @@ const WebsiteCredits = () => {
           Univers Font, font provided by <a href="https://www.cdnfonts.com/univers.font" target="_blank">CDNFonts</a>
         </h4>
       </PageContainer>
-      <PageContainer edits={{ 
+      <PageContainer indent edits={{ 
         height: 'fit-content',
-        maxWidth: '720px'
+        maxWidth: '660px'
       }}>
-        <PageText bold edits={{ 
-          padding: '0.5em',
-          marginBottom: '-1em'
-        }}>
-          This website was made possible with these technologies...
-        </PageText>
-        <br />
         <FlexRow edits={{ justifyContent: 'space-evenly' }}>
           <PageContainer indent edits={{
             backgroundColor: colors.seaBlue,

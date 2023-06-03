@@ -10,14 +10,11 @@ export const RESUME_PAGE_TEXT = [
 
 export const RESUME_MAIN_TEXT = [
     {
-        title: "Test",
-        sub1: "Currently looking...",
-        sub2: "05/2023 - Present",
+        title: "Open for Work",
+        sub1: "Am actively looking to start my full-time career in software engineering!",
+        sub2: "",
         current: true,
-        bullets: [
-            "Test bullet point 1",
-            "Test bullet point 2"
-        ]
+        bullets: []
     },
     {
         title: "Application Developer",

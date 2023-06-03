@@ -28,9 +28,9 @@ const ContactPage = () => {
 
     const redAsterisk = (
       <div style={{ 
-        color: colors.brightOrange, 
+        color: colors.cherryRed, 
         marginLeft: '0.25em',
-        fontSize: '15px'
+        fontSize: '16px'
       }}> * </div>
     );
 

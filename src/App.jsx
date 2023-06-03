@@ -22,8 +22,9 @@ import PrivateAdminPage from "./pages/admin/index";
 import PrivateAdminSigninPage from './pages/admin-signin/index';
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(false);
-  const toggleDarkMode = () => setDarkMode(!darkMode);
+  // const [darkMode, setDarkMode] = useState(false);
+  // const toggleDarkMode = () => setDarkMode(!darkMode);
+  // COME BACK LATER FOR THIS
 
   return (
     <Router>
