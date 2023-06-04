@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { createApi } from "unsplash-js";
-import { apiKeyUnsplash } from '../../utils/envConfig';
+import { apiKeyUnsplash } from '../../envConfig';
 
 import FlexColumn from '../flex-column';
 import colors from '../../constants/colors';

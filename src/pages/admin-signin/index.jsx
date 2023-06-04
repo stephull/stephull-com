@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Auth } from 'aws-amplify';
-import { randomRoute as r } from '../../utils/envConfig';
+import { randomRoute as r } from '../../envConfig';
 import FlexColumn from '../../components/flex-column';
 
 const PrivateAdminSigninPage = () => {

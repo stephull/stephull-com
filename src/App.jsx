@@ -5,7 +5,7 @@ import {
   Route,
   Navigate as Nav
 } from "react-router-dom";
-import { randomRoute as r } from './utils/envConfig';
+import { randomRoute as r } from './envConfig'
 import AppBody from './components/appbody';
 import Header from './components/header';
 import Footer from './components/footer';

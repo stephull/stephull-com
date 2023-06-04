@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 
 import FlexRow from '../../components/flex-row';
 import PageContainer from '../../components/page-container';
 import colors from '../../constants/colors';
 
 const ContactPage = () => {
+  const [submitDone, setSubmitDone] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
+
   const onSubmit = (e) => {
     e.preventDefault();
     const { firstName, lastName, emailAddress, howYouFound, inquiry } = e.target.elements;
@@ -15,8 +19,22 @@ const ContactPage = () => {
       howYouFound: howYouFound.value,
       inquiry: inquiry.value
     };
-    console.log(confirm);
+    submitForm(confirm);
   }
+
+  const submitForm = (confirmation) => {
+    try {
+      axios.post('', confirmation)
+        .then((res) => {
+          res.status === 200 && setSubmitDone(true);
+          res.status !== 200 && setSubmitError(true);
+        })
+        .catch((err) => console.error(err));
+    } catch (err) {
+      setSubmitError(true);
+      console.error(err);
+    }
+  };
 
   const ContactForm = () => {
     const labelStyle = { 
@@ -139,6 +157,19 @@ const ContactPage = () => {
         <button type='submit' className="btn btn-primary">
           Submit
         </button>
+        <br />
+        {
+          submitDone &&
+          <div style={{ color: colors.jadedGreen }}>
+            Thank you for your submission. We'll get back to you sometime soon.
+          </div>
+        }
+        {
+          submitError &&
+          <div style={{ color: colors.cherryRed }}>
+            We have detected an error. Please try again later.
+          </div>
+        }
       </form>
     );
   };

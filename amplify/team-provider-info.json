@@ -26,6 +26,12 @@
       },
       "storage": {
         "s3stephullcomstorageecac3f19": {}
+      },
+      "function": {
+        "SubmitContactForm": {
+          "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
+          "s3Key": "amplify-builds/SubmitContactForm-515331756a757635504f-build.zip"
+        }
       }
     }
   }

@@ -46,10 +46,35 @@
       "serviceType": "managed"
     }
   },
+  "function": {
+    "SubmitContactForm": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
   "hosting": {
     "S3AndCloudFront": {
       "providerPlugin": "awscloudformation",
       "service": "S3AndCloudFront"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_SubmitContactForm_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "SubmitContactForm"
+        }
+      ]
+    },
+    "AMPLIFY_function_SubmitContactForm_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "SubmitContactForm"
+        }
+      ]
     }
   },
   "storage": {
