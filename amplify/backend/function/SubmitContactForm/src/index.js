@@ -1,9 +1,9 @@
-import { SES, DynamoDB } from 'aws-sdk';
+const { SES, DynamoDB } = require('aws-sdk');
 
 /**
  * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
  */
-export async function handler(event) {
+module.exports.handler = async (event) => {
     try {
         console.log("Received event data\n" + JSON.stringify(event));
         const formData = JSON.parse(event.body);
