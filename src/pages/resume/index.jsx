@@ -202,11 +202,17 @@ const ResumePage = () => {
           ) : (
             <FlexColumn>
               <div>
-                Updated as of May 15, 2023
+                Updated as of June 12, 2023
               </div>
-              <div style={{ marginBottom: '1em' }}>
-                Please note that resume file may not always be up to date.
-              </div>
+              {
+                /*
+                // just in case
+                <div style={{ marginBottom: '1em' }}>
+                  Please note that resume file may not always be up to date.
+                </div>
+                */
+              }
+              <br />
               <object
                 data="https://stephull-com.s3.amazonaws.com/Stephen_Hullender_Resume.pdf"
                 type="application/pdf"

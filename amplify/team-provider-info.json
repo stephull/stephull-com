@@ -30,7 +30,7 @@
       "function": {
         "SubmitContactForm": {
           "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
-          "s3Key": "amplify-builds/SubmitContactForm-4b4f7a4c364f5662574d-build.zip"
+          "s3Key": "amplify-builds/SubmitContactForm-77616b2b7645502f4e75-build.zip"
         }
       }
     }

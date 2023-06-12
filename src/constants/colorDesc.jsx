@@ -42,18 +42,8 @@ export const COLOR_DESCS = [
       fgColor: colors.jetBlack
     },
     {
-      name: "Cherry Red",
-      hex: colors.cherryRed,
-      fgColor: colors.jetBlack
-    },
-    {
       name: "Golden Yellow",
       hex: colors.goldenYellow,
-      fgColor: colors.jetBlack
-    },
-    {
-      name: "Jaded Green",
-      hex: colors.jadedGreen,
       fgColor: colors.jetBlack
     },
     {

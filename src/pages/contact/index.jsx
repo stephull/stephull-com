@@ -5,156 +5,187 @@ import FlexRow from '../../components/flex-row';
 import PageContainer from '../../components/page-container';
 import colors from '../../constants/colors';
 
+import { graphqlApi } from "../../envConfig";
+
 const ContactPage = () => {
   const [submitDone, setSubmitDone] = useState(false);
   const [submitError, setSubmitError] = useState(false);
 
-  const onSubmit = (e) => {
-    e.preventDefault();
+  // when user immediately clicks 'Submit'
+  // call function to POST endpoint to send contact data
+  const onSubmit = async (e) => {
     const { firstName, lastName, emailAddress, howYouFound, inquiry } = e.target.elements;
-    let confirm = {
-      firstName: firstName.value,
-      lastName: lastName.value,
-      email: emailAddress.value,
-      howYouFound: howYouFound.value,
-      inquiry: inquiry.value
-    };
-    submitForm(confirm);
-  }
-
-  const submitForm = (confirmation) => {
     try {
-      axios.post('', confirmation)
-        .then((res) => {
-          res.status === 200 && setSubmitDone(true);
-          res.status !== 200 && setSubmitError(true);
-        })
-        .catch((err) => console.error(err));
+      e.preventDefault();
+      const sendData = {
+        firstName: firstName.value,
+        lastName: lastName.value,
+        emailAddress: emailAddress.value,
+        howYouFound: howYouFound.value,
+        inquiry: inquiry.value
+      };
+
+      const response = await axios.post(graphqlApi, sendData, {
+        headers: { 'Content-Type': 'application/json' },
+        params: { data: sendData }
+      });
+
+      (response.status === 200)
+        ? setSubmitDone(true)
+        : setSubmitError(true);
     } catch (err) {
       setSubmitError(true);
       console.error(err);
     }
-  };
+  }
 
+  // contact form component
   const ContactForm = () => {
-    const labelStyle = { 
+    const labelStyle = {
       marginRight: '1em',
       display: 'flex',
       flexDirection: 'row',
-      color: colors.jetBlack
+      color: colors.snowWhite
+    }, textFieldStyle = {
+      width: '240px',
+      height: '24px'
     };
 
-    const redAsterisk = (
-      <div style={{ 
-        color: colors.cherryRed, 
+    const asterisk = (
+      <div style={{
+        color: colors.brightOrange,
         marginLeft: '0.25em',
-        fontSize: '16px'
-      }}> * </div>
+        fontSize: '18px'
+      }}>
+        {" * "}
+      </div>
     );
 
     return (
-      <form 
-        id="contact-form" 
+      <form
+        id="contact-form"
         onSubmit={onSubmit}
-        style={{ marginLeft: '0.75em' }}
+        style={{
+          marginLeft: '0.75em',
+        }}
       >
-        <FlexRow>
-          <div className="form-group" style={{ marginRight: '1em' }}>
-            <label 
-              htmlFor="firstName"
+        <div style={{
+          backgroundColor: colors.brightBlue,
+          padding: '0.5em 1em'
+        }}>
+          <FlexRow>
+            <div className="form-group" style={{ marginRight: '1em' }}>
+              <label
+                htmlFor="firstName"
+                style={labelStyle}
+              >
+                <FlexRow>
+                  First name
+                  {asterisk}
+                </FlexRow>
+              </label>
+              <input
+                type='text'
+                id="firstName"
+                className="form-control"
+                required
+                style={textFieldStyle}
+                key="firstName"
+              />
+            </div>
+            <div className="form-group">
+              <label
+                htmlFor="lastName"
+                style={labelStyle}
+              >
+                Last name
+              </label>
+              <input
+                type='text'
+                id="lastName"
+                className="form-control"
+                style={textFieldStyle}
+                key="lastName"
+              />
+            </div>
+          </FlexRow>
+          <br />
+          <FlexRow>
+            <div className="form-group" style={{ marginRight: '1em' }}>
+              <label
+                htmlFor="emailAddress"
+                style={labelStyle}
+              >
+                <FlexRow>
+                  Email address
+                  {asterisk}
+                </FlexRow>
+              </label>
+              <input
+                type='email'
+                id="emailAddress"
+                className="form-control"
+                required
+                style={textFieldStyle}
+                key="emailAddress"
+              />
+            </div>
+            <div className="form-group">
+              <label
+                htmlFor="howYouFound"
+                style={labelStyle}
+              >
+                How did you find us?
+              </label>
+              <input
+                type='text'
+                id="howYouFound"
+                className="form-control"
+                style={textFieldStyle}
+                key="howYouFound"
+              />
+            </div>
+          </FlexRow>
+          <br />
+          <div className="form-group">
+            <label
+              htmlFor="inquiry"
               style={labelStyle}
             >
               <FlexRow>
-                First name
-                {redAsterisk}
+                Message
+                {asterisk}
               </FlexRow>
             </label>
-            <input 
-              type='text' 
-              id="firstName"
-              className="form-control" 
+            <textarea
               required
-              style={{ width: '240px' }}
-            />
-          </div>
-          <div className="form-group">
-            <label
-              htmlFor="lastName"
-              style={labelStyle}
-            >
-              Last name
-            </label>
-            <input 
-              type='text'
-              id="lastName"
               className="form-control"
-              style={{ width: '240px' }}
+              id="inquiry"
+              style={{
+                height: 'auto',
+                width: '505px',
+                minWidth: '505px',
+                maxWidth: '505px',
+                height: '150px',
+                minHeight: '50px',
+                maxHeight: '300px',
+              }}
+              key="inquiry"
             />
           </div>
-        </FlexRow>
-        <br />
-        <FlexRow>
-          <div className="form-group" style={{ marginRight: '1em' }}>
-            <label
-              htmlFor="emailAddress"
-              style={labelStyle}
-            >
-              <FlexRow>
-                Email address
-                {redAsterisk}
-              </FlexRow>
-            </label>
-            <input 
-              type='email'
-              id="emailAddress"
-              className="form-control"
-              required
-              style={{ width: '240px' }}
-            />
-          </div>
-          <div className="form-group">
-            <label
-              htmlFor="howYouFound"
-              style={labelStyle}
-            >
-              How did you find us?
-            </label>
-            <input 
-              type='text'
-              id="howYouFound"
-              className="form-control"
-              style={{ width: '240px' }}
-            />
-          </div>
-        </FlexRow>
-        <br />
-        <div className="form-group">
-          <label
-            htmlFor="inquiry"
-            style={labelStyle}
-          >
-            <FlexRow>
-              Message
-              { redAsterisk }
-            </FlexRow>
-          </label>
-          <textarea 
-            required
-            className="form-control"
-            id="inquiry"
-            style={{
-              height: 'auto',
-              width: '505px',
-              minWidth: '505px',
-              maxWidth: '505px',
-              height: '150px',
-              minHeight: '50px',
-              maxHeight: '300px'
-            }}
-          />
         </div>
         <br />
-        <button type='submit' className="btn btn-primary">
+        <button
+          type='submit'
+          className="btn btn-primary"
+          style={{
+            fontSize: '18px',
+            padding: '0.5em 1em',
+            backgroundColor: colors.brightBlue,
+            color: colors.snowWhite,
+            borderColor: colors.snowWhite,
+          }}
+        >
           Submit
         </button>
         <br />
@@ -183,12 +214,14 @@ const ContactPage = () => {
         Contact
       </h2>
       <PageContainer indent>
-        <p style={{ 
-          marginTop: '-0.125em', 
-          maxWidth: '540px', 
-          marginLeft: '0.75em' 
+        <p style={{
+          marginTop: '-0.125em',
+          maxWidth: '540px',
+          marginLeft: '0.75em'
         }}>
-          Feel free to leave some comments/suggestions, or make an inquiry if you're interested in working or connecting with me! <b>Thanks in advance.</b>
+          Feel free to leave some comments/suggestions, or make an inquiry if you're interested in working or connecting with me! 
+          A response email will be made whenever readily available. {'\n'}
+          <b>Thanks in advance.</b>
         </p>
         <ContactForm />
       </PageContainer>
