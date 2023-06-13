@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+
 import FlexRow from '../../components/flex-row';
 import PageContainer from '../../components/page-container';
+
 import colors from '../../constants/colors';
 import awsmobile from '../../aws-exports';
+
+import Construction from '../../components/under-construction';
 
 const ContactPage = () => {
   const [submitDone, setSubmitDone] = useState(false);
@@ -234,6 +238,12 @@ const ContactPage = () => {
       }}>
         Contact
       </h2>
+      {
+        // temporary
+        <Construction tidbits={[
+          "Need to fix errors in submitting data and receiving proper response"
+        ]} />
+      }
       <PageContainer indent>
         <p style={{
           marginTop: '-0.125em',

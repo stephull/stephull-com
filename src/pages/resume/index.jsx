@@ -11,6 +11,7 @@ import {
 } from '../../assets/text/resume';
 
 import colors from '../../constants/colors';
+import { s3ResumeLink } from '../../envConfig';
 
 const ResumePage = () => {
   const [PDFView, setPDFView] = useState(false);
@@ -184,19 +185,14 @@ const ResumePage = () => {
       </FlexRow>
       <PageContainer 
         indent 
-        edits={{
-          maxWidth: '840px'
-        }}
+        edits={{ maxWidth: '840px' }}
       >
         {
           !PDFView ? (
             <>
               <MainResumeContent />
               {
-                !showMore && <button onClick={() => setShowMore(true)}>Show More</button>
-              }
-              {
-                showMore && <SecondaryResumeContent />
+                showMore ? <SecondaryResumeContent /> : <button onClick={() => setShowMore(true)}>Show More</button>
               }
             </>
           ) : (
@@ -204,24 +200,13 @@ const ResumePage = () => {
               <div>
                 Updated as of June 12, 2023
               </div>
-              {
-                /*
-                // just in case
-                <div style={{ marginBottom: '1em' }}>
-                  Please note that resume file may not always be up to date.
-                </div>
-                */
-              }
               <br />
               <object
-                data="https://stephull-com.s3.amazonaws.com/Stephen_Hullender_Resume.pdf"
+                data={s3ResumeLink}
                 type="application/pdf"
                 width="510px"
                 height="660px"
               />
-              {
-                /* CHANGE THIS LATER AAAHHHHH */
-              }
             </FlexColumn>
           )
         }

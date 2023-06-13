@@ -8,10 +8,18 @@ import colors from '../../constants/colors';
 import FlexRow from '../../components/flex-row';
 import FlexColumn from '../../components/flex-column';
 
+import Construction from '../../components/under-construction';
+
 const ProjectsPage = () => {
   return (
     <>
       <h2>Tech Projects</h2>
+      {
+        // temporary
+        <Construction tidbits={[
+          "Need to find better pictures"
+        ]} />
+      }
       <PageContainer indent edits={{ maxWidth: '840px' }}>
         <PageText bold edits={{ 
           fontSize: '24px',
@@ -37,15 +45,17 @@ const ProjectsPage = () => {
             return (
               <PageContainer key={index} edits={{ marginBottom: '1.25em' }}>
                 <FlexRow edits={{ marginBottom: '1em' }}>
-                  <div style={{ 
-                    border: `1px solid ${colors.jetBlack}`,
-                    maxHeight: '100px',
-                    height: '100px',
-                    maxWidth: '100px',
-                    width: '100px'
-                  }}>
-                    <image src="https://stephull-com.s3.amazonaws.com/roblox.png" alt=""></image>
-                  </div>
+                  <img 
+                    style={{
+                      maxWidth: '100px',
+                      maxHeight: '100px',
+                      height: '100px',
+                      width: '100px',
+                      border: `1px solid ${colors.jetBlack}`
+                    }}
+                    src={picture} 
+                    alt=""
+                  />
                   <PageContainer>
                     <FlexColumn edits={{ marginTop: '-1em' }}>
                       <PageText bold edits={{ 
@@ -128,15 +138,17 @@ const ProjectsPage = () => {
             return (
               <PageContainer key={index} edits={{ marginBottom: '1.25em' }}>
                 <FlexRow edits={{ marginBottom: '1em' }}>
-                  <div style={{ 
-                    border: `1px solid ${colors.jetBlack}`,
-                    maxHeight: '100px',
-                    height: '100px',
-                    maxWidth: '100px',
-                    width: '100px'
-                  }}>
-                    <image src={picture} alt=""></image>
-                  </div>
+                  <img 
+                    style={{
+                      maxWidth: '100px',
+                      maxHeight: '100px',
+                      height: '100px',
+                      width: '100px',
+                      border: `1px solid ${colors.jetBlack}`
+                    }}
+                    src={picture} 
+                    alt=""
+                  />
                   <PageContainer>
                     <FlexColumn edits={{ marginTop: '-1em' }}>
                     <PageText bold edits={{ 
