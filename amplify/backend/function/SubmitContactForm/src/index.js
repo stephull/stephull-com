@@ -23,7 +23,6 @@ module.exports.handler = async (event) => {
   }
 
   const sendEmailToSES = async (data) => {
-    console.log("TESTTTT:", data);
     const emailParams = {
       Source: "noreply@stephull.com",
       Destination: {

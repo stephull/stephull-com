@@ -106,7 +106,7 @@ const ResumePage = () => {
                   marginLeft: '-0.5em',
                 }}>
                   <PageText bold edits={{ 
-                    color: colors.cherryRed,
+                    color: colors.brightOrange,
                     fontSize: '20px'
                   }}>
                     {title}
@@ -115,7 +115,7 @@ const ResumePage = () => {
                     justifyContent: 'space-between',
                   }}>
                     <PageText edits={{ 
-                      color: colors.brightOrange,
+                      color: colors.lightOrange,
                       fontSize: '20px',
                       maxWidth: '80%'
                     }}>

@@ -29,7 +29,7 @@ const PrivateAdminPage = () => {
     backgroundColor: colors.skyBlue,
     ...containerStyles
   }, updateContainer = {
-    backgroundColor: colors.cherryRed,
+    backgroundColor: colors.brightOrange,
     ...containerStyles
   }
 

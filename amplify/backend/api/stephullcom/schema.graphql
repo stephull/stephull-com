@@ -46,3 +46,20 @@ type Blog @model @auth(rules: [{allow: public}]) {
   externallinks: [AWSURL]
 }
  
+type Mutation {
+  createFormContact(input: ContactFormInput!): ContactFormResult
+}
+
+input ContactFormInput {
+  firstName: String!
+  lastName: String!
+  emailAddress: String!
+  howYouFound: String!
+  inquiry: String!
+}
+
+type ContactFormResult {
+  id: ID!
+  success: Boolean!
+  message: String
+}

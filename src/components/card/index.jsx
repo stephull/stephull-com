@@ -84,7 +84,7 @@ const Card = ({ id, post, content }) => {
 
     return (
       <FlexColumn edits={{ 
-        backgroundColor: colors.cherryRed,
+        backgroundColor: colors.brightOrange,
         padding: '0.5em',
         maxWidth: '585px',
       }}>

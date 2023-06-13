@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
   Routes,
@@ -22,7 +22,7 @@ import PrivateAdminPage from "./pages/admin/index";
 import PrivateAdminSigninPage from './pages/admin-signin/index';
 
 const App = () => {
-  // const [darkMode, setDarkMode] = useState(false);
+  // const [darkMode, setDarkMode] = React.useState(false);
   // const toggleDarkMode = () => setDarkMode(!darkMode);
   // COME BACK LATER FOR THIS
 

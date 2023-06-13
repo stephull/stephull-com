@@ -6,6 +6,7 @@ import PageContainer from '../../components/page-container';
 import colors from '../../constants/colors';
 
 import { graphqlApi } from "../../envConfig";
+import awsmobile from '../../aws-exports';
 
 const ContactPage = () => {
   const [submitDone, setSubmitDone] = useState(false);
@@ -17,22 +18,40 @@ const ContactPage = () => {
     const { firstName, lastName, emailAddress, howYouFound, inquiry } = e.target.elements;
     try {
       e.preventDefault();
+
       const sendData = {
-        firstName: firstName.value,
+        firstName: firstName.value, 
         lastName: lastName.value,
         emailAddress: emailAddress.value,
         howYouFound: howYouFound.value,
         inquiry: inquiry.value
       };
 
-      const response = await axios.post(graphqlApi, sendData, {
-        headers: { 'Content-Type': 'application/json' },
-        params: { data: sendData }
-      });
+      const graphqlQuery = `
+        mutation CreateFormContact($input: ContactFormInput!) {
+          createFormContact(input: $input) {
+            id
+            success
+            message
+          }
+        }
+      `;
 
-      (response.status === 200)
-        ? setSubmitDone(true)
-        : setSubmitError(true);
+      const response = await axios.post(
+        graphqlApi, {
+          query: graphqlQuery,
+          variables: { input: sendData }
+        }, {
+          headers: { 
+            'Content-Type': 'application/json',
+            'x-api-key': awsmobile.aws_appsync_apiKey
+          },
+        }
+      );
+
+      console.log(response);
+
+      response.status === 200 && setSubmitDone(true)
     } catch (err) {
       setSubmitError(true);
       console.error(err);
@@ -45,7 +64,9 @@ const ContactPage = () => {
       marginRight: '1em',
       display: 'flex',
       flexDirection: 'row',
-      color: colors.snowWhite
+      color: colors.snowWhite,
+      fontWeight: '400',
+      fontSize: '17px'
     }, textFieldStyle = {
       width: '240px',
       height: '24px'
@@ -191,13 +212,13 @@ const ContactPage = () => {
         <br />
         {
           submitDone &&
-          <div style={{ color: colors.jadedGreen }}>
+          <div style={{ color: colors.skyBlue }}>
             Thank you for your submission. We'll get back to you sometime soon.
           </div>
         }
         {
           submitError &&
-          <div style={{ color: colors.cherryRed }}>
+          <div style={{ color: colors.lightOrange }}>
             We have detected an error. Please try again later.
           </div>
         }

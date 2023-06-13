@@ -7,7 +7,21 @@ export enum ContentType {
   VIDEO = "VIDEO"
 }
 
+type EagerContactFormResult = {
+  readonly id: string;
+  readonly success: boolean;
+  readonly message?: string | null;
+}
 
+type LazyContactFormResult = {
+  readonly id: string;
+  readonly success: boolean;
+  readonly message?: string | null;
+}
+
+export declare type ContactFormResult = LazyLoading extends LazyLoadingDisabled ? EagerContactFormResult : LazyContactFormResult
+
+export declare const ContactFormResult: (new (init: ModelInit<ContactFormResult>) => ContactFormResult)
 
 type EagerComment = {
   readonly [__modelMeta__]: {

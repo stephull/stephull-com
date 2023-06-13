@@ -7,7 +7,7 @@ const ContentType = {
   "VIDEO": "VIDEO"
 };
 
-const { Comment, BlogTimelineItem, MediaTimelineItem, Content, Blog } = initSchema(schema);
+const { Comment, BlogTimelineItem, MediaTimelineItem, Content, Blog, ContactFormResult } = initSchema(schema);
 
 export {
   Comment,
@@ -15,5 +15,6 @@ export {
   MediaTimelineItem,
   Content,
   Blog,
-  ContentType
+  ContentType,
+  ContactFormResult
 };
