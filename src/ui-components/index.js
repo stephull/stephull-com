@@ -15,3 +15,5 @@ export { default as BlogCreateForm } from "./BlogCreateForm";
 export { default as ContentUpdateForm } from "./ContentUpdateForm";
 export { default as BlogTimelineItemCreateForm } from "./BlogTimelineItemCreateForm";
 export { default as CommentUpdateForm } from "./CommentUpdateForm";
+export { default as ContactFormResultCreateForm } from "./ContactFormResultCreateForm";
+export { default as ContactFormResultUpdateForm } from "./ContactFormResultUpdateForm";

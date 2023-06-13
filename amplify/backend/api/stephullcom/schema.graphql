@@ -58,7 +58,7 @@ input ContactFormInput {
   inquiry: String!
 }
 
-type ContactFormResult {
+type ContactFormResult @model @auth(rules: [{allow: public}]) {
   id: ID!
   success: Boolean!
   message: String

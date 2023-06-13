@@ -1,6 +1,7 @@
 const { SES, DynamoDB } = require('aws-sdk');
 
-const dynamoDB = new DynamoDB.DocumentClient(), ses = new SES();
+const dynamoDB = new DynamoDB.DocumentClient();
+const ses = new SES();
 
 /**
  * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
@@ -9,10 +10,7 @@ module.exports.handler = async (event) => {
   const sendDataToDynamoDB = async (data) => {
     const params = {
       TableName: 'ContactSubmissionData-stephull',
-      Item: {
-        id: Date.now().toString(),
-        ...data
-      }
+      Item: data
     };
 
     try {
@@ -91,19 +89,30 @@ module.exports.handler = async (event) => {
     await sendDataToDynamoDB(event);
     await sendEmailToSES(event);
 
+    const ts = Date.now().toString();
     return {
       statusCode: 200,
       body: JSON.stringify({
-        message: 'Form submitted successfully'
+        data: {
+          createFormContact: {
+            id: ts,
+            success: true,
+            message: `Form submitted successfully at timestamp ${ts}.`
+          }
+        }
       })
     }
   } catch (err) {
     console.error('Error handling form data:', err);
-    
+
     return {
       statusCode: 500,
       body: JSON.stringify({
-        error: 'An error occurred while processing the form submission data'
+        errors: [
+          {
+            message: "An error occurred while processing form submission."
+          }
+        ]
       })
     }
   }

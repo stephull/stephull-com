@@ -1,33 +1,19 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
 import FlexRow from '../../components/flex-row';
 import PageContainer from '../../components/page-container';
 import colors from '../../constants/colors';
-
-import { graphqlApi } from "../../envConfig";
 import awsmobile from '../../aws-exports';
 
 const ContactPage = () => {
   const [submitDone, setSubmitDone] = useState(false);
   const [submitError, setSubmitError] = useState(false);
 
-  // when user immediately clicks 'Submit'
-  // call function to POST endpoint to send contact data
   const onSubmit = async (e) => {
+    e.preventDefault();
+
     const { firstName, lastName, emailAddress, howYouFound, inquiry } = e.target.elements;
-    try {
-      e.preventDefault();
-
-      const sendData = {
-        firstName: firstName.value, 
-        lastName: lastName.value,
-        emailAddress: emailAddress.value,
-        howYouFound: howYouFound.value,
-        inquiry: inquiry.value
-      };
-
-      const graphqlQuery = `
+    const graphqlQuery = `
         mutation CreateFormContact($input: ContactFormInput!) {
           createFormContact(input: $input) {
             id
@@ -37,28 +23,42 @@ const ContactPage = () => {
         }
       `;
 
-      const response = await axios.post(
-        graphqlApi, {
-          query: graphqlQuery,
-          variables: { input: sendData }
-        }, {
-          headers: { 
-            'Content-Type': 'application/json',
-            'x-api-key': awsmobile.aws_appsync_apiKey
-          },
-        }
-      );
+    try {
+      const postToLambda = async (data) => {
+        return await axios.post(
+          awsmobile.aws_appsync_graphqlEndpoint, 
+          {
+            query: graphqlQuery,
+            variables: { input: data }
+          }, 
+          {
+            headers: { 
+              'Content-Type': 'application/json',
+              'x-api-key': awsmobile.aws_appsync_apiKey
+            },
+          }
+        );
+      }
+
+      const response = await postToLambda({
+        firstName: firstName.value, 
+        lastName: lastName.value,
+        emailAddress: emailAddress.value,
+        howYouFound: howYouFound.value,
+        inquiry: inquiry.value
+      });
 
       console.log(response);
 
-      response.status === 200 && setSubmitDone(true)
+      const responseData = response.data.data.createFormContact;
+      responseData.success ? setSubmitDone(true) : setSubmitError(true);
+    
     } catch (err) {
       setSubmitError(true);
       console.error(err);
     }
   }
 
-  // contact form component
   const ContactForm = () => {
     const labelStyle = {
       marginRight: '1em',
