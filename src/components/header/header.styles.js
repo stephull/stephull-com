@@ -31,8 +31,8 @@ export const HeaderMenu = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 675px;
-    max-width: 675px;
+    width: ${(props) => props.style.width};
+    max-width: ${(props) => props.style.maxWidth};
 
     span {
         color: ${colors.snowWhite};

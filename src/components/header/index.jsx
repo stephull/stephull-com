@@ -2,6 +2,7 @@ import React from 'react';
 import { HeaderBody, HeaderTitle, HeaderMenu } from './header.styles';
 
 const Header = () => {
+    const WIDTH = '540px';
     return (
         <HeaderBody>
             <HeaderTitle
@@ -12,19 +13,22 @@ const Header = () => {
             >
                 Stephen Hullender
             </HeaderTitle>
-            <HeaderMenu>
+            <HeaderMenu style={{ width: WIDTH, maxWidth: WIDTH }}>
                 <span onClick={(e) => {
                     e.preventDefault();
                     window.open('/about', '_self');
                 }}>
                     About
                 </span>
-                <span onClick={(e) => {
-                    e.preventDefault();
-                    window.open('/portfolio', '_self');
-                }}>
-                    Portfolio
-                </span>
+                {
+                    /* ::: Take out for now :::
+                    <span onClick={(e) => {
+                        e.preventDefault();
+                        window.open('/portfolio', '_self');
+                    }}>
+                        Portfolio
+                    </span>*/
+                }
                 <span onClick={(e) => {
                     e.preventDefault();
                     window.open("/projects", "_self");

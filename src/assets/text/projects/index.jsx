@@ -16,10 +16,14 @@ export const PROJECTS_ACADEMIC_TEXT = [
         title: "Parking Spot Detector",
         ongoing: false,
         complete: true,
-        sub1: "For Projects in Computer Science (CIS 4398)",
-        sub2: "09/2022 - 12/2022",
+        course: "Projects in Computer Science (CIS 4398)",
+        dates: [
+            {
+                start: new Date(2022, 8),
+                end: new Date(2022, 11)
+            }
+        ],
         link: "https://github.com/Capstone-Projects-2022-Fall/parking-spot-detector-api",
-        picture: s3TestPic,
         description: "Software program that specializes in helping users navigate and easily access open parking areas through a mobile application, with image recognition software to indicate available areas detected from registered camera units.",
         skills: [
             "Node.js",
@@ -34,10 +38,14 @@ export const PROJECTS_ACADEMIC_TEXT = [
         title: "\"How Can I Help\" App",
         ongoing: false,
         complete: true,
-        sub1: "For Software Design (CIS 3296)",
-        sub2: "04/2022 - 05/2022",
+        course: "Software Design (CIS 3296)",
+        dates: [
+            {
+                start: new Date(2022, 4),
+                end: new Date(2022, 3)
+            }
+        ],
         link: "https://github.com/cis3296s22/howcanihelp",
-        picture: s3TestPic,
         description: "This app is about helping people with services through a mobile application. Users can either request services/items or advertise them through the marketplace, with additional visual assistance using Google Maps SDK and options for disability or special needs.",
         skills: [
             "Java",
@@ -53,10 +61,14 @@ export const PROJECTS_ACADEMIC_TEXT = [
         title: "Musical Genre Lyrics Predictor",
         ongoing: false,
         complete: true,
-        sub1: "For Principles of Data Science (CIS 3715)",
-        sub2: "03/2022 - 04/2022",
+        course: "Principles of Data Science (CIS 3715)",
+        dates: [
+            {
+                start: new Date(2022, 3),
+                end: new Date(2022, 2)
+            }
+        ],
         link: "https://github.com/stephull/python-music-genre-predictor",
-        picture: s3TestPic,
         description: "This is an algorithm I made to predict what musical genres can be detected based on lyrical content using data science techniques.",
         skills: [
             "Python",
@@ -71,12 +83,41 @@ export const PROJECTS_ACADEMIC_TEXT = [
 
 export const PROJECTS_PERSONAL_TEXT = [
     {
+        title: "Korean Building Blocks",
+        ongoing: false,
+        complete: false,
+        purpose: "Independent Project",
+        dates: [
+            {
+                start: new Date(2022, 5),
+                end: new Date(2022, 7)
+            },
+            {
+                start: new Date(2023, 5),
+                end: null
+            }
+        ],
+        link: "https://github.com/stephull/korean-building-blocks",
+        description: "Simple website to help users learn Korean words using building-block style game",
+        skills: [
+            "React.js",
+            "Node.js",
+            "Spring Boot",
+            "Photoshop/Illustrator"
+        ]
+    },
+    {
         title: "Personal Website (Stephull.com)",
         ongoing: true,
         complete: false,
-        sub: "04/2023 - Present",
+        purpose: "Personal Portfolio",
+        dates: [
+            {
+                start: new Date(2023, 3),
+                end: null
+            }
+        ],
         link: "https://www.stephull.com",
-        picture: s3TestPic,
         description: "My soon-to-be official personal website.",
         skills: [
             "React.js",
@@ -88,27 +129,17 @@ export const PROJECTS_PERSONAL_TEXT = [
         ]
     },
     {
-        title: "Korean Building Blocks",
-        ongoing: false,
-        complete: false,
-        sub: "07/2022 - 08/2022, TBA",
-        link: "https://github.com/stephull/korean-building-blocks",
-        picture: s3TestPic,
-        description: "Simple website to help users learn Korean words using building-block style game",
-        skills: [
-            "React.js",
-            "Node.js",
-            "Spring Boot",
-            "Photoshop/Illustrator"
-        ]
-    },
-    {
         title: "Minesweeper Clone Game",
         ongoing: false,
         complete: false,
-        sub: "07/2021 - 08/2021",
+        purpose: "Independent Project",
+        dates: [
+            {
+                start: new Date(2021, 6),
+                end: new Date(2021, 7)
+            }
+        ],
         link: "https://github.com/stephull/minesweeper-game",
-        picture: s3TestPic,
         description: "My first personal project, a simple and not-so-amazing replica of Minesweeper",
         skills: [
             "Java",

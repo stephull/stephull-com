@@ -36,9 +36,12 @@ const App = () => {
           <Route exact path="/blogs" element={
             <BlogsPage />
           } />
-          <Route exact path="/portfolio" element={
-            <PortfolioPage />
-          } />
+          {
+            /* ::: Take out for now :::
+            <Route exact path="/portfolio" element={
+              <PortfolioPage />
+            } />*/
+          }
           <Route exact path="/projects" element={
             <ProjectsPage />
           } />
