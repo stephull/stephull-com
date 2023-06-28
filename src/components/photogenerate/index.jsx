@@ -5,6 +5,8 @@ import { apiKeyUnsplash } from '../../envConfig';
 import FlexColumn from '../flex-column';
 import colors from '../../constants/colors';
 
+import LoadingPictureError from '../loading-picture-error';
+
 const api = createApi({
   accessKey: apiKeyUnsplash
 });
@@ -12,14 +14,14 @@ const api = createApi({
 const PhotoRender = ({ resp, complementary }) => {
   return (
     <FlexColumn edits={{ maxWidth: '200px' }}>
-      <img 
+      <img
         style={{
           position: 'relative',
           maxHeight: '250px',
           maxWidth: '200px',
           border: `1px solid ${complementary}`
-        }} 
-        src={resp.urls.small} 
+        }}
+        src={resp.urls.small}
       />
       <a
         style={{
@@ -34,12 +36,12 @@ const PhotoRender = ({ resp, complementary }) => {
       >
         Taken by {resp.user.name}
       </a>
-      
+
     </FlexColumn>
   )
 };
 
-const PhotoGenerate = ({info: { name, primary, complementary }}) => {
+const PhotoGenerate = ({ info: { name, colorScheme }, error }) => {
   const [photoResponse, setPhotoResponse] = useState(null);
 
   useEffect(() => {
@@ -48,18 +50,20 @@ const PhotoGenerate = ({info: { name, primary, complementary }}) => {
       .catch((err) => console.error(err));
   }, [name]);
 
-  return photoResponse === null 
-    ? <div>Loading...</div>
-    : photoResponse.errors 
+  return photoResponse === null
+    ? (error)
+      ? <LoadingPictureError />
+      : <div>Loading...</div>
+    : photoResponse.errors
       ? (
         <>
           <div>{photoResponse.errors[0]}</div>
-          <div>Make sure to set access token!</div>
+          <div>Access to Unsplash unavailable!!!</div>
         </>
       ) : (
         <FlexColumn>
           <div style={{
-            backgroundColor: primary,
+            backgroundColor: colorScheme.primary,
             border: '1px solid black',
             width: '240px',
             height: '315px',
@@ -67,16 +71,19 @@ const PhotoGenerate = ({info: { name, primary, complementary }}) => {
             padding: '1em 1em 0 1em',
             fontWeight: 'bold'
           }}>
-            <div style={{ color: complementary }}>
-              { name }
+            <div style={{ color: colorScheme.complementary }}>
+              {name}
             </div>
             <br />
             {
-              <PhotoRender resp={photoResponse} complementary={complementary} />
+              <PhotoRender
+                resp={photoResponse}
+                complementary={colorScheme.complementary}
+              />
             }
           </div>
-          <small style={{ 
-            fontSize: '12px', 
+          <small style={{
+            fontSize: '12px',
             color: colors.jetBlack,
             marginLeft: '1.25em',
             marginTop: '0.5em'

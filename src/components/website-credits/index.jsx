@@ -13,20 +13,29 @@ const WebsiteCredits = () => {
       <PageText bold>
         About This Website
       </PageText>
-      <PageContainer indent>
+      <PageContainer>
         <h4>Colors Used for Website</h4>
+        <h5
+          style={{ marginTop: '-1em', marginBottom: '1em' }}
+        >
+          Click on each color block to generate a pretty picture!
+        </h5>
+        <small>
+          Note: pictures are automatically generated
+        </small>
+        <br />
         <ColorScheme />
       </PageContainer>
-      <PageContainer indent>
+      <PageContainer>
         <h4>
           Univers Font, font provided by <a href="https://www.cdnfonts.com/univers.font" target="_blank">CDNFonts</a>
         </h4>
       </PageContainer>
-      <PageContainer indent edits={{ 
+      <PageContainer edits={{ 
         height: 'fit-content',
         maxWidth: '660px'
       }}>
-        <FlexRow edits={{ justifyContent: 'space-evenly' }}>
+        <FlexRow edits={{ justifyContent: 'space-evenly', marginLeft: '-1em' }}>
           <PageContainer indent edits={{
             backgroundColor: colors.seaBlue,
             width: '250px'

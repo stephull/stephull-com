@@ -3,6 +3,7 @@ import colors from '../../constants/colors';
 
 export const FooterBody = styled.div`
     background-color: ${colors.brightBlue};
+    
     width: 100%;
     padding: 0.25em;
     paddingLeft: 1em;
@@ -12,10 +13,15 @@ export const FooterBody = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    z-index: 998;
 `;
 
 export const FooterContentTitle = styled.div`
     color: ${colors.snowWhite};
+
     padding: 0.0625em 0;
     padding-left: 0.85em;
+
+    z-index: 999;
 `;

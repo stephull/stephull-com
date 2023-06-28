@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { COLOR_DESCS } from '../../constants/colorDesc';
+
 import PhotoGenerate from '../photogenerate';
+
 import FlexRow from "../flex-row";
 import FlexColumn from "../flex-column";
 
@@ -8,8 +10,14 @@ const ColorScheme = () => {
   const [clickColor, setClickColor] = useState(false);
   const [current, setCurrent] = useState({
     name: "",
-    primary: "",
-    complementary: ""
+    dimensions: {
+      frameWidth: "",
+      frameHeight: ""
+    },
+    colorScheme: {
+      primary: "",
+      complementary: ""
+    }
   });
 
   // each block shows color, name, and hex
@@ -28,16 +36,28 @@ const ColorScheme = () => {
         onClick={() => {
           if (clickColor) {
             setCurrent({
-              ...current, 
-              primary: '',
-              complementary: ''
+              name: "",
+              dimensions: {
+                frameWidth: '',
+                frameHeight: ''
+              },
+              colorScheme: {
+                primary: '',
+                complementary: ''
+              }
             });
           }
           setClickColor(true);
           setCurrent({
             name: name,
-            primary: hex,
-            complementary: fgColor
+            dimensions: {
+              frameWidth: '240px',
+              frameHeight: '315px'
+            },
+            colorScheme: {
+              primary: hex,
+              complementary: fgColor
+            }
           });
         }}
       >
@@ -73,7 +93,7 @@ const ColorScheme = () => {
         }
       </FlexColumn>
       {
-        clickColor && <PhotoGenerate info={current} />
+        clickColor && <PhotoGenerate info={current} error={false} />
       }
     </FlexRow>
   )
