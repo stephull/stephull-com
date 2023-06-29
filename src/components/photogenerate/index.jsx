@@ -39,6 +39,7 @@ const PhotoGenerate = ({ info, error }) => {
     api.photos.getRandom({ query: name })
       .then((res) => setPhotoResponse(res.response))
       .catch((err) => console.error(err));
+    // note, check query property on resume text for words that return a 404 error...
   }, [name]);
 
   return photoResponse === null

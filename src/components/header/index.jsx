@@ -18,7 +18,7 @@ const Header = () => {
                     e.preventDefault();
                     window.open('/about', '_self');
                 }}>
-                    About
+                    ABOUT
                 </span>
                 {
                     /* ::: Take out for now :::
@@ -33,7 +33,7 @@ const Header = () => {
                     e.preventDefault();
                     window.open("/projects", "_self");
                 }}>
-                    Projects
+                    PROJECTS
                 </span>
                 <span onClick={(e) => {
                     e.preventDefault();
@@ -51,7 +51,7 @@ const Header = () => {
                     e.preventDefault();
                     window.open("/resume", "_self");
                 }}>
-                    Resume
+                    RESUME
                 </span>
                 <span onClick={(e) => {
                     e.preventDefault();
