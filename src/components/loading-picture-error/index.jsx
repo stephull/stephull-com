@@ -13,7 +13,9 @@ const LoadingPictureError = () => {
                 <p style={{
                     maxWidth: '90px',
                     maxHeight: '90px',
-                    marginLeft: '1em'
+                    marginLeft: '1em',
+                    color: colors.goldenYellow,
+                    fontStyle: 'italic'
                 }}>
                     Photo unavailable
                 </p>

@@ -35,6 +35,10 @@ export const PROJECTS_ACADEMIC_TEXT = [
             "MongoDB",
             "Postman",
             "AWS (Elastic Beanstalk, S3)"
+        ],
+        query: [
+            "Parking lot",
+            "Cars"
         ]
     },
     {
@@ -63,6 +67,10 @@ export const PROJECTS_ACADEMIC_TEXT = [
             "Google Maps SDK (integration)",
             "Design patterns",
             "Object-oriented programming"
+        ],
+        query: [
+            "Volunteering",
+            "Happy people"
         ]
     },
     {
@@ -90,6 +98,10 @@ export const PROJECTS_ACADEMIC_TEXT = [
             "NumPy",
             "scikit-learn",
             "Data science"
+        ],
+        query: [
+            "Music",
+            "Vocabulary"
         ]
     }
 ]
@@ -126,6 +138,10 @@ export const PROJECTS_PERSONAL_TEXT = [
             "Node.js",
             "Spring Boot",
             "Photoshop/Illustrator"
+        ],
+        query: [
+            "Korea",
+            "Toy blocks"
         ]
     },
     {
@@ -153,10 +169,14 @@ export const PROJECTS_PERSONAL_TEXT = [
         skills: [
             "React.js",
             "Node.js",
-            "AWS Amplify (CloudFormation, DynamoDB, S3)",
+            "AWS Amplify (with S3, CloudFront, DynamoDB)",
             "Babel",
             "Webpack",
             "User interface"
+        ],
+        query: [
+            "Portfolio",
+            "Happy people"
         ]
     },
     {
@@ -179,6 +199,10 @@ export const PROJECTS_PERSONAL_TEXT = [
         description: "Python-based program that utilizes open-source youtube-dl library to download YouTube audio with a better user interface",
         skills: [
             "Too lazy to write this now..."
+        ],
+        query: [
+            "YouTube",
+            "Listening"
         ]
     },
     {
@@ -204,6 +228,10 @@ export const PROJECTS_PERSONAL_TEXT = [
             "Java SWING GUI",
             "Algorithms",
             "Photoshop/Illustrator"
+        ],
+        query: [
+            "Puzzle games",
+            "Bombs"
         ]
     },
     {
@@ -231,6 +259,10 @@ export const PROJECTS_PERSONAL_TEXT = [
         description: "An assortment of small web design projects from FreeCodeCamp.com",
         skills: [
             "Too lazy to write this now..."
+        ],
+        query: [
+            "Web design",
+            "HTML"
         ]
     }
 ];

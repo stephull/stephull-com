@@ -5,6 +5,8 @@ import FlexColumn from '../../components/flex-column';
 import ToggleButton from '../../components/toggle-button';
 import PageContainer from "../../components/page-container";
 import PageText from "../../components/page-text";
+import HyperLinkButton from '../../components/hyperlink-button';
+
 import { 
   RESUME_MAIN_TEXT,
   RESUME_SECONDARY_TEXT
@@ -15,6 +17,8 @@ import { s3ResumeLink } from '../../envConfig';
 import { getListOfDates } from '../../utils/formatDate';
 
 const ResumePage = () => {
+  const activeSectionStyle = { display: 'block' }, sectionStyle = { display: 'none' };
+
   const [PDFView, setPDFView] = useState(false);
   const togglePDFView = (state) => setPDFView(!state);
 
@@ -28,7 +32,7 @@ const ResumePage = () => {
         </PageText>
         {
           RESUME_MAIN_TEXT.map((element, index) => {
-            const {title, location, dates, current, bullets} = element;
+            const {title, location, dates, current, bullets, sources} = element;
             return (
               <PageContainer key={index} edits={{
                 marginLeft: '-0.5em',
@@ -85,6 +89,25 @@ const ResumePage = () => {
                     })
                   }
                 </PageContainer>
+                {
+                  sources.length > 0 &&
+                  <PageContainer edits={{ marginTop: '-1em' }}>
+                    <small style={{ 
+                      padding: '0.25em',
+                      fontSize: '12px'
+                    }}>
+                      Links: 
+                    </small>
+                    <FlexRow>
+                      {
+                        sources.map((element, index) => {
+                          const { name: n, url: u } = element;
+                          return <HyperLinkButton key={index} name={n} url={u} />;
+                        })
+                      }
+                    </FlexRow>
+                  </PageContainer>
+                }
               </PageContainer>
             );
           })
@@ -103,7 +126,7 @@ const ResumePage = () => {
         <div>
           {
             RESUME_SECONDARY_TEXT.map((element, index) => {
-              const {title, location, dates, bullets} = element;
+              const {title, location, dates, bullets, sources} = element;
               return (
                 <PageContainer key={index} edits={{
                   marginLeft: '-0.5em',
@@ -153,6 +176,33 @@ const ResumePage = () => {
                       })
                     }
                   </PageContainer>
+                  {
+                    sources.length > 0 &&
+                    <PageContainer edits={{ marginTop: '-1em' }}>
+                      <small style={{ 
+                        padding: '0.25em',
+                        fontSize: '12px'
+                      }}>
+                        Links: 
+                      </small>
+                      <FlexRow>
+                        {
+                          sources.map((element, index) => {
+                            const { name: n, url: u } = element;
+                            return (
+                              <HyperLinkButton 
+                                key={index} 
+                                name={n} 
+                                url={u} 
+                                color={colors.brightOrange}
+                                hoverColor={colors.lightOrange}
+                              />
+                            );
+                          })
+                        }
+                      </FlexRow>
+                    </PageContainer>
+                  }
                 </PageContainer>
               );
             })
@@ -164,7 +214,9 @@ const ResumePage = () => {
 
   return (
     <>
-      <FlexRow edits={{ justifyContent: 'space-between' }}>
+      <FlexRow edits={{ 
+        justifyContent: 'space-between' 
+      }}>
         <h2 style={{ 
           color: colors.jetBlack, 
           paddingLeft: '0.5em' 
@@ -189,29 +241,46 @@ const ResumePage = () => {
         indent 
         edits={{ maxWidth: '840px' }}
       >
-        {
-          !PDFView ? (
-            <>
-              <MainResumeContent />
-              {
-                showMore ? <SecondaryResumeContent /> : <button onClick={() => setShowMore(true)}>Show More</button>
-              }
-            </>
-          ) : (
-            <FlexColumn>
-              <div>
-                Updated as of June 29, 2023
-              </div>
-              <br />
-              <object
-                data={s3ResumeLink}
-                type="application/pdf"
-                width="510px"
-                height="660px"
-              />
-            </FlexColumn>
-          )
-        }
+        <div style={ !PDFView ? activeSectionStyle : sectionStyle }>
+          <MainResumeContent />
+            {
+              showMore 
+                ? <SecondaryResumeContent /> 
+                : (
+                  <div style={{ 
+                    display: 'flex',
+                    justifyContent: 'center'
+                  }}>
+                    <button 
+                      onClick={() => setShowMore(true)}
+                      style={{
+                        fontSize: '18px',
+                        padding: '0.5em 1em',
+                        backgroundColor: colors.brightBlue,
+                        color: colors.snowWhite,
+                        borderColor: colors.snowWhite
+                      }}
+                    >
+                      Show More
+                    </button>
+                  </div>
+                )
+            }
+        </div>
+        <div style={ PDFView ? activeSectionStyle : sectionStyle }>
+          <FlexColumn>
+            <div>
+              Updated as of June 29, 2023
+            </div>
+            <br />
+            <object
+              data={s3ResumeLink}
+              type="application/pdf"
+              width="600px"
+              height="800px"
+            />
+          </FlexColumn>
+        </div>
       </PageContainer>
     </>
   );
