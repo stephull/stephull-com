@@ -9,14 +9,16 @@ import { BACKEND_CREDITS, FRONTEND_CREDITS } from '../../assets/text/home';
 
 const WebsiteCredits = () => {
   return (
-    <>
+    <div style={{
+      margin: '2.5em 0'
+    }}>
       <PageText bold>
-        About This Website
+        {`About This Website`}
       </PageText>
       <PageContainer>
         <h4>Colors Used for Website</h4>
         <h5
-          style={{ marginTop: '-1em', marginBottom: '1em' }}
+          style={{ marginTop: '-1em', marginBottom: '-0.125em' }}
         >
           Click on each color block to generate a pretty picture!
         </h5>
@@ -26,14 +28,14 @@ const WebsiteCredits = () => {
         <br />
         <ColorScheme />
       </PageContainer>
-      <PageContainer>
+      <PageContainer edits={{ marginTop: '-1em', marginBottom: '-1em' }}>
         <h4>
           Univers Font, font provided by <a href="https://www.cdnfonts.com/univers.font" target="_blank">CDNFonts</a>
         </h4>
       </PageContainer>
       <PageContainer edits={{ 
         height: 'fit-content',
-        maxWidth: '660px'
+        maxWidth: '570px'
       }}>
         <FlexRow edits={{ justifyContent: 'space-evenly', marginLeft: '-1em' }}>
           <PageContainer indent edits={{
@@ -80,7 +82,7 @@ const WebsiteCredits = () => {
           </PageContainer>
         </FlexRow>
       </PageContainer>
-    </>
+    </div>
   )
 };
 

@@ -9,24 +9,10 @@ import PhotoGenerate from '../../components/photogenerate';
 import FlexRow from '../../components/flex-row';
 import FlexColumn from '../../components/flex-column';
 
-import formatDate from '../../utils/formatDate';
+import { getListOfDates } from '../../utils/formatDate';
 
 const ProjectsPage = () => {
-  const IMAGE_DIMENSIONS = {
-    frameHeight: '100px', frameWidth: '100px'
-  };
-  const IMAGE_COLOR_SCHEME = {
-    primary: colors.snowWhite, complementary: colors.jetBlack  
-  };
-
-  const getListOfDates = (dates) => {
-      return (dates.length > 1)
-        ? dates.map((e) => `${formatDate(e.start)} - ${formatDate(e.end) ?? "Present"}, `)
-          .join('')
-          .slice(0, -2)
-        : dates.map((e) => `${formatDate(e.start)} - ${formatDate(e.end) ?? "Present"}`)
-          .join('');
-  }
+  const IMAGE_DIMENSIONS = { frameHeight: '100px', frameWidth: '120px' };
 
   return (
     <>
@@ -60,8 +46,7 @@ const ProjectsPage = () => {
                 <PhotoGenerate 
                   info={{
                     name: title,
-                    dimensions: IMAGE_DIMENSIONS,
-                    colorScheme: IMAGE_COLOR_SCHEME
+                    dimensions: IMAGE_DIMENSIONS
                   }}
                   error={true} 
                 />
@@ -86,9 +71,7 @@ const ProjectsPage = () => {
                       <PageText edits={{
                         color: colors.seaBlue
                       }}>
-                        {
-                          getListOfDates(dates)
-                        }
+                        { getListOfDates(dates) }
                       </PageText>
                     </FlexColumn>
                   </PageContainer>
@@ -150,10 +133,10 @@ const ProjectsPage = () => {
                   <PhotoGenerate 
                     info={{
                       name: title,
-                      dimensions: IMAGE_DIMENSIONS,
-                      colorScheme: IMAGE_COLOR_SCHEME
+                      dimensions: IMAGE_DIMENSIONS
                     }}
                     error={true} 
+                    edits={{ marginLeft: '1em' }}
                   />
                   <PageContainer>
                     <FlexColumn edits={{ marginTop: '-1em' }}>
@@ -176,9 +159,7 @@ const ProjectsPage = () => {
                       <PageText edits={{
                         color: colors.seaBlue
                       }}>
-                        {
-                          getListOfDates(dates)
-                        }
+                        { getListOfDates(dates) }
                       </PageText>
                     </FlexColumn>
                   </PageContainer>

@@ -1,9 +1,3 @@
-import { s3TestPic } from "../../../envConfig";
-
-export const PROJECT_PAGE_TEXT = [
-    //
-];
-
 // ::: for both academic and personal projects :::
 // ongoing means it's currently in the works
 // complete means it's working/finished product
@@ -23,7 +17,16 @@ export const PROJECTS_ACADEMIC_TEXT = [
                 end: new Date(2022, 11)
             }
         ],
-        link: "https://github.com/Capstone-Projects-2022-Fall/parking-spot-detector-api",
+        links: [
+            {
+                name: "Backend-API GitHub",
+                url: "https://github.com/Capstone-Projects-2022-Fall/parking-spot-detector-api"
+            },
+            {
+                name: "Frontend application GitHub",
+                url: "https://github.com/Capstone-Projects-2022-Fall/parking-spot-detector-front-end"
+            }
+        ],
         description: "Software program that specializes in helping users navigate and easily access open parking areas through a mobile application, with image recognition software to indicate available areas detected from registered camera units.",
         skills: [
             "Node.js",
@@ -45,7 +48,12 @@ export const PROJECTS_ACADEMIC_TEXT = [
                 end: new Date(2022, 3)
             }
         ],
-        link: "https://github.com/cis3296s22/howcanihelp",
+        links: [
+            {
+                name: "GitHub",
+                url: "https://github.com/cis3296s22/howcanihelp"
+            }
+        ],
         description: "This app is about helping people with services through a mobile application. Users can either request services/items or advertise them through the marketplace, with additional visual assistance using Google Maps SDK and options for disability or special needs.",
         skills: [
             "Java",
@@ -68,7 +76,12 @@ export const PROJECTS_ACADEMIC_TEXT = [
                 end: new Date(2022, 2)
             }
         ],
-        link: "https://github.com/stephull/python-music-genre-predictor",
+        links: [
+            {
+                name: "GitHub",
+                url: "https://github.com/stephull/python-music-genre-predictor"
+            }
+        ],
         description: "This is an algorithm I made to predict what musical genres can be detected based on lyrical content using data science techniques.",
         skills: [
             "Python",
@@ -84,7 +97,7 @@ export const PROJECTS_ACADEMIC_TEXT = [
 export const PROJECTS_PERSONAL_TEXT = [
     {
         title: "Korean Building Blocks",
-        ongoing: false,
+        ongoing: true,
         complete: false,
         purpose: "Independent Project",
         dates: [
@@ -97,7 +110,16 @@ export const PROJECTS_PERSONAL_TEXT = [
                 end: null
             }
         ],
-        link: "https://github.com/stephull/korean-building-blocks",
+        links: [
+            {
+                name: "Website",
+                url: "https://korean-building-blocks.stephull.com"
+            },
+            {
+                name: "GitHub",
+                url: "https://github.com/stephull/korean-building-blocks"
+            }
+        ],
         description: "Simple website to help users learn Korean words using building-block style game",
         skills: [
             "React.js",
@@ -117,7 +139,16 @@ export const PROJECTS_PERSONAL_TEXT = [
                 end: null
             }
         ],
-        link: "https://www.stephull.com",
+        links: [
+            {
+                name: "Website",
+                url: "https://www.stephull.com"
+            },
+            {
+                name: "GitHub",
+                url: "https://github.com/stephull/stephull-com"
+            }  
+        ],
         description: "My soon-to-be official personal website.",
         skills: [
             "React.js",
@@ -126,6 +157,28 @@ export const PROJECTS_PERSONAL_TEXT = [
             "Babel",
             "Webpack",
             "User interface"
+        ]
+    },
+    {
+        title: "YouTube Audio Downloader",
+        ongoing: false,
+        complete: true,
+        purpose: "Independent Project",
+        dates: [
+            {
+                start: new Date(2022, 6),
+                end: new Date(2022, 7)
+            }
+        ],
+        links: [
+            {
+                name: "GitHub",
+                url: "https://github.com/stephull/youtube-audio-downloader"
+            }
+        ],
+        description: "Python-based program that utilizes open-source youtube-dl library to download YouTube audio with a better user interface",
+        skills: [
+            "Too lazy to write this now..."
         ]
     },
     {
@@ -139,14 +192,45 @@ export const PROJECTS_PERSONAL_TEXT = [
                 end: new Date(2021, 7)
             }
         ],
-        link: "https://github.com/stephull/minesweeper-game",
+        links: [
+            {
+                name: "GitHub",
+                url: "https://github.com/stephull/minesweeper-game"
+            }
+        ],
         description: "My first personal project, a simple and not-so-amazing replica of Minesweeper",
         skills: [
             "Java",
             "Java SWING GUI",
-            "MySQL",
             "Algorithms",
             "Photoshop/Illustrator"
+        ]
+    },
+    {
+        // :-)
+        title: "CodePen.io Designs (Portfolio)",
+        ongoing: false,
+        complete: true,
+        purpose: "Independent projects",
+        dates: [
+            {
+                start: new Date(2021, 5),
+                end: new Date(2021, 4)
+            }
+        ],
+        links: [
+            {
+                name: "FreeCodeCamp certification",
+                url: "https://www.freecodecamp.org/certification/stephull/responsive-web-design"
+            },
+            {
+                name: "GitHub",
+                url: "https://github.com/stephull/old-codepen-designs",
+            }
+        ],
+        description: "An assortment of small web design projects from FreeCodeCamp.com",
+        skills: [
+            "Too lazy to write this now..."
         ]
     }
 ];

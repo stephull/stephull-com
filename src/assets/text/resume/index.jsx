@@ -1,54 +1,63 @@
-export const RESUME_PAGE_TEXT = [
-    {
-        text: "Here is my resume",
-        quote: false,
-        bullets: []
-    }
-];
-
-// title, sub1, sub2, current, bullets
-
 export const RESUME_MAIN_TEXT = [
     {
         title: "Open for Work",
-        sub1: "Am actively looking to start my full-time career in software engineering!",
-        sub2: "",
+        location: "Am actively looking to start my full-time career in software engineering!",
+        dates: [
+            {
+                start: new Date(2023, 5),
+                end: null
+            }
+        ],
         current: true,
         bullets: []
     },
     {
         title: "Application Developer",
-        sub1: "Temple University Fox School of Business",
-        sub2: "09/2022 - 04/2023",
+        location: "Temple University Fox School of Business",
+        dates: [
+            {
+                start: new Date(2022, 8),
+                end: new Date(2023, 3)
+            }
+        ],
         current: false,
         bullets: [
-            "Strengthened integrity of car ownership transfer and potential fraud reduction for 13 locations by incorporating notarization API to send PDF files or obtain notary transaction data via Axios HTTP client",
-            "Optimized document generation for 50 states, 5 files each, by encoding algorithm to print field values via Node.js PDF, CSV parsing libraries based on conditional transaction attributes for all possible title transfer requirements",
+            "Strengthened integrity of car ownership transfer and potential fraud reduction for 13 locations by incorporating notarization API via Axios HTTP client for PDF file transmission and notary transaction retrieval",
+            "Optimized document generation by encoding algorithm to print field values via Node.js PDF, CSV parsing libraries based on document type and attributes for all possible title transfer conditions throughout 50 states",
             "Revised TypeScript code on React Native application to enhance user interface, organize screen transitions in navigation stack for three vehicular transaction types and located state"
         ],
     },
     {
         title: "Software Engineer Intern",
-        sub1: "Above & Beyond Studios",
-        sub2: "08/2022 - 01/2023",
+        location: "Above & Beyond Studios, Inc",
+        dates: [
+            {
+                start: new Date(2022, 7),
+                end: new Date(2023, 0)
+            }
+        ],
         current: false,
         bullets: [
-            "Increased business recognition by engineering AWS CloudFront networks to mobilize resources to new company website and four e-commerce platform subdomains, AWS S3 storage and Route 53 DNS records",
-            "Supported development of API endpoints with two co-interns for shopping cart, order history, and coupons to reward discounted products; Postgres for database management, JWT for authorizing user activity",
+            "Engineered AWS CloudFront networks to improve outreach of business resources to new company website, four e-commerce platform subdomains with AWS S3 storage and Route 53 hosting zones",
+            "Collaborated with co-interns to support development of API endpoints and utilization of Postgres for database management on shopping cart, order history, and coupons to reward discounted products",
             "Improved company contact and support by integrating HubSpot API client in Node.js server code combined with additional data analysis client for customer responses, newsletters",
-            "Upgraded user experience on e-commerce website for 15 account and shopping pages by reviewing Figma designs with frontend team, redesigned with React.js, CSS",
-            "Operated Git version control on three repositories to review and approve pull requests for updating Chrome extension, company and shopping websites"
+            "Upgraded user experience on e-commerce website for 15 account and shopping pages using React.js and CSS based on Figma designs, reviewed with frontend development team"
         ],
     },
     {
         title: "Data Science Classroom Assistant",
-        sub1: "Temple University College of Science and Technology",
-        sub2: "08/2021 - 12/2021",
+        location: "Temple University College of Science and Technology",
+        dates: [
+            {
+                start: new Date(2021, 7),
+                end: new Date(2021, 11)
+            }
+        ],
         current: false,
         bullets: [
-            "Expanded accessibility of data science knowledge to 60 first-year students by collaborating in the instruction of Python programming and preparatory data science skills using pandas, NumPy libraries",
-            "Expedited progress on Python worksheets by debugging student code, software issues on Jupyter Notebook",
-            "Provided grades and comments for 15 lab worksheets based on assessment of data manipulation techniques and curriculum knowledge, charted attendance for students visiting office hours"
+            "Expanded accessibility of data science knowledge to 60 first-year students by collaborating in instruction of Python programming and preparatory data science skills via pandas, NumPy libraries",
+            "Expedited progress by debugging student code and resolving software issues on Jupyter Notebook worksheets",
+            "Assessed 15 lab worksheets for grading based on data manipulation techniques and curriculum knowledge, charted attendance tracking for office hours"
         ],
     }
 ];
@@ -56,9 +65,17 @@ export const RESUME_MAIN_TEXT = [
 export const RESUME_SECONDARY_TEXT = [
     {
         title: "Computer Lab Consultant",
-        sub1: "Temple University",
-        sub2: "08/2021 - 05/2022, 08/2022 - 09/2022",
-        current: false,
+        location: "Temple University",
+        dates: [
+            {
+                start: new Date(2021, 7),
+                end: new Date(2022, 4)
+            },
+            {
+                start: new Date(2022, 7),
+                end: new Date(2022, 8)
+            }
+        ],
         bullets: [
             "Troubleshooted computers and intermedia equipment inside three laboratory settings to ensure working conditions are satisfactory for uninterrupted classroom instruction",
             "Coordinated the inspection of 60 workspaces to check for working systems and organization in-between lab hours and before closing"
@@ -66,9 +83,13 @@ export const RESUME_SECONDARY_TEXT = [
     },
     {
         title: "Research Assistant",
-        sub1: "Temple University",
-        sub2: "06/2022 - 08/2022",
-        current: false,
+        location: "Temple University",
+        dates: [
+            {
+                start: new Date(2022, 5),
+                end: new Date(2022, 7)
+            }
+        ],
         bullets: [
             "Analyzed network security datasets by assessing 10 designated machine learning algorithms and comparing classification scores via Google CoLab (Python) and Weka (Java)",
             "Assembled stratified k-fold and train-test split validation models through scikit-learn (Python) to sort predicted and actual values based on 42 dataset attributes",
@@ -77,9 +98,13 @@ export const RESUME_SECONDARY_TEXT = [
     },
     {
         title: "Fulfillment Center Associate",
-        sub1: "Amazon (Prime Now, Whole Foods Market)",
-        sub2: "08/2020 - 07/2021",
-        current: false,
+        location: "Amazon (Prime Now, Whole Foods Market)",
+        dates: [
+            {
+                start: new Date(2020, 7),
+                end: new Date(2021, 6)
+            }
+        ],
         bullets: [
             "Staged essential food or hygiene products for online orders via Amazon Prime Now",
             "Cooperated with Whole Foods employees for inventory management to ensure customer satisfaction",

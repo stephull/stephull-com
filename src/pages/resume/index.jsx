@@ -12,10 +12,12 @@ import {
 
 import colors from '../../constants/colors';
 import { s3ResumeLink } from '../../envConfig';
+import { getListOfDates } from '../../utils/formatDate';
 
 const ResumePage = () => {
   const [PDFView, setPDFView] = useState(false);
   const togglePDFView = (state) => setPDFView(!state);
+
   const [showMore, setShowMore] = useState(false);
 
   const MainResumeContent = () => {
@@ -26,7 +28,7 @@ const ResumePage = () => {
         </PageText>
         {
           RESUME_MAIN_TEXT.map((element, index) => {
-            const { title, sub1, sub2, current, bullets } = element;
+            const {title, location, dates, current, bullets} = element;
             return (
               <PageContainer key={index} edits={{
                 marginLeft: '-0.5em',
@@ -47,7 +49,7 @@ const ResumePage = () => {
                     fontSize: '20px',
                     maxWidth: '80%'
                   }}>
-                    {sub1}
+                    {location}
                   </PageText>
                   <PageText edits={{ 
                     color: current ? colors.snowWhite : colors.seaBlue,
@@ -57,7 +59,7 @@ const ResumePage = () => {
                     marginTop: '0.25em',
                     maxWidth: '80%'
                   }}>
-                    {sub2}
+                    { getListOfDates(dates) }
                   </PageText>
                 </FlexRow>
                 <PageContainer edits={{
@@ -101,7 +103,7 @@ const ResumePage = () => {
         <div>
           {
             RESUME_SECONDARY_TEXT.map((element, index) => {
-              const { title, sub1, sub2, bullets } = element;
+              const {title, location, dates, bullets} = element;
               return (
                 <PageContainer key={index} edits={{
                   marginLeft: '-0.5em',
@@ -120,7 +122,7 @@ const ResumePage = () => {
                       fontSize: '20px',
                       maxWidth: '80%'
                     }}>
-                      {sub1}
+                      {location}
                     </PageText>
                     <PageText edits={{ 
                       color: colors.brightOrange, 
@@ -128,7 +130,7 @@ const ResumePage = () => {
                       marginTop: '0.25em',
                       maxWidth: '80%'
                     }}>
-                      {sub2}
+                      { getListOfDates(dates) }
                     </PageText>
                   </FlexRow>
                   <PageContainer edits={{
@@ -198,7 +200,7 @@ const ResumePage = () => {
           ) : (
             <FlexColumn>
               <div>
-                Updated as of June 12, 2023
+                Updated as of June 29, 2023
               </div>
               <br />
               <object
