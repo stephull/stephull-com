@@ -7,21 +7,7 @@ export enum ContentType {
   VIDEO = "VIDEO"
 }
 
-type EagerContactFormResult = {
-  readonly id: string;
-  readonly success: boolean;
-  readonly message?: string | null;
-}
 
-type LazyContactFormResult = {
-  readonly id: string;
-  readonly success: boolean;
-  readonly message?: string | null;
-}
-
-export declare type ContactFormResult = LazyLoading extends LazyLoadingDisabled ? EagerContactFormResult : LazyContactFormResult
-
-export declare const ContactFormResult: (new (init: ModelInit<ContactFormResult>) => ContactFormResult)
 
 type EagerComment = {
   readonly [__modelMeta__]: {
@@ -195,4 +181,34 @@ export declare type Blog = LazyLoading extends LazyLoadingDisabled ? EagerBlog :
 
 export declare const Blog: (new (init: ModelInit<Blog>) => Blog) & {
   copyOf(source: Blog, mutator: (draft: MutableModel<Blog>) => MutableModel<Blog> | void): Blog;
+}
+
+type EagerContactFormResult = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<ContactFormResult, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly success: boolean;
+  readonly message?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazyContactFormResult = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<ContactFormResult, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly success: boolean;
+  readonly message?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type ContactFormResult = LazyLoading extends LazyLoadingDisabled ? EagerContactFormResult : LazyContactFormResult
+
+export declare const ContactFormResult: (new (init: ModelInit<ContactFormResult>) => ContactFormResult) & {
+  copyOf(source: ContactFormResult, mutator: (draft: MutableModel<ContactFormResult>) => MutableModel<ContactFormResult> | void): ContactFormResult;
 }

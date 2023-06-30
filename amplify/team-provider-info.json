@@ -18,20 +18,17 @@
       "auth": {
         "stephullcom": {}
       },
-      "api": {
-        "stephullcom": {}
-      },
-      "analytics": {
-        "stephullcom": {}
-      },
       "storage": {
         "s3stephullcomstorageecac3f19": {}
       },
       "function": {
-        "SubmitContactForm": {
+        "stephullcomab0243dd": {
           "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
-          "s3Key": "amplify-builds/SubmitContactForm-5a49592b2b3665663542-build.zip"
+          "s3Key": "amplify-builds/stephullcomab0243dd-65354877336454507953-build.zip"
         }
+      },
+      "api": {
+        "StephullComRESTAPI": {}
       }
     }
   }

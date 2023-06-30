@@ -498,18 +498,7 @@ export const schema = {
                     }
                 }
             ]
-        }
-    },
-    "enums": {
-        "ContentType": {
-            "name": "ContentType",
-            "values": [
-                "IMAGE",
-                "VIDEO"
-            ]
-        }
-    },
-    "nonModels": {
+        },
         "ContactFormResult": {
             "name": "ContactFormResult",
             "fields": {
@@ -533,10 +522,60 @@ export const schema = {
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
                 }
-            }
+            },
+            "syncable": true,
+            "pluralName": "ContactFormResults",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
         }
     },
+    "enums": {
+        "ContentType": {
+            "name": "ContentType",
+            "values": [
+                "IMAGE",
+                "VIDEO"
+            ]
+        }
+    },
+    "nonModels": {},
     "codegenVersion": "3.4.3",
-    "version": "31ecf52a5d5f4414f6fa25d44767f417"
+    "version": "e4fd14461f31b6a74b91a9b6a5bf7fff"
 };

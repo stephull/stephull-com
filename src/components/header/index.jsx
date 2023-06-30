@@ -35,18 +35,21 @@ const Header = () => {
                 }}>
                     PROJECTS
                 </span>
-                <span onClick={(e) => {
-                    e.preventDefault();
-                    window.open("/blogs", "_self");
-                }}>
-                    Blogs
-                </span>
-                <span onClick={(e) => {
-                    e.preventDefault();
-                    window.open("/media", "_self");
-                }}>
-                    Media
-                </span>
+                {
+                    // Take out for now, leave links open for editing
+                   /* <span onClick={(e) => {
+                        e.preventDefault();
+                        window.open("/blogs", "_self");
+                    }}>
+                        Blogs
+                    </span>
+                    <span onClick={(e) => {
+                        e.preventDefault();
+                        window.open("/media", "_self");
+                    }}>
+                        Media
+                    </span>*/
+                }
                 <span onClick={(e) => {
                     e.preventDefault();
                     window.open("/resume", "_self");
@@ -57,7 +60,7 @@ const Header = () => {
                     e.preventDefault();
                     window.open("/contact", "_self")
                 }}>
-                    Contact
+                    CONTACT
                 </span>
             </HeaderMenu>
         </HeaderBody>

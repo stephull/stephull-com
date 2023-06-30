@@ -7,50 +7,39 @@ import PageContainer from '../../components/page-container';
 import colors from '../../constants/colors';
 import awsmobile from '../../aws-exports';
 
-import Construction from '../../components/under-construction';
+import { apiGatewayRestFormEndpoint } from '../../envConfig';
 
 const ContactPage = () => {
+  const MAX_TEXTAREA = '505px';
+
   const [submitDone, setSubmitDone] = useState(false);
   const [submitError, setSubmitError] = useState(false);
 
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    const { firstName, lastName, emailAddress, howYouFound, inquiry } = e.target.elements;
-    const graphqlQuery = `
-        mutation CreateFormContact($input: ContactFormInput!) {
-          createFormContact(input: $input) {
-            id
-            success
-            message
-          }
-        }
-      `;
+    const { elements } = e.target;
+    const formValues = {
+      firstName: elements.firstName.value,
+      lastName: elements.lastName.value,
+      emailAddress: elements.emailAddress.value,
+      howYouFound: elements.howYouFound.value,
+      inquiry: elements.inquiry.value
+    };
+
+    console.log(formValues);
 
     try {
-      const postToLambda = async (data) => {
-        return await axios.post(
-          awsmobile.aws_appsync_graphqlEndpoint, 
-          {
-            query: graphqlQuery,
-            variables: { input: data }
-          }, 
-          {
-            headers: { 
-              'Content-Type': 'application/json',
-              'x-api-key': awsmobile.aws_appsync_apiKey
-            },
+      const response = await axios.post(
+        apiGatewayRestFormEndpoint, 
+        formValues,
+        {
+          headers: { 
+            'Content-Type': 'application/json',
+            'x-api-key': awsmobile.aws_appsync_apiKey
           }
-        );
-      }
-
-      const response = await postToLambda({
-        firstName: firstName.value, 
-        lastName: lastName.value,
-        emailAddress: emailAddress.value,
-        howYouFound: howYouFound.value,
-        inquiry: inquiry.value
-      });
+        }
+      );
 
       console.log(response);
 
@@ -188,9 +177,9 @@ const ContactPage = () => {
               id="inquiry"
               style={{
                 height: 'auto',
-                width: '505px',
-                minWidth: '505px',
-                maxWidth: '505px',
+                width: MAX_TEXTAREA,
+                minWidth: MAX_TEXTAREA,
+                maxWidth: MAX_TEXTAREA,
                 height: '150px',
                 minHeight: '50px',
                 maxHeight: '300px',
@@ -238,12 +227,6 @@ const ContactPage = () => {
       }}>
         Contact
       </h2>
-      {
-        // temporary
-        <Construction tidbits={[
-          "Need to fix errors in submitting data and receiving proper response"
-        ]} />
-      }
       <PageContainer indent>
         <p style={{
           marginTop: '-0.125em',

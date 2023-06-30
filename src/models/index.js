@@ -15,6 +15,6 @@ export {
   MediaTimelineItem,
   Content,
   Blog,
-  ContentType,
-  ContactFormResult
+  ContactFormResult,
+  ContentType
 };

@@ -47,12 +47,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "SubmitContactForm",
+            "stephullcomab0243dd",
             {
               "Fn::Join": [
                 "",
                 [
-                  "SubmitContactForm",
+                  "stephullcomab0243dd",
                   "-",
                   {
                     "Ref": "env"
@@ -89,12 +89,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "stephullcomLambdaRole7fe766b6",
+            "stephullcomLambdaRolee7ffa522",
             {
               "Fn::Join": [
                 "",
                 [
-                  "stephullcomLambdaRole7fe766b6",
+                  "stephullcomLambdaRolee7ffa522",
                   "-",
                   {
                     "Ref": "env"

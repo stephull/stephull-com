@@ -1,16 +1,9 @@
 export type AmplifyDependentResourcesAttributes = {
-  "analytics": {
-    "stephullcom": {
-      "Id": "string",
-      "Region": "string",
-      "appName": "string"
-    }
-  },
   "api": {
-    "stephullcom": {
-      "GraphQLAPIEndpointOutput": "string",
-      "GraphQLAPIIdOutput": "string",
-      "GraphQLAPIKeyOutput": "string"
+    "StephullComRESTAPI": {
+      "ApiId": "string",
+      "ApiName": "string",
+      "RootUrl": "string"
     }
   },
   "auth": {
@@ -26,6 +19,13 @@ export type AmplifyDependentResourcesAttributes = {
   },
   "function": {
     "SubmitContactForm": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
+    "stephullcomab0243dd": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
       "LambdaExecutionRoleArn": "string",
