@@ -29,7 +29,8 @@
         }
       },
       "api": {
-        "stephullcomRESTAPI": {}
+        "stephullcomRESTAPI": {},
+        "stephullcomGRAPHQLAPI": {}
       }
     }
   }

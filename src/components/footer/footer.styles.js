@@ -5,6 +5,7 @@ export const FooterBody = styled.div`
     background-color: ${colors.brightBlue};
     
     width: 100%;
+    height: 22.5px;
     padding: 0.25em;
     paddingLeft: 1em;
     position: fixed;
@@ -22,6 +23,7 @@ export const FooterContentTitle = styled.div`
 
     padding: 0.0625em 0;
     padding-left: 0.85em;
+    font-weight: bold; 
 
     z-index: 999;
 `;

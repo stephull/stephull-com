@@ -2,30 +2,30 @@ import React, { useState, useEffect } from 'react';
 import { Amplify } from 'aws-amplify';
 import awsconfig from '../../aws-exports';
 import { DataStore } from '@aws-amplify/datastore';
-import { MediaTimelineItem, Content } from '../../models';
+import { Album, Media } from '../../models';
 import Card from '../card';
 
 import PageContainer from "../page-container/index.jsx";
 
-const MediaTimeline = () => {
+const AlbumTimeline = () => {
   Amplify.configure(awsconfig);
 
-  const [timeline, setTimeline] = useState([]);
-  const [content, setContent] = useState([]);
+  const [album, setAlbum] = useState([]);
+  const [media, setMedia] = useState([]);
 
   useEffect(() => {
     const getTimeline = async () => {
-      const timelineData = await DataStore.query(MediaTimelineItem);
-      const newContent = await DataStore.query(Content);
-      setTimeline(
-        timelineData.map((item) => item).reverse()
+      const newAlbum = await DataStore.query(Album);
+      const newMedia = await DataStore.query(Media);
+      setAlbum(
+        newAlbum.map((item) => item).reverse()
       );
-      setContent(
-        newContent.map((item) => item).reverse()
+      setMedia(
+        newMedia.map((item) => item).reverse()
       );
 
-      console.log(timelineData);
-      console.log(newContent);
+      console.log(newAlbum);
+      console.log(newMedia);
     }
     getTimeline();
   }, []);
@@ -35,14 +35,14 @@ const MediaTimeline = () => {
       { 
         // this code only returns 1 content, change it in the
         // future to get more than one based on post ID
-        timeline.map((post, index) => {
+        album.map((a, i) => {
           return (
-            <PageContainer key={index}>
+            <PageContainer key={i}>
               <Card 
                 id={post.id} 
                 post={post}
                 content={
-                  content.filter((c) => post.id === c.mediatimelineitemID)[0]
+                  media.filter((m) => a.id === m.albumID)[0]
                 } 
               />
             </PageContainer>
@@ -53,4 +53,4 @@ const MediaTimeline = () => {
   );
 };
 
-export default MediaTimeline;
+export default AlbumTimeline;

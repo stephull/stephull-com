@@ -1,5 +1,5 @@
 import React from 'react';
-import MediaTimeline from '../../components/media-timeline';
+import AlbumTimeline from '../../components/album-timeline';
 
 import Construction from '../../components/under-construction';
 
@@ -13,7 +13,7 @@ const MediaPage = () => {
                     "Need to fix backend to display media posts properly"
                 ]} />
             }
-            <MediaTimeline />
+            <AlbumTimeline />
         </>
     );
 };  

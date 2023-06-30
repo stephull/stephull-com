@@ -8,8 +8,8 @@ const Hyperlink = ({ url, children, edits = null }) => {
         <div 
             style={{
                 padding: '0 1em',
-                color: colors.snowWhite,
-                textDecoration: hover ? 'underline' : 'none',
+                color: hover ? colors.skyBlue : colors.snowWhite,
+                textDecoration: 'underline',
                 cursor: hover ? 'pointer' : 'none'
             }}
             onMouseEnter={() => setHover(true)}

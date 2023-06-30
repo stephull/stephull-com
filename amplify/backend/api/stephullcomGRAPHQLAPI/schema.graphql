@@ -1,0 +1,39 @@
+enum MediaType {
+  VIDEO
+  IMAGE
+}
+
+type Media @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  type: MediaType!
+  desc: String
+  comments: [Comment] @hasMany(indexName: "byMedia", fields: ["id"])
+  likes: Int!
+  albumID: ID! @index(name: "byAlbum")
+  blogID: ID! @index(name: "byBlog")
+}
+
+type Blog @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  paragraphs: [String!]!
+  media: [Media] @hasMany(indexName: "byBlog", fields: ["id"])
+  comments: [Comment] @hasMany(indexName: "byBlog", fields: ["id"])
+  likes: Int!
+}
+
+type Album @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  desc: String
+  comments: [Comment] @hasMany(indexName: "byAlbum", fields: ["id"])
+  media: [Media] @hasMany(indexName: "byAlbum", fields: ["id"])
+  likes: Int!
+}
+
+type Comment @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  body: String!
+  albumID: ID! @index(name: "byAlbum")
+  mediaID: ID! @index(name: "byMedia")
+  blogID: ID! @index(name: "byBlog")
+}
+ 

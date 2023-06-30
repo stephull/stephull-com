@@ -43,8 +43,6 @@ const ContactPage = () => {
         }
       );
 
-      console.log(response);
-
       let responseBody = JSON.parse(response.data.body);
       let responseData = responseBody.data.createFormContact;
       if (responseData.success) {

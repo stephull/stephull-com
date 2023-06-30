@@ -1,6 +1,6 @@
 import { Amplify, Storage, API } from 'aws-amplify';
 import { DataStore } from '@aws-amplify/datastore';
-import { Content, ContentType } from "../models/index";
+import { Media, MediaType } from "../models/index";
 import awsconfig from '../aws-exports';
 
 const fileUpload = async (file, fileTitle) => {  
@@ -18,11 +18,11 @@ const fileUpload = async (file, fileTitle) => {
     }
   });
 
-  const getContentType = (type) => {
+  const getMediaType = (type) => {
     return (type.includes("video"))
-      ? ContentType.VIDEO
+      ? MediaType.VIDEO
       : (type.includes("image"))
-        ? ContentType.IMAGE : undefined;
+        ? MediaType.IMAGE : undefined;
   }
 
   try {
@@ -38,9 +38,7 @@ const fileUpload = async (file, fileTitle) => {
       }
     );
 
-    console.log("CHECKINGGGG");
-
-    const fileType = getContentType(file.type);
+    const fileType = getMediaType(file.type);
     const newRecord = { 
       type: fileType,
       title: fileTitle,
@@ -52,13 +50,13 @@ const fileUpload = async (file, fileTitle) => {
     // step 1
     const apiResponse = await API.post(
       'stephullcom', 
-      '/Content', 
+      '/Media', 
       { body: newRecord }
     );
 
     // step 2
     const createdItem = await DataStore.save(
-      new Content(newRecord)
+      new Media(newRecord)
     );
 
     console.log("File upload successful:", apiResponse, "::", createdItem);

@@ -6,7 +6,7 @@ import { HeaderBody, HeaderTitle, HeaderMenu } from './header.styles';
 import FlexRow from '../flex-row';
 
 const Header = () => {
-  const WIDTH = '400px';//'495px';
+  const WIDTH = '480px';
   const MARGIN_LEFT = '-2.5em';
 
   return (
@@ -43,21 +43,22 @@ const Header = () => {
             PROJECTS
           </span>
           {
-            // Take out for now, leave links open for editing
+            // Take out for now
             /* <span onClick={(e) => {
                     e.preventDefault();
                     window.open("/blogs", "_self");
                 }}>
                     Blogs
                 </span>*/
-
           }
-          {/*<span onClick={(e) => {
-                        e.preventDefault();
-                        window.open("/media", "_self");
-                    }}>
-                        MEDIA
-                    </span>*/}
+          {
+            // take out this too
+          /*<span onClick={(e) => {
+              e.preventDefault();
+              window.open("/media", "_self");
+          }}>
+              MEDIA
+        </span>*/}
           <span onClick={(e) => {
             e.preventDefault();
             window.open("/resume", "_self");

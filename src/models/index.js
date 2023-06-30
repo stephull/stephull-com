@@ -2,19 +2,17 @@
 import { initSchema } from '@aws-amplify/datastore';
 import { schema } from './schema';
 
-const ContentType = {
-  "IMAGE": "IMAGE",
-  "VIDEO": "VIDEO"
+const MediaType = {
+  "VIDEO": "VIDEO",
+  "IMAGE": "IMAGE"
 };
 
-const { Comment, BlogTimelineItem, MediaTimelineItem, Content, Blog, ContactFormResult } = initSchema(schema);
+const { Media, Blog, Album, Comment } = initSchema(schema);
 
 export {
-  Comment,
-  BlogTimelineItem,
-  MediaTimelineItem,
-  Content,
+  Media,
   Blog,
-  ContactFormResult,
-  ContentType
+  Album,
+  Comment,
+  MediaType
 };
