@@ -63,7 +63,7 @@ const PhotoGenerate = ({ info, error }) => {
                   backgroundColor: colorScheme.primary,
                   border: '1px solid black',
                   width: dimensions.frameWidth,
-                  height: '375px',
+                  height: '400px',
                   margin: '0em 1em',
                   padding: '1em 1em 0 1em',
                   fontWeight: 'bold'
@@ -92,6 +92,16 @@ const PhotoGenerate = ({ info, error }) => {
                       >
                         Taken by {photoResponse.user.name}
                       </a>
+                      <br/>
+                      <small style={{ fontSize: '12px' }}>
+                        <a 
+                          target='_blank' 
+                          href="https://unsplash.com/?utm_source=your_app_name&utm_medium=referral"
+                          style={{ color: colorScheme.complementary }}
+                        >
+                          Courtesy of Unsplash
+                        </a>
+                      </small>
                     </>
                   }
                 </div>
@@ -103,25 +113,22 @@ const PhotoGenerate = ({ info, error }) => {
                 <PhotoRender
                   resp={photoResponse}
                   dimensions={dimensions}
-                  onClick={() => window.open(
-                    `https://unsplash.com/@${photoResponse.user.username}`, '_blank'
-                  )}
                 />
                 <small style={{ color: colors.snowWhite }}>
                   Taken by {photoResponse.user.name}
                 </small>
+                <br/>
+                <small style={{ fontSize: '10px' }}>
+                  <a 
+                    style={{ color: colors.snowWhite }}
+                    target='_blank' 
+                    href="https://unsplash.com/?utm_source=your_app_name&utm_medium=referral"
+                  >
+                    Courtesy of Unsplash
+                  </a>
+                </small>
               </FlexColumn>
             )}
-          <small style={{
-            fontSize: '12px',
-            color: colors.snowWhite,
-            marginLeft: '1.25em',
-            marginTop: '0.5em'
-          }}>
-            Courtesy of <a target='_blank' href="https://unsplash.com/?utm_source=your_app_name&utm_medium=referral">
-              Unsplash
-            </a>
-          </small>
         </FlexColumn>
       )
 };

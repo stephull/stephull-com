@@ -108,6 +108,17 @@ const ResumePage = () => {
                     </FlexRow>
                   </PageContainer>
                 }
+                {
+                  !current &&
+                  <>
+                    <svg style={{ marginBottom: '-7.5em' }}>
+                      <rect height='3px' width='97.5%' fill={colors.brightBlue} />
+                    </svg>
+                    <svg style={{ marginTop: '-1.5em', marginBottom: '-7.5em' }}>
+                      <rect height='3px' width='97.5%' fill={colors.brightBlue} />
+                    </svg>
+                  </>
+                }
               </PageContainer>
             );
           })
@@ -203,6 +214,16 @@ const ResumePage = () => {
                       </FlexRow>
                     </PageContainer>
                   }
+                  {
+                    <>
+                      <svg style={{ marginBottom: '-7.5em' }}>
+                        <rect height='3px' width='97.5%' fill={colors.brightOrange} />
+                      </svg>
+                      <svg style={{ marginTop: '-1.5em', marginBottom: '-7.5em' }}>
+                        <rect height='3px' width='97.5%' fill={colors.brightOrange} />
+                      </svg>
+                    </>
+                  }
                 </PageContainer>
               );
             })
@@ -225,6 +246,7 @@ const ResumePage = () => {
         </h2>
         <div style={{
           marginRight: '1em',
+          marginTop: '0.5em'
         }}>
           <ToggleButton
             border

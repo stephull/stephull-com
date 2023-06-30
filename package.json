@@ -9,7 +9,8 @@
     "build": "webpack --config ./webpack.config.js --mode production",
     "update": "amplify pull --appId d3hw4f4clwc0rb --envName dev",
     "thing1": "npx update-browserslist-db@latest && npx browserslist@latest --update-db",
-    "thing2": "npm install @aws-amplify/ui-react@^4.6.0 aws-amplify@^5.0.2"
+    "thing2": "npm install @aws-amplify/ui-react@^4.6.0 aws-amplify@^5.0.2",
+    "publish-all": "amplify publish --invalidateCloudFront"
   },
   "keywords": [],
   "author": "Stephen Hullender",

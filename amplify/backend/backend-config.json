@@ -47,6 +47,24 @@
       "service": "S3AndCloudFront"
     }
   },
+  "parameters": {
+    "AMPLIFY_function_CreateContactPost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateContactPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreateContactPost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateContactPost"
+        }
+      ]
+    }
+  },
   "storage": {
     "s3stephullcomstorageecac3f19": {
       "dependsOn": [],
