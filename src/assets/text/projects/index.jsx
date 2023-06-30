@@ -134,7 +134,8 @@ export const PROJECTS_PERSONAL_TEXT = [
         ],
         description: "Simple website to help users learn Korean words using building-block style game",
         skills: [
-            "React.js",
+            "Angular.js",
+            "React.js (previously)",
             "Node.js",
             "Spring Boot",
             "Photoshop/Illustrator"
@@ -169,10 +170,14 @@ export const PROJECTS_PERSONAL_TEXT = [
         skills: [
             "React.js",
             "Node.js",
-            "AWS Amplify (with S3, CloudFront, DynamoDB)",
             "Babel",
             "Webpack",
-            "User interface"
+            "AWS Amplify",
+            "AWS S3",
+            "AWS CloudFront",
+            "AWS API Gateway",
+            "AWS DynamoDB",
+            "AWS Route 53"
         ],
         query: [
             "Portfolio",
@@ -198,7 +203,9 @@ export const PROJECTS_PERSONAL_TEXT = [
         ],
         description: "Python-based program that utilizes open-source youtube-dl library to download YouTube audio with a better user interface",
         skills: [
-            "Too lazy to write this now..."
+            "Python",
+            "Git Bash",
+            "Tkinter GUI"
         ],
         query: [
             "YouTube",
@@ -258,7 +265,8 @@ export const PROJECTS_PERSONAL_TEXT = [
         ],
         description: "An assortment of small web design projects from FreeCodeCamp.com",
         skills: [
-            "Too lazy to write this now..."
+            "HTML",
+            "CSS"
         ],
         query: [
             "Web design",

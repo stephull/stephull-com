@@ -26,11 +26,11 @@ export const HeaderTitle = styled.div`
 
 export const HeaderMenu = styled.div`
     padding: 0.25em 0;
-    padding-left: 0.85em;
+    padding-left: 2em;
     font-size: 16.5px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     width: ${(props) => props.style.width};
     max-width: ${(props) => props.style.maxWidth};
 

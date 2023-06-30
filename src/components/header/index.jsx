@@ -2,7 +2,7 @@ import React from 'react';
 import { HeaderBody, HeaderTitle, HeaderMenu } from './header.styles';
 
 const Header = () => {
-    const WIDTH = '540px';
+    const WIDTH = '435px';//'495px';
     return (
         <HeaderBody>
             <HeaderTitle
@@ -42,14 +42,15 @@ const Header = () => {
                         window.open("/blogs", "_self");
                     }}>
                         Blogs
-                    </span>
-                    <span onClick={(e) => {
-                        e.preventDefault();
-                        window.open("/media", "_self");
-                    }}>
-                        Media
                     </span>*/
+                    
                 }
+                {/*<span onClick={(e) => {
+                    e.preventDefault();
+                    window.open("/media", "_self");
+                }}>
+                    MEDIA
+                </span>*/}
                 <span onClick={(e) => {
                     e.preventDefault();
                     window.open("/resume", "_self");

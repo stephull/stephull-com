@@ -107,14 +107,14 @@ const PhotoGenerate = ({ info, error }) => {
                     `https://unsplash.com/@${photoResponse.user.username}`, '_blank'
                   )}
                 />
-                <small>
+                <small style={{ color: colors.snowWhite }}>
                   Taken by {photoResponse.user.name}
                 </small>
               </FlexColumn>
             )}
           <small style={{
             fontSize: '12px',
-            color: colors.jetBlack,
+            color: colors.snowWhite,
             marginLeft: '1.25em',
             marginTop: '0.5em'
           }}>
