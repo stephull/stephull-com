@@ -1,7 +1,7 @@
 {
   "analytics": {},
   "api": {
-    "StephullComRESTAPI": {
+    "stephullcomrestapi": {
       "dependsOn": [
         {
           "attributes": [
@@ -9,7 +9,7 @@
             "Arn"
           ],
           "category": "function",
-          "resourceName": "stephullcomab0243dd"
+          "resourceName": "ContactCreatePost"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -35,7 +35,7 @@
     }
   },
   "function": {
-    "stephullcomab0243dd": {
+    "ContactCreatePost": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
@@ -45,24 +45,6 @@
     "S3AndCloudFront": {
       "providerPlugin": "awscloudformation",
       "service": "S3AndCloudFront"
-    }
-  },
-  "parameters": {
-    "AMPLIFY_function_stephullcomab0243dd_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "stephullcomab0243dd"
-        }
-      ]
-    },
-    "AMPLIFY_function_stephullcomab0243dd_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "stephullcomab0243dd"
-        }
-      ]
     }
   },
   "storage": {

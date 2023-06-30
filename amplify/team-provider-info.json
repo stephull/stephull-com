@@ -22,13 +22,7 @@
         "s3stephullcomstorageecac3f19": {}
       },
       "function": {
-        "stephullcomab0243dd": {
-          "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
-          "s3Key": "amplify-builds/stephullcomab0243dd-65354877336454507953-build.zip"
-        }
-      },
-      "api": {
-        "StephullComRESTAPI": {}
+        "ContactCreatePost": {}
       }
     }
   }
