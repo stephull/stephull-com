@@ -1,7 +1,7 @@
 {
   "analytics": {},
   "api": {
-    "stephullcomrestapi": {
+    "stephullcomRESTAPI": {
       "dependsOn": [
         {
           "attributes": [
@@ -9,7 +9,7 @@
             "Arn"
           ],
           "category": "function",
-          "resourceName": "ContactCreatePost"
+          "resourceName": "CreateContactPost"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -35,7 +35,7 @@
     }
   },
   "function": {
-    "ContactCreatePost": {
+    "CreateContactPost": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"

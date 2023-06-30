@@ -9,7 +9,8 @@
       "UnauthRoleName": "amplify-stephullcom-dev-172857-unauthRole",
       "StackName": "amplify-stephullcom-dev-172857",
       "StackId": "arn:aws:cloudformation:us-east-1:353462908506:stack/amplify-stephullcom-dev-172857/00491210-f5c3-11ed-b7ec-0aac9dae0fc3",
-      "AmplifyAppId": "d3hw4f4clwc0rb"
+      "AmplifyAppId": "d3hw4f4clwc0rb",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-stephullcom-dev-172857-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "hosting": {
@@ -22,7 +23,13 @@
         "s3stephullcomstorageecac3f19": {}
       },
       "function": {
-        "ContactCreatePost": {}
+        "CreateContactPost": {
+          "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
+          "s3Key": "amplify-builds/CreateContactPost-667956466a647a395358-build.zip"
+        }
+      },
+      "api": {
+        "stephullcomRESTAPI": {}
       }
     }
   }

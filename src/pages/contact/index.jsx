@@ -5,9 +5,8 @@ import FlexRow from '../../components/flex-row';
 import PageContainer from '../../components/page-container';
 
 import colors from '../../constants/colors';
-import awsmobile from '../../aws-exports';
 
-import { apiGatewayRestFormEndpoint } from '../../envConfig';
+import { lambdaCreateContact, apiKeyApiGateway } from '../../envConfig';
 
 const ContactPage = () => {
   const MAX_TEXTAREA = '505px';
@@ -31,20 +30,29 @@ const ContactPage = () => {
 
     try {
       const response = await axios.post(
-        apiGatewayRestFormEndpoint, 
-        formValues,
+        lambdaCreateContact, 
+        {
+          id: Date.now().toString(),
+          ...formValues
+        },
         {
           headers: { 
             'Content-Type': 'application/json',
-            'x-api-key': awsmobile.aws_appsync_apiKey
+            'x-api-key': apiKeyApiGateway
           }
         }
       );
 
       console.log(response);
 
-      const responseData = response.data.data.createFormContact;
-      responseData.success ? setSubmitDone(true) : setSubmitError(true);
+      let responseBody = JSON.parse(response.data.body);
+      let responseData = responseBody.data.createFormContact;
+      if (responseData.success) {
+        setSubmitDone(true);
+        console.log(responseData);
+      } else {
+        setSubmitError(true);
+      }
     
     } catch (err) {
       setSubmitError(true);
@@ -205,13 +213,19 @@ const ContactPage = () => {
         <br />
         {
           submitDone &&
-          <div style={{ color: colors.skyBlue }}>
+          <div style={{ 
+            color: colors.brightBlue,
+            padding: '1em 0'
+          }}>
             Thank you for your submission. We'll get back to you sometime soon.
           </div>
         }
         {
           submitError &&
-          <div style={{ color: colors.lightOrange }}>
+          <div style={{ 
+            color: colors.brightOrange,
+            padding: '1em 0'
+          }}>
             We have detected an error. Please try again later.
           </div>
         }
