@@ -12,6 +12,7 @@ import ToggleButton from '../../components/toggle-button';
 import HyperLinkButton from '../../components/hyperlink-button';
 
 import { getListOfDates } from '../../utils/formatDate';
+import GradientBackdrop from '../../components/gradient-backdrop';
 
 const ProjectsPage = () => {
   const sectionStyle = { display: 'none' }, activeSectionStyle = { display: 'block' };
@@ -52,10 +53,10 @@ const ProjectsPage = () => {
   };
 
   // svg's for ongoing and/or complete statuses
-  const FinishedProjectSymbol = ({ thick }) => {
+  const FinishedProjectSymbol = () => {
     return (
       <div style={{ 
-        border: (thick ? "5px" : '2px') + ' solid ' + colors.snowWhite, 
+        border: '5px solid ' + colors.snowWhite, 
         borderRadius: '100%',
         height: '45px',
         margin: '0.25em'
@@ -72,10 +73,10 @@ const ProjectsPage = () => {
     );
   };
   
-  const OngoingProjectSymbol = ({ thick }) => {
+  const OngoingProjectSymbol = () => {
     return (
       <div style={{ 
-        border: (thick ? "5px" : '2px') + ' solid ' + colors.snowWhite, 
+        border: '5px solid ' + colors.snowWhite, 
         borderRadius: '100%',
         height: '45px',
         margin: '0.25em'
@@ -89,35 +90,6 @@ const ProjectsPage = () => {
           />
         </svg>
       </div>
-    );
-  };
-
-  const AwesomeKeyBackground = () => {
-    const MARGIN = '-1.125em', OPAC = '0.5';
-    return (
-      <FlexRow>
-        <svg height='44px' width='50px' style={{ marginLeft: MARGIN }}>
-          <polygon points="0,0 40,0 20,40, 0,40" fill={colors.goldenYellow} opacity={OPAC} />
-        </svg>
-        <svg height='44px' width='50px' style={{ marginLeft: MARGIN }}>
-          <polygon points="20,0 40,0 20,40, 0,40" fill={colors.goldenYellow} opacity={OPAC} />
-        </svg>
-        <svg height='44px' width='50px' style={{ marginLeft: MARGIN }}>
-          <polygon points="20,0 40,0 20,40, 0,40" fill={colors.goldenYellow} opacity={OPAC} />
-        </svg>
-        <svg height='44px' width='50px' style={{ marginLeft: MARGIN }}>
-          <polygon points="20,0 40,0 20,40, 0,40" fill={colors.goldenYellow} opacity={OPAC} />
-        </svg>
-        <svg height='44px' width='50px' style={{ marginLeft: MARGIN }}>
-          <polygon points="20,0 40,0 20,40, 0,40" fill={colors.goldenYellow} opacity={OPAC} />
-        </svg>
-        <svg height='44px' width='50px' style={{ marginLeft: MARGIN }}>
-          <polygon points="20,0 40,0 20,40, 0,40" fill={colors.goldenYellow} opacity={OPAC} />
-        </svg>
-        <svg height='44px' width='50px' style={{ marginLeft: MARGIN }}>
-          <polygon points="20,0 40,0 40,40, 0,40" fill={colors.goldenYellow} opacity={OPAC} />
-        </svg>
-      </FlexRow>
     );
   };
 
@@ -187,20 +159,46 @@ const ProjectsPage = () => {
                         </PageText>
                       </FlexColumn>
                     </PageContainer>
-                    <FlexColumn>
-                      {
+                    <FlexRow edits={{ marginRight: '1em' }}>
+                    {
                         ongoing &&
-                        <div style={{ padding: '0.5em' }}>
-                          <OngoingProjectSymbol thick={false} />
-                        </div>
+                        <FlexColumn>
+                          <div style={{ 
+                            padding: '0.5em',
+                            marginTop: '-1.85em' 
+                          }}>
+                            <OngoingProjectSymbol />
+                          </div>
+                          <small style={{ 
+                            color: colors.lightOrange,
+                            marginLeft: '1.125em',
+                            marginTop: '-0.75em',
+                            fontWeight: 'bold'
+                          }}>
+                            Ongoing
+                          </small>
+                        </FlexColumn>
                       }
                       {
                         complete &&
-                        <div style={{ padding: '0.5em' }}>
-                          <FinishedProjectSymbol thick={false} />
-                        </div>
+                        <FlexColumn>
+                          <div style={{ 
+                            padding: '0.5em',
+                            marginTop: '-1.85em'
+                          }}>
+                            <FinishedProjectSymbol />
+                          </div>
+                          <small style={{ 
+                            color: colors.skyBlue,
+                            marginLeft: '1em',
+                            marginTop: '-0.75em',
+                            fontWeight: 'bold'
+                          }}>
+                            Complete
+                          </small>
+                        </FlexColumn>
                       }
-                    </FlexColumn>
+                    </FlexRow>
                   </FlexRow>
                   {
                     <svg style={{ 
@@ -250,6 +248,7 @@ const ProjectsPage = () => {
                     </FlexRow>
                   </PageContainer>
                 </PageContainer>
+                <br />
               </PageContainer>
             );
           })
@@ -323,20 +322,46 @@ const ProjectsPage = () => {
                         </PageText>
                       </FlexColumn>
                     </PageContainer>
-                    <FlexColumn>
+                    <FlexRow edits={{ marginRight: '1em' }}>
                       {
                         ongoing &&
-                        <div style={{ padding: '0.5em' }}>
-                          <OngoingProjectSymbol thick={false} />
-                        </div>
+                        <FlexColumn>
+                          <div style={{ 
+                            padding: '0.5em',
+                            marginTop: '-1.85em' 
+                          }}>
+                            <OngoingProjectSymbol />
+                          </div>
+                          <small style={{ 
+                            color: colors.lightOrange,
+                            marginLeft: '1.125em',
+                            marginTop: '-0.75em',
+                            fontWeight: 'bold'
+                          }}>
+                            Ongoing
+                          </small>
+                        </FlexColumn>
                       }
                       {
                         complete &&
-                        <div style={{ padding: '0.5em' }}>
-                          <FinishedProjectSymbol thick={false} />
-                        </div>
+                        <FlexColumn>
+                          <div style={{ 
+                            padding: '0.5em',
+                            marginTop: '-1.85em'
+                          }}>
+                            <FinishedProjectSymbol />
+                          </div>
+                          <small style={{ 
+                            color: colors.skyBlue,
+                            marginLeft: '1em',
+                            marginTop: '-0.75em',
+                            fontWeight: 'bold'
+                          }}>
+                            Complete
+                          </small>
+                        </FlexColumn>
                       }
-                    </FlexColumn>
+                    </FlexRow>
                   </FlexRow>
                   {
                     <svg style={{ 
@@ -386,6 +411,7 @@ const ProjectsPage = () => {
                     </FlexRow>
                   </PageContainer>
                 </PageContainer>
+                <br />
               </PageContainer>
             );
           })
@@ -404,30 +430,74 @@ const ProjectsPage = () => {
             zIndex: 301, 
             position: 'absolute'
           }}>
-            <div style={{ marginLeft: '1em', marginTop: '0.25em' }}>
+            <div style={{ 
+              marginTop: '0.25em',
+              padding: '0.25em' 
+            }}>
               <small style={{ 
                 marginRight: '1em',
-                fontStyle: 'italic'
+                fontStyle: 'italic',
+                fontWeight: 'bold'
               }}>
                 Key:
               </small>
             </div>
             <FlexRow style={{ width: '100px' }}>
               <div style={{ padding: '0 0.5em' }}>
-                <OngoingProjectSymbol thick={true} />
-                <div style={{ marginTop: '-1em' }}>
-                  <small style={{ fontWeight: 'bold' }}>
+                <OngoingProjectSymbol />
+                <div style={{ 
+                  marginTop: '-0.333em',
+                  marginLeft: '0.4em'
+                }}>
+                  <small style={{ 
+                    fontWeight: 'bold',
+                    color: colors.lightOrange,
+                    backgroundColor: colors.snowWhite,
+                    padding: '0.25em 0'
+                  }}>
                     Ongoing
                   </small>
                 </div>
               </div>
+              <div style={{ 
+                width: '200px', 
+                marginLeft: '-0.125em',
+                marginTop: '-0.25em' 
+              }}>
+                <p style={{ 
+                  fontSize: '14px',
+                  opacity: '0.8' 
+                }}>
+                  Project is currently in progress or in revision
+                </p>
+              </div>
               <div style={{ padding: '0 0.5em' }}>
-                <FinishedProjectSymbol thick={true} />
-                <div style={{ marginTop: '-1em' }}>
-                  <small style={{ fontWeight: 'bold' }}>
-                    Finished
+                <FinishedProjectSymbol />
+                <div style={{ 
+                  marginTop: '-0.333em',
+                  marginLeft: '0.333em' 
+                }}>
+                  <small style={{ 
+                    fontWeight: 'bold',
+                    color: colors.skyBlue,
+                    backgroundColor: colors.snowWhite,
+                    padding: '0.25em 0'
+                  }}>
+                    Complete
                   </small>
                 </div>
+              </div>
+              <div style={{ 
+                marginLeft: '-0.125em',
+                marginTop: '-0.25em',
+              }}>
+                <p style={{ 
+                  fontSize: '14px',
+                  opacity: '0.8'
+                }}>
+                  Complete version of project is available 
+                  (may not always mean it is finalized as intended)
+                </p>
               </div>
             </FlexRow>
           </FlexRow>
@@ -437,7 +507,17 @@ const ProjectsPage = () => {
             paddingTop: "0.5em",
             marginLeft: '1.5em'
           }}>
-            <AwesomeKeyBackground />
+            <GradientBackdrop  
+              margin='-1.5em'
+              opacity='0.333'
+              height='150px'
+              width='60px'
+              color={colors.goldenYellow}
+              stripes={10}
+              startPoints="0,0 55,0 25,70 0,70"
+              middlePoints="30,0 55,0 25,70 0,70"
+              endPoints="30,0 55,0 55,70 0,70"
+            />
           </div>
         </div>
         <div style={{ marginTop: '-3em' }}>

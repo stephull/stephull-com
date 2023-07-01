@@ -148,7 +148,7 @@ export const PROJECTS_PERSONAL_TEXT = [
     {
         title: "Personal Website (Stephull.com)",
         ongoing: true,
-        complete: false,
+        complete: true,
         purpose: "Personal Portfolio",
         dates: [
             {
