@@ -132,7 +132,7 @@ export const PROJECTS_PERSONAL_TEXT = [
                 url: "https://github.com/stephull/korean-building-blocks"
             }
         ],
-        description: "Simple website to help users learn Korean words using building-block style game",
+        description: "Simple website to help users learn Korean and Chinese words using building-block style game for consonant/vowels or radicals.",
         skills: [
             "Angular.js",
             "React.js (previously)",
@@ -166,7 +166,7 @@ export const PROJECTS_PERSONAL_TEXT = [
                 url: "https://github.com/stephull/stephull-com"
             }  
         ],
-        description: "My soon-to-be official personal website.",
+        description: "My personal portfolio website, dedicated to hosting my personal endeavors/goals and craft in the technology field. Also a place to showcase my academic and work experience.",
         skills: [
             "React.js",
             "Node.js",
@@ -201,7 +201,7 @@ export const PROJECTS_PERSONAL_TEXT = [
                 url: "https://github.com/stephull/youtube-audio-downloader"
             }
         ],
-        description: "Python-based program that utilizes open-source youtube-dl library to download YouTube audio with a better user interface",
+        description: "Python-based program that utilizes open-source youtube-dl library to download YouTube audio with a friendlier user interface.",
         skills: [
             "Python",
             "Git Bash",
@@ -229,7 +229,7 @@ export const PROJECTS_PERSONAL_TEXT = [
                 url: "https://github.com/stephull/minesweeper-game"
             }
         ],
-        description: "My first personal project, a simple and not-so-amazing replica of Minesweeper",
+        description: "My first personal project, a simple and not-so-amazing replica of Minesweeper, made for fun.",
         skills: [
             "Java",
             "Java SWING GUI",
@@ -263,7 +263,7 @@ export const PROJECTS_PERSONAL_TEXT = [
                 url: "https://github.com/stephull/old-codepen-designs",
             }
         ],
-        description: "An assortment of small web design projects from FreeCodeCamp.com",
+        description: "An assortment of small web design projects from FreeCodeCamp.com using HTML and CSS.",
         skills: [
             "HTML",
             "CSS"

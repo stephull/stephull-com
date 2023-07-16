@@ -18,7 +18,7 @@ export const RESUME_MAIN_TEXT = [
         dates: [
             {
                 start: new Date(2022, 8),
-                end: new Date(2023, 3)
+                end: new Date(2023, 2)
             }
         ],
         current: false,
@@ -71,14 +71,14 @@ export const RESUME_MAIN_TEXT = [
         dates: [
             {
                 start: new Date(2021, 7),
-                end: new Date(2021, 11)
+                end: new Date(2022, 4)
             }
         ],
         current: false,
         bullets: [
-            "Expanded accessibility of data science knowledge to 60 first-year students by collaborating in instruction of Python programming and preparatory data science skills via pandas, NumPy libraries",
+            "Expanded accessibility of data science knowledge to 60 first-year students by collaborating in teaching of Python programming and preparatory data science skills using pandas, NumPy libraries",
             "Expedited progress by debugging student code and resolving software issues on Jupyter Notebook worksheets",
-            "Assessed 15 lab worksheets for grading based on data manipulation techniques and curriculum knowledge, charted attendance tracking for office hours"
+            "Evaluated 15 worksheets based on data manipulation and programming knowledge during office hours"
         ],
         sources: [
             {
