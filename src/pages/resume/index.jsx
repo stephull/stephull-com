@@ -292,7 +292,7 @@ const ResumePage = () => {
         <div style={ PDFView ? activeSectionStyle : sectionStyle }>
           <FlexColumn>
             <div>
-              Updated as of July 15, 2023
+              Updated as of July 21, 2023
             </div>
             <br />
             <object

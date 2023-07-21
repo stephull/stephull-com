@@ -23,9 +23,9 @@ export const RESUME_MAIN_TEXT = [
         ],
         current: false,
         bullets: [
-            "Strengthened integrity of car ownership transfer and potential fraud reduction for 13 locations by incorporating notarization API via Axios HTTP client for PDF file transmission and notary transaction retrieval",
-            "Optimized document generation by encoding algorithm to print field values via Node.js PDF, CSV parsing libraries based on document type and attributes for all possible title transfer conditions throughout 50 states",
-            "Revised TypeScript code on React Native application to enhance user interface, organize screen transitions in navigation stack for three vehicular transaction types and located state"
+            "Enhanced integrity of car ownership transfer and potential fraud reduction for 13 states by incorporating notarization API via Axios HTTP client for PDF file transmission and notary transaction retrieval",
+            "Restructured document generation algorithm with Node.js PDF, CSV libraries to efficiently print title, bill of sale conditions for four additional states using Excel, with potential transition to relational database for scalability",
+            "Revised user interface and organization of screen transitions for three transaction types to clarify instructions on vehicular transfer using TypeScript in flagship React Native application"
         ],
         sources: [
             {
@@ -53,10 +53,10 @@ export const RESUME_MAIN_TEXT = [
         ],
         current: false,
         bullets: [
-            "Engineered AWS CloudFront networks to improve outreach of business resources to new company website, four e-commerce platform subdomains with AWS S3 storage and Route 53 hosting zones",
-            "Collaborated with co-interns to support development of API endpoints and utilization of Postgres for database management on shopping cart, order history, and coupons to reward discounted products",
-            "Improved company contact and support by integrating HubSpot API client in Node.js server code combined with additional data analysis client for customer responses, newsletters",
-            "Upgraded user experience on e-commerce website for 15 account and shopping pages using React.js and CSS based on Figma designs, reviewed with frontend development team"
+            "Engineered AWS CloudFront distributions for outreach of business resources to new company website, four e-commerce platform subdomains, with AWS S3 storage and Route 53 hosting zones for effective content delivery",
+            "Collaborated with co-interns to support development of API endpoints via Node.js, API Gateway and handle query builder functions for PostgreSQL database on shopping cart, order history, coupon objects",
+            "Improved company contact for business partnerships by integrating HubSpot API client in Node.js server code combined with additional implementation of data analysis client for customer responses, newsletters",
+            "Upgraded user experience on e-commerce website for 15 account and shopping pages using React.js, CSS based on Figma designs, reviewed with frontend development team"
         ],
         sources: [
             {
@@ -76,7 +76,7 @@ export const RESUME_MAIN_TEXT = [
         ],
         current: false,
         bullets: [
-            "Expanded accessibility of data science knowledge to 60 first-year students by collaborating in teaching of Python programming and preparatory data science skills using pandas, NumPy libraries",
+            "Expanded accessibility of data science knowledge to 60 non-programming students by collaborating in teaching of Python programming and preparatory data science skills using pandas, NumPy libraries",
             "Expedited progress by debugging student code and resolving software issues on Jupyter Notebook worksheets",
             "Evaluated 15 worksheets based on data manipulation and programming knowledge during office hours"
         ],
