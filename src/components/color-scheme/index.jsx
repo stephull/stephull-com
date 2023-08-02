@@ -10,14 +10,8 @@ const ColorScheme = () => {
   const [clickColor, setClickColor] = useState(false);
   const [current, setCurrent] = useState({
     name: "",
-    dimensions: {
-      frameWidth: "",
-      frameHeight: ""
-    },
-    colorScheme: {
-      primary: "",
-      complementary: ""
-    }
+    dimensions: { frameWidth: "", frameHeight: "" },
+    colorScheme: { primary: "", complementary: "" }
   });
 
   // each block shows color, name, and hex
@@ -93,7 +87,8 @@ const ColorScheme = () => {
         }
       </FlexColumn>
       {
-        clickColor && <PhotoGenerate info={current} error={false} />
+        clickColor && 
+        <PhotoGenerate info={current} error={false} />
       }
     </FlexRow>
   )

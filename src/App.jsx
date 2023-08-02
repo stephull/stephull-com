@@ -5,21 +5,19 @@ import {
   Route,
   Navigate as Nav
 } from "react-router-dom";
-import { randomRoute as r } from './envConfig'
+//import { randomRoute as r } from './envConfig'
+
 import AppBody from './components/appbody';
 import Header from './components/header';
 import Footer from './components/footer';
 import HomePage from "./pages/home";
 import AboutPage from "./pages/about";
-import BlogsPage from "./pages/blogs";
 import PortfolioPage from "./pages/portfolio";
 import ProjectsPage from "./pages/projects";
 import MediaPage from "./pages/media";
 import ResumePage from "./pages/resume";
 import ContactPage from "./pages/contact";
 import ErrorPage from "./pages/error-404";
-import PrivateAdminPage from "./pages/admin/index";
-import PrivateAdminSigninPage from './pages/admin-signin/index';
 
 const App = () => {
   return (

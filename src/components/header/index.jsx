@@ -6,7 +6,7 @@ import { HeaderBody, HeaderTitle, HeaderMenu } from './header.styles';
 import FlexRow from '../flex-row';
 
 const Header = () => {
-  const WIDTH = '555px';
+  const WIDTH = '570px';
   const MARGIN_LEFT = '-2.5em';
 
   return (
@@ -31,13 +31,13 @@ const Header = () => {
             e.preventDefault();
             window.open("/projects", "_self");
           }}>
-            TECH
+            PROJECTS
           </span>
           <span onClick={(e) => {
               e.preventDefault();
               window.open('/portfolio', '_self');
           }}>
-              PORTFOLIO
+            PORTFOLIO
           </span>
           <span onClick={(e) => {
             e.preventDefault();
