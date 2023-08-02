@@ -6,7 +6,7 @@ import { HeaderBody, HeaderTitle, HeaderMenu } from './header.styles';
 import FlexRow from '../flex-row';
 
 const Header = () => {
-  const WIDTH = '480px';
+  const WIDTH = '555px';
   const MARGIN_LEFT = '-2.5em';
 
   return (
@@ -27,43 +27,30 @@ const Header = () => {
           }}>
             ABOUT
           </span>
-          {
-            /* ::: Take out for now :::
-            <span onClick={(e) => {
-                e.preventDefault();
-                window.open('/portfolio', '_self');
-            }}>
-                Portfolio
-            </span>*/
-          }
           <span onClick={(e) => {
             e.preventDefault();
             window.open("/projects", "_self");
           }}>
-            PROJECTS
+            TECH
           </span>
-          {
-            // Take out for now
-            /* <span onClick={(e) => {
-                    e.preventDefault();
-                    window.open("/blogs", "_self");
-                }}>
-                    Blogs
-                </span>*/
-          }
-          {
-            // take out this too
-          /*<span onClick={(e) => {
+          <span onClick={(e) => {
               e.preventDefault();
-              window.open("/media", "_self");
+              window.open('/portfolio', '_self');
           }}>
-              MEDIA
-        </span>*/}
+              PORTFOLIO
+          </span>
           <span onClick={(e) => {
             e.preventDefault();
             window.open("/resume", "_self");
           }}>
             RESUME
+          </span>
+          <span onClick={(e) => {
+              e.preventDefault();
+              window.open("/timeline", "_self");
+          }}>
+            
+            MY LIFE
           </span>
           <span onClick={(e) => {
             e.preventDefault();

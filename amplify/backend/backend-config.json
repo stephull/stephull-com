@@ -56,7 +56,17 @@
     }
   },
   "function": {
+    "CreateBlogPost": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "CreateContactPost": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "CreatePicturePost": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
@@ -69,6 +79,22 @@
     }
   },
   "parameters": {
+    "AMPLIFY_function_CreateBlogPost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateBlogPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreateBlogPost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateBlogPost"
+        }
+      ]
+    },
     "AMPLIFY_function_CreateContactPost_deploymentBucketName": {
       "usedBy": [
         {
@@ -82,6 +108,22 @@
         {
           "category": "function",
           "resourceName": "CreateContactPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreatePicturePost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreatePicturePost"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreatePicturePost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreatePicturePost"
         }
       ]
     }

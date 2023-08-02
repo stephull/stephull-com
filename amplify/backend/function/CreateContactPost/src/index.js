@@ -21,7 +21,7 @@ module.exports.handler = async (event) => {
   }
 
   const sendEmailToSES = async (data) => {
-    const emailParams = {
+    const toUserEmailParams = {
       Source: "noreply@stephull.com",
       Destination: {
         ToAddresses: [data.emailAddress]
@@ -78,8 +78,47 @@ module.exports.handler = async (event) => {
       }
     };
 
+    const toOwnerEmailParams = {
+      Source: "info@stephull.com",
+      Destination: {
+        ToAddresses: ["shullender0907@gmail.com"]
+      },
+      Message: {
+        Subject: {
+          Data: `You have mail! From stephull.com`
+        },
+        Body: {
+          Html: {
+            Charset: "UTF-8",
+            Data: `
+              <html>
+                <head>
+                  <meta charset="utf-8" />
+                </head>
+                <body>
+                  <p>
+                    ${data.firstName} ${data.lastName ?? ""} found you from the following: ${data.howYouFound}
+                  </p>
+                  <p>
+                    The following inquiry was sent from ${data.firstName} via ${data.emailAddress}:
+                  </p>
+                  <blockquote>
+                    ${data.inquiry}
+                  </blockquote>
+                  <span>
+                    Remember to respond using this email only: ${data.emailAddress}, and address them as ${data.firstName} ${data.lastName ?? ""}
+                  </span>
+                </body>
+              </html>
+            `
+          }
+        }
+      }
+    }
+
     try {
-      await ses.sendEmail(emailParams).promise();
+      await ses.sendEmail(toUserEmailParams).promise();
+      await ses.sendEmail(toOwnerEmailParams).promise();
     } catch (err) {
       console.error('Error sending email:', err);
     }
@@ -90,6 +129,7 @@ module.exports.handler = async (event) => {
     await sendEmailToSES(event);
 
     const ts = Date.now().toString();
+
     return {
       statusCode: 200,
       body: JSON.stringify({

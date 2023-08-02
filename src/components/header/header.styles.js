@@ -5,7 +5,7 @@ export const HeaderBody = styled.div`
     background-color: ${colors.brightBlue};
     padding: 0.25em;
     paddingLeft: 1em;
-    width: 560px;
+    width: 600px;
     height: 80px;
     position: relative;
     top: 0;

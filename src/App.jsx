@@ -33,20 +33,15 @@ const App = () => {
           <Route exact path="/about" element={
             <AboutPage />
           } />
-          {/*
-          <Route exact path="/blogs" element={
-            <BlogsPage />
+          <Route exact path="/portfolio" element={
+            <PortfolioPage />
           } />
-            <Route exact path="/portfolio" element={
-              <PortfolioPage />
-            } />
-          */}
           <Route exact path="/projects" element={
             <ProjectsPage />
           } />
-          {/*<Route exact path="/media" element={
+          <Route exact path="/timeline" element={
             <MediaPage />
-          } />*/}
+          } />
           <Route exact path="/resume" element={
             <ResumePage />
           } />
@@ -56,12 +51,6 @@ const App = () => {
           <Route exact path="/404" element={
             <ErrorPage />
           } />
-          {/*<Route exact path={`/${r}`} element={
-            <PrivateAdminPage />
-          } />
-          <Route exact path={`/signin`} element={
-            <PrivateAdminSigninPage />
-          } />*/}
           <Route exact path="*" element={
             <Nav to="/404" />
           } />

@@ -35,10 +35,6 @@ export const PROJECTS_ACADEMIC_TEXT = [
             "MongoDB",
             "Postman",
             "AWS (Elastic Beanstalk, S3)"
-        ],
-        query: [
-            "Parking lot",
-            "Cars"
         ]
     },
     {
@@ -67,10 +63,6 @@ export const PROJECTS_ACADEMIC_TEXT = [
             "Google Maps SDK (integration)",
             "Design patterns",
             "Object-oriented programming"
-        ],
-        query: [
-            "Volunteering",
-            "Happy people"
         ]
     },
     {
@@ -98,10 +90,6 @@ export const PROJECTS_ACADEMIC_TEXT = [
             "NumPy",
             "scikit-learn",
             "Data science"
-        ],
-        query: [
-            "Music",
-            "Vocabulary"
         ]
     }
 ]
@@ -125,7 +113,7 @@ export const PROJECTS_PERSONAL_TEXT = [
         links: [
             {
                 name: "Website",
-                url: "https://korean-building-blocks.stephull.com"
+                url: "https://korean-building.stephull.com"
             },
             {
                 name: "GitHub",
@@ -135,14 +123,14 @@ export const PROJECTS_PERSONAL_TEXT = [
         description: "Simple website to help users learn Korean and Chinese words using building-block style game for consonant/vowels or radicals.",
         skills: [
             "Angular.js",
-            "React.js (previously)",
             "Node.js",
-            "Spring Boot",
-            "Photoshop/Illustrator"
-        ],
-        query: [
-            "Korea",
-            "Toy blocks"
+            "Java Spring Boot",
+            "Photoshop/Illustrator",
+            "API integration",
+            "HTML scraping",
+            "Hexadecimal encoding (Unicode)",
+            "Dependency injection",
+            "Object-oriented programming"
         ]
     },
     {
@@ -179,10 +167,6 @@ export const PROJECTS_PERSONAL_TEXT = [
             "AWS DynamoDB",
             "AWS Route 53"
         ],
-        query: [
-            "Portfolio",
-            "Happy people"
-        ]
     },
     {
         title: "YouTube Audio Downloader",
@@ -206,10 +190,6 @@ export const PROJECTS_PERSONAL_TEXT = [
             "Python",
             "Git Bash",
             "Tkinter GUI"
-        ],
-        query: [
-            "YouTube",
-            "Listening"
         ]
     },
     {
@@ -235,10 +215,6 @@ export const PROJECTS_PERSONAL_TEXT = [
             "Java SWING GUI",
             "Algorithms",
             "Photoshop/Illustrator"
-        ],
-        query: [
-            "Puzzle games",
-            "Bombs"
         ]
     },
     {
@@ -265,12 +241,7 @@ export const PROJECTS_PERSONAL_TEXT = [
         ],
         description: "An assortment of small web design projects from FreeCodeCamp.com using HTML and CSS.",
         skills: [
-            "HTML",
-            "CSS"
-        ],
-        query: [
-            "Web design",
-            "HTML"
+            "HTML/CSS"
         ]
     }
 ];
