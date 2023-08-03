@@ -198,7 +198,7 @@ const PortfolioPage = () => {
 
   return (
     <>
-      <h2>Portfolio</h2>
+      <h2>Other Portfolio</h2>
       <p>
         Unlike the Projects page, this portfolio is reserved for more liberal/creative bodies of work that I have done either independently or through volunteering/organizational work.
       </p>

@@ -10,6 +10,7 @@ import {
 import AppBody from './components/appbody';
 import Header from './components/header';
 import Footer from './components/footer';
+
 import HomePage from "./pages/home";
 import AboutPage from "./pages/about";
 import PortfolioPage from "./pages/portfolio";
@@ -17,7 +18,6 @@ import ProjectsPage from "./pages/projects";
 import MediaPage from "./pages/media";
 import ResumePage from "./pages/resume";
 import ContactPage from "./pages/contact";
-import ErrorPage from "./pages/error-404";
 
 const App = () => {
   return (
@@ -46,11 +46,8 @@ const App = () => {
           <Route exact path="/contact" element={
             <ContactPage />
           } />
-          <Route exact path="/404" element={
-            <ErrorPage />
-          } />
           <Route exact path="*" element={
-            <Nav to="/404" />
+            <Nav to="/" />
           } />
         </Routes>
       </AppBody>
