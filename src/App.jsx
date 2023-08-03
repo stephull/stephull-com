@@ -15,8 +15,8 @@ import HomePage from "./pages/home";
 import AboutPage from "./pages/about";
 import PortfolioPage from "./pages/portfolio";
 import ProjectsPage from "./pages/projects";
-import MediaPage from "./pages/media";
 import ResumePage from "./pages/resume";
+import TimelinePage from './pages/timeline';
 import ContactPage from "./pages/contact";
 
 const App = () => {
@@ -38,7 +38,7 @@ const App = () => {
             <ProjectsPage />
           } />
           <Route exact path="/timeline" element={
-            <MediaPage />
+            <TimelinePage />
           } />
           <Route exact path="/resume" element={
             <ResumePage />
