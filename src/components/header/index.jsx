@@ -34,12 +34,6 @@ const Header = () => {
             PROJECTS
           </span>
           <span onClick={(e) => {
-              e.preventDefault();
-              window.open('/portfolio', '_self');
-          }}>
-            PORTFOLIO
-          </span>
-          <span onClick={(e) => {
             e.preventDefault();
             window.open("/resume", "_self");
           }}>
@@ -47,9 +41,14 @@ const Header = () => {
           </span>
           <span onClick={(e) => {
               e.preventDefault();
+              window.open('/portfolio', '_self');
+          }}>
+            OTHER WORK
+          </span>
+          <span onClick={(e) => {
+              e.preventDefault();
               window.open("/timeline", "_self");
           }}>
-            
             MY LIFE
           </span>
           <span onClick={(e) => {

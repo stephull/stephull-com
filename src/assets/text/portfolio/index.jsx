@@ -1,3 +1,8 @@
+// for type, choose between the following:
+// art
+// music
+// game
+
 export const PORTFOLIO_TEXT = [
     {
         title: "Temple University Asian Students Association",
@@ -6,6 +11,13 @@ export const PORTFOLIO_TEXT = [
             start: new Date(2019, 2),
             end: new Date(2020, 3)
         },
+        type: "art",
+        links: [
+            {
+                name: "About Temple ASA",
+                url: "https://temple.campuslabs.com/engage/organization/templeasa"
+            }
+        ],
         media: [
             {
                 link: "https://stephull-com.s3.amazonaws.com/portfolio/onigiri_1.png",
@@ -84,12 +96,6 @@ export const PORTFOLIO_TEXT = [
                 title: "Onigiri and Bao Buns Fundraiser",
                 desc: "Fundraiser cover photo for selling onigiri and bao buns, cover photo resembles a Vaporwave atmosphere",
                 date: new Date(2020, 1)
-            },
-            {
-                link: "https://stephull-com.s3.amazonaws.com/portfolio/Stephen.png",
-                title: "Bonus picture of my introductory profile picture",
-                desc: "Part of the e-board introductions at the start of the 2019-20 year",
-                date: new Date(2020, 3)
             }
         ]
     }    
