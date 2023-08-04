@@ -1,3 +1,12 @@
+export const INTRODUCTION_TEXT = [
+    {
+        text: "Welcome to my personal portfolio website!"
+    },
+    {
+        text: "This website is to highlight my projects, experience, and hobbies in one place, as a way to demonstrate my skills/craft and a way to document some important moments in my life."
+    }
+];
+
 export const ABOUT_PAGE_TEXT = [
     {
         text: "Becoming is better than being.",

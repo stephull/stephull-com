@@ -25,6 +25,9 @@ const WebsiteCredits = () => {
         <small>
           Note: pictures are automatically generated
         </small>
+        <small>
+          If picture does not load, it may be due to exceeding rate limit.
+        </small>
         <br />
         <ColorScheme />
       </PageContainer>

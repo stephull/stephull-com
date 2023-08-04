@@ -3,18 +3,70 @@ import React from 'react';
 import PageContainer from "../../components/page-container";
 import PageText from "../../components/page-text";
 import WebsiteCredits from '../../components/website-credits';
-import FlexRow from '../../components/flex-row';
 
-import { ABOUT_PAGE_TEXT } from '../../assets/text/about';
+import { INTRODUCTION_TEXT, ABOUT_PAGE_TEXT } from '../../assets/text/about';
 import colors from '../../constants/colors';
 import GradientBackdrop from '../../components/gradient-backdrop';
 
-const AboutPage = () => {
+const HomePage = () => {
+
+  const FONT_SIZE_NORMAL = '19px';
+  const MAX_WIDTH_NORMAL = '840px';
+
+  const SocialParagraph = () => {
+    const instagram = <a href="https://instagram.com/step_hull" target="_blank">Instagram</a>;
+    const linkedin = <a href="https://linkedin.com/in/shullender" target="_blank">LinkedIn</a>;
+    const github = <a href="https://github.com/stephull" target="_blank">GitHub</a>;
+
+    return (
+      <>{github}, {linkedin}, and {instagram}</>  
+    )
+  }
+
+  const Introduction = () => {
+    return (
+      <>
+        <div style={{ 
+          marginTop: '0.25em',
+          marginLeft: '-0.0625em',
+          maxWidth: MAX_WIDTH_NORMAL
+        }}>
+          <small style={{ 
+              backgroundColor: colors.brightBlue, 
+              color: colors.snowWhite,
+              fontWeight: '300',
+              fontSize: '12px',
+              padding: '0.25em'
+            }}>
+              Please note that this website will not work on mobile...
+            </small>
+          <br />
+        </div>
+        <h2>Home</h2>
+        <div style={{ 
+          marginLeft: '1.25em',
+          fontSize: FONT_SIZE_NORMAL,
+          maxWidth: MAX_WIDTH_NORMAL
+        }}>
+          {
+            INTRODUCTION_TEXT.map((element, index) => {
+              return <p key={index}>{element.text}</p>
+            })
+          }
+          <p>
+            You can also learn more about me through my <SocialParagraph />
+          </p>
+        </div>
+      </>
+    )
+  };
 
   return (
     <>
-      <h2>About Me</h2>
-      <PageContainer edits={{ maxWidth: '840px' }}>
+      <Introduction />
+      <br />
+      <h3>About Me</h3>
+      <PageContainer edits={{ maxWidth: MAX_WIDTH_NORMAL }}>
         {
           ABOUT_PAGE_TEXT.map((element, index) => {
             const { text, quote, bullets } = element;
@@ -54,7 +106,7 @@ const AboutPage = () => {
                             marginLeft: quote && '-2.5em',
                             marginTop: quote && '-1em',
                             color: quote && colors.darkBlue,
-                            fontSize: quote ? '16px' : '19px',
+                            fontSize: quote ? '16px' : FONT_SIZE_NORMAL,
                             position: quote && 'absolute'
                           }}
                         > 
@@ -79,4 +131,4 @@ const AboutPage = () => {
   );
 };
 
-export default AboutPage;
+export default HomePage;

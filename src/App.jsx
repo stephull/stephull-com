@@ -5,14 +5,12 @@ import {
   Route,
   Navigate as Nav
 } from "react-router-dom";
-//import { randomRoute as r } from './envConfig'
 
 import AppBody from './components/appbody';
 import Header from './components/header';
 import Footer from './components/footer';
 
-import HomePage from "./pages/home";
-import AboutPage from "./pages/about";
+import HomePage from "./pages/about";
 import PortfolioPage from "./pages/portfolio";
 import ProjectsPage from "./pages/projects";
 import ResumePage from "./pages/resume";
@@ -26,10 +24,10 @@ const App = () => {
       <AppBody>
         <Routes>
           <Route exact path="/" element={
-            <HomePage />
+            <Nav to="/home" />
           } />
-          <Route exact path="/about" element={
-            <AboutPage />
+          <Route exact path="/home" element={
+            <HomePage />
           } />
           <Route exact path="/portfolio" element={
             <PortfolioPage />
@@ -47,7 +45,7 @@ const App = () => {
             <ContactPage />
           } />
           <Route exact path="*" element={
-            <Nav to="/" />
+            <Nav to="/home" />
           } />
         </Routes>
       </AppBody>

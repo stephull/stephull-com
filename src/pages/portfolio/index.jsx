@@ -18,7 +18,7 @@ const PortfolioPage = () => {
 
   const PORTFOLIO_SECTION_WIDTH = '720px';
   const DISPLAY_IMAGE_ON_MODAL = '100px';
-  const MODAL_MOVE_UP = '-80em';
+  const MODAL_MOVE_UP = '-85em';
 
   useEffect(() => {
     const initHover = Array(PORTFOLIO_TEXT.length).fill(false);

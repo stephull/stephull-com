@@ -12,20 +12,15 @@ const Header = () => {
   return (
     <FlexRow>
       <HeaderBody>
-        <HeaderTitle
-          onClick={(e) => {
-            e.preventDefault();
-            window.open("/", "_self");
-          }}
-        >
+        <HeaderTitle>
           Stephen Hullender
         </HeaderTitle>
         <HeaderMenu style={{ width: WIDTH, maxWidth: WIDTH }}>
           <span onClick={(e) => {
             e.preventDefault();
-            window.open('/about', '_self');
+            window.open('/home', '_self');
           }}>
-            ABOUT
+            HOME
           </span>
           <span onClick={(e) => {
             e.preventDefault();

@@ -29,11 +29,11 @@
         },
         "CreatePicturePost": {
           "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
-          "s3Key": "amplify-builds/CreatePicturePost-4b674d71784e5176384b-build.zip"
+          "s3Key": "amplify-builds/CreatePicturePost-366e687239576c596154-build.zip"
         },
         "CreateBlogPost": {
           "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
-          "s3Key": "amplify-builds/CreateBlogPost-6d563767562b5368566a-build.zip"
+          "s3Key": "amplify-builds/CreateBlogPost-41455237566b6973365a-build.zip"
         }
       },
       "api": {

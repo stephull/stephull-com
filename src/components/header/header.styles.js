@@ -18,11 +18,6 @@ export const HeaderTitle = styled.div`
     font-weight: bold;
     font-size: 32px;
     width: fit-content;
-
-    &:hover {
-        text-decoration: underline;
-        cursor: pointer;
-    }
 `;
 
 export const HeaderMenu = styled.div`
