@@ -1,3 +1,89 @@
+export const RESUME_EDUCATION = {
+    title: "Temple University",
+    subtitle: "College of Science and Technology",
+    location: "Philadelphia, Pennsylvania",
+    major: "Bachelor of Science - Computer Science",
+    minor: "Minor in Data Science (Computational Analytics)",
+    tidbits: [
+        "Dean's List Award - Fall 2020",
+        "GPA 3.30"
+    ],
+    courses: [
+        {
+            name: "Projects in Computer Science",
+            code: "CIS 4398",
+            dates: {
+                start: new Date(2022, 7),
+                end: new Date(2022, 11)
+            }
+        },
+        {   
+            name: "Foundations of Machine Learning",
+            code: "CIS 4526",
+            dates: {
+                start: new Date(2022, 7),
+                end: new Date(2022, 11)
+            }
+        },
+        {
+            name: "Cooperative Education Experience in Computer Science",
+            code: "CIS 3381",
+            dates: {
+                start: new Date(2022, 7),
+                end: new Date(2022, 11)
+            }
+        },
+        {
+            name: "Data-Intensive and Cloud Computing",
+            code: "CIS 4517",
+            dates: {
+                start: new Date(2022, 0),
+                end: new Date(2022, 4)
+            }
+        },
+        {
+            name: "Principles of Data Science",
+            code: "CIS 3715",
+            dates: {
+                start: new Date(2022, 0),
+                end: new Date(2022, 4)
+            }
+        },
+        {
+            name: "Software Design",
+            code: "CIS 3296",
+            dates: {
+                start: new Date(2022, 0),
+                end: new Date(2022, 4)
+            }
+        },
+        {
+            name: "Calculus III",
+            code: "MATH 2043",
+            dates: {
+                start: new Date(2022, 0),
+                end: new Date(2022, 4)
+            }
+        },
+        {
+            name: "Introduction to Mobile Application Development",
+            code: "CIS 3515",
+            dates: {
+                start: new Date(2021, 7),
+                end: new Date(2021, 11)
+            }
+        },
+        {
+            name: "Wireless Networks and Security",
+            code: "CIS 3319",
+            dates: {
+                start: new Date(2021, 7),
+                end: new Date(2021, 11)
+            }
+        }
+    ]
+};
+
 export const RESUME_MAIN_TEXT = [
     {
         title: "Open for Work",

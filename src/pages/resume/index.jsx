@@ -8,21 +8,106 @@ import PageText from "../../components/page-text";
 import HyperLinkButton from '../../components/hyperlink-button';
 
 import { 
+  RESUME_EDUCATION,
   RESUME_MAIN_TEXT,
   RESUME_SECONDARY_TEXT
 } from '../../assets/text/resume';
 
 import colors from '../../constants/colors';
 import { s3ResumeLink } from '../../envConfig';
-import { getListOfDates } from '../../utils/formatDate';
+import { formatDate, getListOfDates } from '../../utils/formatDate';
 
 const ResumePage = () => {
-  const activeSectionStyle = { display: 'block' }, sectionStyle = { display: 'none' };
+  const activeSectionStyle = { display: 'block' }, 
+    sectionStyle = { display: 'none' };
+  const MAX_WIDTH_NORMAL = '840px';
 
   const [PDFView, setPDFView] = useState(false);
   const togglePDFView = (state) => setPDFView(!state);
 
   const [showMore, setShowMore] = useState(false);
+
+  const EducationContent = () => {
+    const { title, subtitle, location, major, minor, courses } = RESUME_EDUCATION;
+    const eduStyle = {
+      display: 'flex', 
+      justifyContent: "space-between",
+      marginBottom: '-1em',
+      fontSize: '17px'
+    };
+
+    return (
+      <>
+        <PageText bold>
+          Education
+        </PageText>
+        <PageContainer edits={{
+          backgroundColor: colors.brightBlue,
+          marginLeft: '-0.5em',
+          color: colors.snowWhite
+        }}>
+          <div style={{ maxWidth: MAX_WIDTH_NORMAL }}>
+            <div style={eduStyle}>
+              <b style={{ fontSize: '20px' }}>{title}</b>
+              <p style={{ marginTop: "-0.0625em" }}>{location}</p>
+            </div>
+            <small>{subtitle}</small>
+            <div style={eduStyle}>
+              <p>{major}</p>
+              <p>{minor}</p>
+            </div>
+          </div>
+        </PageContainer>
+        <PageContainer edits={{ 
+          marginLeft: '-0.5em',
+          backgroundColor: colors.seaBlue,
+          color: colors.snowWhite,
+          marginTop: "0.125em"
+        }}>
+          <h5 style={{ 
+            fontSize: '16px',
+            marginTop: '-0.25em'
+          }}>
+            Relevant major/minor coursework: 
+          </h5>
+          <ul style={{ 
+            marginTop: '-1em', 
+            marginLeft: '-1em',
+            width: '600px',
+            marginBottom: '-0.25em'
+          }}>
+            {
+              courses.map((c, i) => {
+                const { name, code, dates } = c;
+                return (
+                  <li key={i} style={{ 
+                    display: 'flex', 
+                    justifyContent: 'space-between',
+                    fontSize: '15px'
+                  }}>
+                    <span>
+                      {`${name} (${code})`}
+                    </span>
+                    <span>
+                      {`${formatDate(dates.start) ?? ""} - ${formatDate(dates.end) ?? ""}`}
+                    </span>
+                  </li>
+                )
+              })
+            }
+          </ul>
+        </PageContainer>
+        <FlexColumn edits={{ marginTop: '1em' }}>
+          <svg style={{ marginBottom: '-7.5em' }}>
+            <rect height='3px' width='97.5%' fill={colors.seaBlue} />
+          </svg>
+          <svg style={{ marginTop: '-1.5em', marginBottom: '-7.5em' }}>
+            <rect height='3px' width='97.5%' fill={colors.seaBlue} />
+          </svg>
+        </FlexColumn>
+      </>
+    )
+  }
 
   const MainResumeContent = () => {
     return (
@@ -250,8 +335,8 @@ const ResumePage = () => {
         }}>
           <ToggleButton
             border
-            color={colors.lightOrange}
-            hoverColor={colors.brightOrange}
+            color={colors.brightOrange}
+            hoverColor={colors.lightOrange}
             firstButton="Text"
             secondButton="PDF"
             toggle={togglePDFView}
@@ -261,9 +346,12 @@ const ResumePage = () => {
       </FlexRow>
       <PageContainer 
         indent 
-        edits={{ maxWidth: '840px' }}
+        edits={{ maxWidth: MAX_WIDTH_NORMAL }}
       >
         <div style={ !PDFView ? activeSectionStyle : sectionStyle }>
+          <div style={{ paddingBottom: '4em' }}>
+            <EducationContent />
+          </div>
           <MainResumeContent />
             {
               showMore 

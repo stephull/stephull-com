@@ -16,7 +16,7 @@ const lightOrange = "#FA832D";
 const brightOrange = "#EE6A00";
 
 // other colors
-const herbalGreen = "#69ECC8";
+const herbalGreen = "#3CE6B0";
 
 export default {
     darkBlue,
