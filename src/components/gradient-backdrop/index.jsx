@@ -30,7 +30,7 @@ const GradientBackdrop = ({
         const temp = [];
         for (let i = 0; i < stripes; i++) {
             temp.push(
-                <svg height={height} width={width} style={{ marginLeft: margin }}>
+                <svg key={i} height={height} width={width} style={{ marginLeft: margin }}>
                     <polygon 
                         points={middlePoints} 
                         fill={color} 
