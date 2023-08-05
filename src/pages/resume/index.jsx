@@ -6,6 +6,7 @@ import ToggleButton from '../../components/toggle-button';
 import PageContainer from "../../components/page-container";
 import PageText from "../../components/page-text";
 import HyperLinkButton from '../../components/hyperlink-button';
+import DownloadButton from '../../components/download-button';
 
 import { 
   RESUME_EDUCATION,
@@ -16,6 +17,7 @@ import {
 import colors from '../../constants/colors';
 import { s3ResumeLink } from '../../envConfig';
 import { formatDate, getListOfDates } from '../../utils/formatDate';
+import { handleDownload } from '../../utils/fileDownload';
 
 const ResumePage = () => {
   const activeSectionStyle = { display: 'block' }, 
@@ -26,6 +28,21 @@ const ResumePage = () => {
   const togglePDFView = (state) => setPDFView(!state);
 
   const [showMore, setShowMore] = useState(false);
+
+  const [downloadError, setDownloadError] = useState(false);
+
+  const Divider = ({color}) => {
+    return (
+      <>
+        <svg style={{ marginBottom: '-7.5em' }}>
+          <rect height='3px' width='97.5%' fill={color} />
+        </svg>
+        <svg style={{ marginTop: '-1.5em', marginBottom: '-7.5em' }}>
+          <rect height='3px' width='97.5%' fill={color} />
+        </svg>
+      </>
+    )
+  };
 
   const EducationContent = () => {
     const { title, subtitle, location, major, minor, courses } = RESUME_EDUCATION;
@@ -60,8 +77,7 @@ const ResumePage = () => {
         </PageContainer>
         <PageContainer edits={{ 
           marginLeft: '-0.5em',
-          backgroundColor: colors.seaBlue,
-          color: colors.snowWhite,
+          color: colors.brightBlue,
           marginTop: "0.125em"
         }}>
           <h5 style={{ 
@@ -98,12 +114,7 @@ const ResumePage = () => {
           </ul>
         </PageContainer>
         <FlexColumn edits={{ marginTop: '1em' }}>
-          <svg style={{ marginBottom: '-7.5em' }}>
-            <rect height='3px' width='97.5%' fill={colors.seaBlue} />
-          </svg>
-          <svg style={{ marginTop: '-1.5em', marginBottom: '-7.5em' }}>
-            <rect height='3px' width='97.5%' fill={colors.seaBlue} />
-          </svg>
+          <Divider color={colors.brightBlue} />
         </FlexColumn>
       </>
     )
@@ -185,24 +196,14 @@ const ResumePage = () => {
                     </small>
                     <FlexRow>
                       {
-                        sources.map((element, index) => {
-                          const { name: n, url: u } = element;
-                          return <HyperLinkButton key={index} name={n} url={u} />;
-                        })
+                        sources.map((element, index) => <HyperLinkButton key={index} name={element.name} url={element.url} />)
                       }
                     </FlexRow>
                   </PageContainer>
                 }
                 {
                   !current &&
-                  <>
-                    <svg style={{ marginBottom: '-7.5em' }}>
-                      <rect height='3px' width='97.5%' fill={colors.brightBlue} />
-                    </svg>
-                    <svg style={{ marginTop: '-1.5em', marginBottom: '-7.5em' }}>
-                      <rect height='3px' width='97.5%' fill={colors.brightBlue} />
-                    </svg>
-                  </>
+                  <Divider color={colors.brightBlue} />
                 }
               </PageContainer>
             );
@@ -284,12 +285,11 @@ const ResumePage = () => {
                       <FlexRow>
                         {
                           sources.map((element, index) => {
-                            const { name: n, url: u } = element;
                             return (
                               <HyperLinkButton 
                                 key={index} 
-                                name={n} 
-                                url={u} 
+                                name={element.name} 
+                                url={element.url} 
                                 color={colors.brightOrange}
                                 hoverColor={colors.lightOrange}
                               />
@@ -299,16 +299,7 @@ const ResumePage = () => {
                       </FlexRow>
                     </PageContainer>
                   }
-                  {
-                    <>
-                      <svg style={{ marginBottom: '-7.5em' }}>
-                        <rect height='3px' width='97.5%' fill={colors.brightOrange} />
-                      </svg>
-                      <svg style={{ marginTop: '-1.5em', marginBottom: '-7.5em' }}>
-                        <rect height='3px' width='97.5%' fill={colors.brightOrange} />
-                      </svg>
-                    </>
-                  }
+                  <Divider color={colors.brightOrange} />
                 </PageContainer>
               );
             })
@@ -378,17 +369,38 @@ const ResumePage = () => {
             }
         </div>
         <div style={ PDFView ? activeSectionStyle : sectionStyle }>
-          <FlexColumn>
-            <div>
+          <FlexColumn edits={{ padding: '0.25em' }}>
+            <span>
               Updated as of July 21, 2023
-            </div>
+            </span>
+            <span>
+              Click on 'Download' for a PDF version of my resume.
+            </span>
+            <p style={{
+              fontWeight: 'bold',
+              color: colors.jetBlack,
+              backgroundColor: colors.goldenYellow,
+              padding: '0.5em',
+              width: 'fit-content',
+              height: 'auto'
+            }}>
+              Warning: Please be aware that downloading this PDF file will notify the owner.
+            </p>
             <br />
-            <object
+            <DownloadButton
+              name={"Resume"}
+              onClick={handleDownload}
+            >
+              Download
+            </DownloadButton>
+            <object 
               data={s3ResumeLink}
               type="application/pdf"
               width="600px"
               height="800px"
-            />
+            >
+              <p>It appears that your browser does not support PDF previews.</p>
+            </object>
           </FlexColumn>
         </div>
       </PageContainer>

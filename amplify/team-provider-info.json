@@ -34,6 +34,10 @@
         "CreateBlogPost": {
           "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
           "s3Key": "amplify-builds/CreateBlogPost-41455237566b6973365a-build.zip"
+        },
+        "DownloadPost": {
+          "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
+          "s3Key": "amplify-builds/DownloadPost-314642706a6959644d58-build.zip"
         }
       },
       "api": {
