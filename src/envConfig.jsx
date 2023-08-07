@@ -6,3 +6,4 @@ export const lambdaCreateContact = process.env.APP_LAMBDA_CREATE_CONTACT;
 export const apiKeyApiGateway = process.env.APP_API_KEY_API_GATEWAY;
 export const apiIdentify = process.env.APP_API_IDENTIFY_LINK;
 export const lambdaDownloadNotification = process.env.APP_LAMBDA_DOWNLOAD_NOTIFY;
+export const apiIdentifyValue = process.env.APP_API_IDENTIFY_VALUE;

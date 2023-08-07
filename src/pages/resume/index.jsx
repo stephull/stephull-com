@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from "axios";
 
 import FlexRow from '../../components/flex-row';
 import FlexColumn from '../../components/flex-column';
@@ -15,9 +16,14 @@ import {
 } from '../../assets/text/resume';
 
 import colors from '../../constants/colors';
-import { s3ResumeLink } from '../../envConfig';
+import { 
+  s3ResumeLink, 
+  apiKeyApiGateway,
+  lambdaDownloadNotification, 
+  apiIdentify, 
+  apiIdentifyValue as value
+} from '../../envConfig';
 import { formatDate, getListOfDates } from '../../utils/formatDate';
-import { handleDownload } from '../../utils/fileDownload';
 
 const ResumePage = () => {
   const activeSectionStyle = { display: 'block' }, 
@@ -30,6 +36,45 @@ const ResumePage = () => {
   const [showMore, setShowMore] = useState(false);
 
   const [downloadError, setDownloadError] = useState(false);
+
+  const confirmDownload = (link) => {
+    link.href = s3ResumeLink;
+    link.setAttribute('target', '_blank');
+    link.click();
+  }
+
+  const handleResumeDownload = async () => {
+    try {
+      console.log("Starting resume download...");
+      const address = (await axios.get(apiIdentify)).data;
+      const response = await axios.post(
+        lambdaDownloadNotification,
+        {
+          id: Date.now().toString(),
+          file: s3ResumeLink,
+          addr: address[value]
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': apiKeyApiGateway
+          }
+        }
+      );
+
+      let responseBody = JSON.parse(response.data.body);
+      let resData = responseBody.data.formDownloadInstance;
+      if (resData.success) {
+        console.log(resData);
+        confirmDownload(document.createElement('a'));
+      } else {
+        setDownloadError(true);
+      } 
+    } catch (err) {
+      console.error(err);
+      setDownloadError(true);
+    }
+  }
 
   const Divider = ({color}) => {
     return (
@@ -389,18 +434,19 @@ const ResumePage = () => {
             <br />
             <DownloadButton
               name={"Resume"}
-              onClick={handleDownload}
+              onClick={handleResumeDownload}
             >
               Download
             </DownloadButton>
-            <object 
-              data={s3ResumeLink}
-              type="application/pdf"
-              width="600px"
-              height="800px"
-            >
-              <p>It appears that your browser does not support PDF previews.</p>
-            </object>
+            {
+              downloadError &&
+              <span style={{ 
+                fontWeight: 'bold',
+                color: colors.brightOrange
+              }}>
+                Resume download error. Try again later...
+              </span>
+            }
           </FlexColumn>
         </div>
       </PageContainer>
