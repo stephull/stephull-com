@@ -75,6 +75,16 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "GetBlogPost": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "GetPicturePost": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "hosting": {
@@ -145,6 +155,38 @@
         {
           "category": "function",
           "resourceName": "DownloadPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_GetBlogPost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "GetBlogPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_GetBlogPost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "GetBlogPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_GetPicturePost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "GetPicturePost"
+        }
+      ]
+    },
+    "AMPLIFY_function_GetPicturePost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "GetPicturePost"
         }
       ]
     }

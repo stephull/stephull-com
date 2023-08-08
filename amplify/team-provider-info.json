@@ -38,6 +38,14 @@
         "DownloadPost": {
           "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
           "s3Key": "amplify-builds/DownloadPost-314642706a6959644d58-build.zip"
+        },
+        "GetBlogPost": {
+          "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
+          "s3Key": "amplify-builds/GetBlogPost-42514b3533536a4d586d-build.zip"
+        },
+        "GetPicturePost": {
+          "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
+          "s3Key": "amplify-builds/GetPicturePost-6b43714538456f66444e-build.zip"
         }
       },
       "api": {
