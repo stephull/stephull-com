@@ -59,6 +59,13 @@ export type AmplifyDependentResourcesAttributes = {
       "LambdaExecutionRoleArn": "string",
       "Name": "string",
       "Region": "string"
+    },
+    "MergeTimeline": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
     }
   },
   "hosting": {

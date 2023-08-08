@@ -85,6 +85,11 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "MergeTimeline": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "hosting": {
@@ -187,6 +192,22 @@
         {
           "category": "function",
           "resourceName": "GetPicturePost"
+        }
+      ]
+    },
+    "AMPLIFY_function_MergeTimeline_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "MergeTimeline"
+        }
+      ]
+    },
+    "AMPLIFY_function_MergeTimeline_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "MergeTimeline"
         }
       ]
     }
