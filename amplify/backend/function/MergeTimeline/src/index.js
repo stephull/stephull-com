@@ -1,17 +1,35 @@
-
+const getBlogs = require('../../GetBlogPost/src/index');
+const getPictures = require('../../GetPicturePost/src/index');
 
 /**
  * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
  */
 exports.handler = async (event) => {
-    console.log(`EVENT: ${JSON.stringify(event)}`);
+  try {
+    const blogs = await getBlogs.handler(event);
+    const pics = await getPictures.handler(event);
+
+    const arr = [...blogs, ...pics].sort((a, b) => {
+      return new Date(b.upload) - new Date(a.upload)
+    });
+
     return {
-        statusCode: 200,
-    //  Uncomment below to enable CORS requests
-    //  headers: {
-    //      "Access-Control-Allow-Origin": "*",
-    //      "Access-Control-Allow-Headers": "*"
-    //  },
-        body: JSON.stringify('Hello from Lambda!'),
+      statusCode: 200,
+      body: arr
     };
+
+  } catch (err) {
+    console.error(err);
+
+    return {
+      statusCode: 500,
+      body: JSON.stringify({
+        errors: [
+          {
+            message: "An error occurred attempting to merge all timeline posts into one."
+          }
+        ]
+      })
+    }
+  }
 };

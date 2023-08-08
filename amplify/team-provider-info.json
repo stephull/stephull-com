@@ -50,6 +50,10 @@
         "MergeTimeline": {
           "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
           "s3Key": "amplify-builds/MergeTimeline-764845354a4770514b42-build.zip"
+        },
+        "Ping": {
+          "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
+          "s3Key": "amplify-builds/Ping-56625065396156304879-build.zip"
         }
       },
       "api": {

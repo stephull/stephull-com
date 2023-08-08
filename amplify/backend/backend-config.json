@@ -90,6 +90,11 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "Ping": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "hosting": {
@@ -208,6 +213,22 @@
         {
           "category": "function",
           "resourceName": "MergeTimeline"
+        }
+      ]
+    },
+    "AMPLIFY_function_Ping_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "Ping"
+        }
+      ]
+    },
+    "AMPLIFY_function_Ping_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "Ping"
         }
       ]
     }
