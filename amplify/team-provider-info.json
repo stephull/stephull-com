@@ -57,8 +57,7 @@
         }
       },
       "api": {
-        "stephullcomRESTAPI": {},
-        "stephullcomGRAPHQLAPI": {}
+        "stephullcomRESTAPI": {}
       }
     }
   }
