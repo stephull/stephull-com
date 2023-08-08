@@ -18,6 +18,7 @@ import TimelinePage from './pages/timeline';
 import ContactPage from "./pages/contact";
 
 import ApiPingRequest from "./pages/ping";
+import PrivateDashboardPage from './pages/private-dashboard';
 
 const App = () => {
   return (
@@ -48,6 +49,9 @@ const App = () => {
           } />
           <Route exact path="/ping" element={
             <ApiPingRequest />
+          } />
+          <Route path="/admin" element={
+            <PrivateDashboardPage />
           } />
           <Route exact path="*" element={
             <Nav to="/home" />
