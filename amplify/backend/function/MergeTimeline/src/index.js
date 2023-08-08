@@ -6,8 +6,8 @@ const getPictures = require('../../GetPicturePost/src/index');
  */
 exports.handler = async (event) => {
   try {
-    const blogs = await getBlogs.handler(event);
-    const pics = await getPictures.handler(event);
+    const blogs = await getBlogs.handler(event).body;
+    const pics = await getPictures.handler(event).body;
 
     const arr = [...blogs, ...pics].sort((a, b) => {
       return new Date(b.upload) - new Date(a.upload)

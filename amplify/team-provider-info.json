@@ -49,11 +49,11 @@
         },
         "MergeTimeline": {
           "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
-          "s3Key": "amplify-builds/MergeTimeline-764845354a4770514b42-build.zip"
+          "s3Key": "amplify-builds/MergeTimeline-3872314f5058434b6c50-build.zip"
         },
         "Ping": {
           "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
-          "s3Key": "amplify-builds/Ping-56625065396156304879-build.zip"
+          "s3Key": "amplify-builds/Ping-334535484e365776566c-build.zip"
         }
       },
       "api": {

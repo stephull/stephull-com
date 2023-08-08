@@ -17,6 +17,8 @@ import ResumePage from "./pages/resume";
 import TimelinePage from './pages/timeline';
 import ContactPage from "./pages/contact";
 
+import ApiPingRequest from "./pages/ping";
+
 const App = () => {
   return (
     <Router>
@@ -43,6 +45,9 @@ const App = () => {
           } />
           <Route exact path="/contact" element={
             <ContactPage />
+          } />
+          <Route exact path="/ping" element={
+            <ApiPingRequest />
           } />
           <Route exact path="*" element={
             <Nav to="/home" />
