@@ -5,11 +5,3 @@
  **************************************************************************/
 
 export { default as studioTheme } from "./studioTheme";
-export { default as CommentCreateForm } from "./CommentCreateForm";
-export { default as BlogUpdateForm } from "./BlogUpdateForm";
-export { default as BlogCreateForm } from "./BlogCreateForm";
-export { default as CommentUpdateForm } from "./CommentUpdateForm";
-export { default as MediaCreateForm } from "./MediaCreateForm";
-export { default as MediaUpdateForm } from "./MediaUpdateForm";
-export { default as AlbumCreateForm } from "./AlbumCreateForm";
-export { default as AlbumUpdateForm } from "./AlbumUpdateForm";

@@ -41,15 +41,15 @@
         },
         "GetBlogPost": {
           "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
-          "s3Key": "amplify-builds/GetBlogPost-42514b3533536a4d586d-build.zip"
+          "s3Key": "amplify-builds/GetBlogPost-7a6336665452464f3449-build.zip"
         },
         "GetPicturePost": {
           "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
-          "s3Key": "amplify-builds/GetPicturePost-6b43714538456f66444e-build.zip"
+          "s3Key": "amplify-builds/GetPicturePost-63476d4245675a6b3134-build.zip"
         },
         "MergeTimeline": {
           "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
-          "s3Key": "amplify-builds/MergeTimeline-3872314f5058434b6c50-build.zip"
+          "s3Key": "amplify-builds/MergeTimeline-4a382b49746154566b47-build.zip"
         },
         "Ping": {
           "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",

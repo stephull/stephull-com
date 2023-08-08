@@ -41,7 +41,8 @@ exports.handler = async (event) => {
           createBlogPost: {
             id: ts,
             success: true,
-            message: `Blog post for timeline successfully submitted at timestamp ${ts}`
+            message: `Blog post for timeline successfully submitted at timestamp ${ts}`,
+            data: event
           }
         }
       })

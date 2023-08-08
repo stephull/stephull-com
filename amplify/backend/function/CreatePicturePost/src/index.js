@@ -23,7 +23,7 @@ exports.handler = async (event) => {
   const sendDataToS3 = async (data) => {
     //
     const params = {
-
+      
     }
     
     try {
@@ -46,7 +46,8 @@ exports.handler = async (event) => {
           createPicturePost: {
             id: ts,
             success: true,
-            message: `Picture post for timeline successfully submitted at timestamp ${ts}`
+            message: `Picture post for timeline successfully submitted at timestamp ${ts}`,
+            data: event
           }
         }
       })
