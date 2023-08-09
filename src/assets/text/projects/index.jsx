@@ -3,8 +3,6 @@
 // complete means it's working/finished product
 // projects that are neither ongoing nor complete are probably abandoned :-)
 
-// title, ongoing, complete, ((sub1 and sub2) OR sub), link, picture, description, & skills
-
 export const PROJECTS_ACADEMIC_TEXT = [
     {
         title: "Parking Spot Detector",
