@@ -50,6 +50,16 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
+    "CreateProjectsPost": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "CreateResumePost": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "DownloadPost": {
       "build": true,
       "providerPlugin": "awscloudformation",
@@ -65,12 +75,42 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
+    "GetProjectsPost": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "GetResumePost": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "MergeTimeline": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
     "Ping": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "UpdateBlogPost": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "UpdatePicturePost": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "UpdateProjectsPost": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "UpdateResumePost": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"

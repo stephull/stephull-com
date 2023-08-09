@@ -54,7 +54,15 @@
         "Ping": {
           "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
           "s3Key": "amplify-builds/Ping-334535484e365776566c-build.zip"
-        }
+        },
+        "CreateResumePost": {},
+        "CreateProjectsPost": {},
+        "GetResumePost": {},
+        "GetProjectsPost": {},
+        "UpdateBlogPost": {},
+        "UpdatePicturePost": {},
+        "UpdateResumePost": {},
+        "UpdateProjectsPost": {}
       },
       "api": {
         "stephullcomRESTAPI": {}
