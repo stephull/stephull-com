@@ -103,10 +103,22 @@
           "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
           "s3Key": "amplify-builds/DeleteBlogPost-38474e37624f46447958-build.zip"
         },
-        "CreatePortfolioPost": {},
-        "UpdatePortfolioPost": {},
-        "DeletePortfolioPost": {},
-        "GetPortfolioPost": {}
+        "CreatePortfolioPost": {
+          "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
+          "s3Key": "amplify-builds/CreatePortfolioPost-6941515a523750587856-build.zip"
+        },
+        "UpdatePortfolioPost": {
+          "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
+          "s3Key": "amplify-builds/UpdatePortfolioPost-4166464b726f65417656-build.zip"
+        },
+        "DeletePortfolioPost": {
+          "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
+          "s3Key": "amplify-builds/DeletePortfolioPost-4e79706c3831336b7073-build.zip"
+        },
+        "GetPortfolioPost": {
+          "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
+          "s3Key": "amplify-builds/GetPortfolioPost-5974702f6845514a715a-build.zip"
+        }
       },
       "api": {
         "stephullcomRESTAPI": {}

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import EditableMedia from '../../components/editable-media';
+import EditableMedia from '../../components/update-media';
 
-const PrivateBlogPostEditPage = () => {
-    return <EditableMedia function="/picture" />
+const BlogMediaPage = () => {
+    return <EditableMedia function="/blog" />
 }
 
-export default PrivateBlogPostEditPage;
+export default BlogMediaPage;

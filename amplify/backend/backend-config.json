@@ -162,6 +162,392 @@
       "service": "S3AndCloudFront"
     }
   },
+  "parameters": {
+    "AMPLIFY_function_CreateBlogPost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateBlogPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreateBlogPost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateBlogPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreateContactPost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateContactPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreateContactPost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateContactPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreatePicturePost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreatePicturePost"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreatePicturePost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreatePicturePost"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreatePortfolioPost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreatePortfolioPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreatePortfolioPost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreatePortfolioPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreateProjectsPost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateProjectsPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreateProjectsPost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateProjectsPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreateResumePost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateResumePost"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreateResumePost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateResumePost"
+        }
+      ]
+    },
+    "AMPLIFY_function_DeleteBlogPost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "DeleteBlogPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_DeleteBlogPost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "DeleteBlogPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_DeletePicturePost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "DeletePicturePost"
+        }
+      ]
+    },
+    "AMPLIFY_function_DeletePicturePost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "DeletePicturePost"
+        }
+      ]
+    },
+    "AMPLIFY_function_DeletePortfolioPost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "DeletePortfolioPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_DeletePortfolioPost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "DeletePortfolioPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_DeleteProjectsPost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "DeleteProjectsPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_DeleteProjectsPost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "DeleteProjectsPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_DeleteResumePost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "DeleteResumePost"
+        }
+      ]
+    },
+    "AMPLIFY_function_DeleteResumePost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "DeleteResumePost"
+        }
+      ]
+    },
+    "AMPLIFY_function_DownloadPost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "DownloadPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_DownloadPost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "DownloadPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_GetBlogPost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "GetBlogPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_GetBlogPost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "GetBlogPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_GetPicturePost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "GetPicturePost"
+        }
+      ]
+    },
+    "AMPLIFY_function_GetPicturePost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "GetPicturePost"
+        }
+      ]
+    },
+    "AMPLIFY_function_GetPortfolioPost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "GetPortfolioPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_GetPortfolioPost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "GetPortfolioPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_GetProjectsPost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "GetProjectsPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_GetProjectsPost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "GetProjectsPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_GetResumePost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "GetResumePost"
+        }
+      ]
+    },
+    "AMPLIFY_function_GetResumePost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "GetResumePost"
+        }
+      ]
+    },
+    "AMPLIFY_function_MergeTimeline_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "MergeTimeline"
+        }
+      ]
+    },
+    "AMPLIFY_function_MergeTimeline_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "MergeTimeline"
+        }
+      ]
+    },
+    "AMPLIFY_function_Ping_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "Ping"
+        }
+      ]
+    },
+    "AMPLIFY_function_Ping_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "Ping"
+        }
+      ]
+    },
+    "AMPLIFY_function_UpdateBlogPost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "UpdateBlogPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_UpdateBlogPost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "UpdateBlogPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_UpdatePicturePost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "UpdatePicturePost"
+        }
+      ]
+    },
+    "AMPLIFY_function_UpdatePicturePost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "UpdatePicturePost"
+        }
+      ]
+    },
+    "AMPLIFY_function_UpdatePortfolioPost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "UpdatePortfolioPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_UpdatePortfolioPost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "UpdatePortfolioPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_UpdateProjectsPost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "UpdateProjectsPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_UpdateProjectsPost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "UpdateProjectsPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_UpdateResumePost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "UpdateResumePost"
+        }
+      ]
+    },
+    "AMPLIFY_function_UpdateResumePost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "UpdateResumePost"
+        }
+      ]
+    }
+  },
   "storage": {
     "s3stephullcomstorageecac3f19": {
       "dependsOn": [],

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import EditableText from '../../components/editable-text';
+import EditableText from '../../components/update-text';
 
-const PrivateProjectTextEditPage = () => {
+const ProjectTextPage = () => {
     return <EditableText function="/projects" />
 }
 
-export default PrivateProjectTextEditPage;
+export default ProjectTextPage;

@@ -16,14 +16,12 @@ import ProjectsPage from "./pages/projects";
 import ResumePage from "./pages/resume";
 import TimelinePage from './pages/timeline';
 import ContactPage from "./pages/contact";
-
 import ApiPingRequest from "./pages/ping";
 
 import PrivateDashboardPage from './pages/private-dashboard';
-import PrivateBlogPostEditPage from './pages/private-edits/blog-post.private-edits';
-import PrivatePicturePostEditPage from './pages/private-edits/picture-post.private-edits';
-import PrivateProjectTextEditPage from './pages/private-edits/project-text.private-edits';
-import PrivateResumeTextEditPage from './pages/private-edits/resume-text.private-edits';
+import * as Edit from './pages/private-edits';
+import * as Create from './pages/private-creates';
+import * as Delete from './pages/private-deletes';
 
 const App = () => {
   return (
@@ -58,17 +56,50 @@ const App = () => {
           <Route path="/admin" element={
             <PrivateDashboardPage />
           } />
-          <Route path={`/admin/resume`} element={
-            <PrivateResumeTextEditPage />
+          <Route path={`/admin/create/resume`} element={
+            <Create.ResumeTextPage />
           } />
-          <Route path={`/admin/projects`} element={
-            <PrivateProjectTextEditPage />
+          <Route path={`/admin/create/projects`} element={
+            <Create.ProjectTextPage />
           } />
-          <Route path={`/admin/blogs`} element={
-            <PrivateBlogPostEditPage />
+          <Route path={`/admin/create/blogs`} element={
+            <Create.BlogMediaPage />
           } />
-          <Route path={`/admin/pictures`} element={
-            <PrivatePicturePostEditPage />
+          <Route path={`/admin/create/pictures`} element={
+            <Create.PictureMediaPage />
+          } />
+          <Route path={`/admin/create/portfolio`} element={
+            <Create.PortfolioPage />
+          } />
+          <Route path={`/admin/edit/resume`} element={
+            <Edit.ResumeTextPage />
+          } />
+          <Route path={`/admin/edit/projects`} element={
+            <Edit.ProjectTextPage />
+          } />
+          <Route path={`/admin/edit/blogs`} element={
+            <Edit.BlogMediaPage />
+          } />
+          <Route path={`/admin/edit/pictures`} element={
+            <Edit.PictureMediaPage />
+          } />
+          <Route path={`/admin/edit/portfolio`} element={
+            <Edit.PortfolioPage />
+          } />
+          <Route path={`/admin/delete/resume`} element={
+            <Delete.ResumeTextPage />
+          } />
+          <Route path={`/admin/delete/projects`} element={
+            <Delete.ProjectTextPage />
+          } />
+          <Route path={`/admin/delete/blogs`} element={
+            <Delete.BlogMediaPage />
+          } />
+          <Route path={`/admin/delete/pictures`} element={
+            <Delete.PictureMediaPage />
+          } />
+          <Route path={`/admin/delete/portfolio`} element={
+            <Delete.PortfolioPage />
           } />
           <Route path={'*'} element={
             <Nav to="/home" />

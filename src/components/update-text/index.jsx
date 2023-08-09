@@ -53,7 +53,7 @@ const EditableText = ({ function: funct }) => {
             <>
               <span>{text}</span>
               <button onClick={() => setEditingState(true)}>
-                Edit Text
+                Edit Contents
               </button>
             </>
           )

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import EditableText from '../../components/editable-text';
+import EditableText from '../../components/update-text';
 
-const PrivateResumeTextEditPage = () => {
+const ResumeTextPage = () => {
     return <EditableText function="/resume" />
 }
 
-export default PrivateResumeTextEditPage;
+export default ResumeTextPage;
