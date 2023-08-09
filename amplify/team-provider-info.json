@@ -102,7 +102,11 @@
         "DeleteBlogPost": {
           "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
           "s3Key": "amplify-builds/DeleteBlogPost-38474e37624f46447958-build.zip"
-        }
+        },
+        "CreatePortfolioPost": {},
+        "UpdatePortfolioPost": {},
+        "DeletePortfolioPost": {},
+        "GetPortfolioPost": {}
       },
       "api": {
         "stephullcomRESTAPI": {}

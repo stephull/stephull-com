@@ -32,6 +32,13 @@ export type AmplifyDependentResourcesAttributes = {
       "Name": "string",
       "Region": "string"
     },
+    "CreatePortfolioPost": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
     "CreateProjectsPost": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
@@ -54,6 +61,13 @@ export type AmplifyDependentResourcesAttributes = {
       "Region": "string"
     },
     "DeletePicturePost": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
+    "DeletePortfolioPost": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
       "LambdaExecutionRoleArn": "string",
@@ -89,6 +103,13 @@ export type AmplifyDependentResourcesAttributes = {
       "Region": "string"
     },
     "GetPicturePost": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
+    "GetPortfolioPost": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
       "LambdaExecutionRoleArn": "string",
@@ -131,6 +152,13 @@ export type AmplifyDependentResourcesAttributes = {
       "Region": "string"
     },
     "UpdatePicturePost": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
+    "UpdatePortfolioPost": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
       "LambdaExecutionRoleArn": "string",
