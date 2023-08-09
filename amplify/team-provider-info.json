@@ -29,11 +29,11 @@
         },
         "CreatePicturePost": {
           "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
-          "s3Key": "amplify-builds/CreatePicturePost-366e687239576c596154-build.zip"
+          "s3Key": "amplify-builds/CreatePicturePost-5851474c584158696c71-build.zip"
         },
         "CreateBlogPost": {
           "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
-          "s3Key": "amplify-builds/CreateBlogPost-41455237566b6973365a-build.zip"
+          "s3Key": "amplify-builds/CreateBlogPost-76434676574754447a32-build.zip"
         },
         "DownloadPost": {
           "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
@@ -55,14 +55,54 @@
           "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
           "s3Key": "amplify-builds/Ping-334535484e365776566c-build.zip"
         },
-        "CreateResumePost": {},
-        "CreateProjectsPost": {},
-        "GetResumePost": {},
-        "GetProjectsPost": {},
-        "UpdateBlogPost": {},
-        "UpdatePicturePost": {},
-        "UpdateResumePost": {},
-        "UpdateProjectsPost": {}
+        "CreateResumePost": {
+          "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
+          "s3Key": "amplify-builds/CreateResumePost-425a6d38394b597a4942-build.zip"
+        },
+        "CreateProjectsPost": {
+          "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
+          "s3Key": "amplify-builds/CreateProjectsPost-54325738505a61624530-build.zip"
+        },
+        "GetResumePost": {
+          "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
+          "s3Key": "amplify-builds/GetResumePost-504c746b584153517869-build.zip"
+        },
+        "GetProjectsPost": {
+          "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
+          "s3Key": "amplify-builds/GetProjectsPost-7230385434636d68714b-build.zip"
+        },
+        "UpdateBlogPost": {
+          "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
+          "s3Key": "amplify-builds/UpdateBlogPost-73424c63314733345555-build.zip"
+        },
+        "UpdatePicturePost": {
+          "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
+          "s3Key": "amplify-builds/UpdatePicturePost-55327550552b5136746e-build.zip"
+        },
+        "UpdateResumePost": {
+          "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
+          "s3Key": "amplify-builds/UpdateResumePost-49506f6d6c6863784f64-build.zip"
+        },
+        "UpdateProjectsPost": {
+          "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
+          "s3Key": "amplify-builds/UpdateProjectsPost-67675538554776696866-build.zip"
+        },
+        "DeleteProjectsPost": {
+          "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
+          "s3Key": "amplify-builds/DeleteProjectsPost-35564273755465457534-build.zip"
+        },
+        "DeleteResumePost": {
+          "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
+          "s3Key": "amplify-builds/DeleteResumePost-47624d66635537324d74-build.zip"
+        },
+        "DeletePicturePost": {
+          "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
+          "s3Key": "amplify-builds/DeletePicturePost-6a42676d3352594f6b62-build.zip"
+        },
+        "DeleteBlogPost": {
+          "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
+          "s3Key": "amplify-builds/DeleteBlogPost-38474e37624f46447958-build.zip"
+        }
       },
       "api": {
         "stephullcomRESTAPI": {}

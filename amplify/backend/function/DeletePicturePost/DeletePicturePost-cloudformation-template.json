@@ -47,12 +47,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "UpdateProjectsPost",
+            "DeletePicturePost",
             {
               "Fn::Join": [
                 "",
                 [
-                  "UpdateProjectsPost",
+                  "DeletePicturePost",
                   "-",
                   {
                     "Ref": "env"
@@ -89,12 +89,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "stephullcomLambdaRole9f1dd64b",
+            "stephullcomLambdaRolea9384f5f",
             {
               "Fn::Join": [
                 "",
                 [
-                  "stephullcomLambdaRole9f1dd64b",
+                  "stephullcomLambdaRolea9384f5f",
                   "-",
                   {
                     "Ref": "env"

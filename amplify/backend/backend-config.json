@@ -60,6 +60,26 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
+    "DeleteBlogPost": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "DeletePicturePost": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "DeleteProjectsPost": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "DeleteResumePost": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "DownloadPost": {
       "build": true,
       "providerPlugin": "awscloudformation",
@@ -171,6 +191,102 @@
         }
       ]
     },
+    "AMPLIFY_function_CreateProjectsPost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateProjectsPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreateProjectsPost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateProjectsPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreateResumePost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateResumePost"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreateResumePost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateResumePost"
+        }
+      ]
+    },
+    "AMPLIFY_function_DeleteBlogPost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "DeleteBlogPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_DeleteBlogPost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "DeleteBlogPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_DeletePicturePost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "DeletePicturePost"
+        }
+      ]
+    },
+    "AMPLIFY_function_DeletePicturePost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "DeletePicturePost"
+        }
+      ]
+    },
+    "AMPLIFY_function_DeleteProjectsPost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "DeleteProjectsPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_DeleteProjectsPost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "DeleteProjectsPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_DeleteResumePost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "DeleteResumePost"
+        }
+      ]
+    },
+    "AMPLIFY_function_DeleteResumePost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "DeleteResumePost"
+        }
+      ]
+    },
     "AMPLIFY_function_DownloadPost_deploymentBucketName": {
       "usedBy": [
         {
@@ -219,6 +335,38 @@
         }
       ]
     },
+    "AMPLIFY_function_GetProjectsPost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "GetProjectsPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_GetProjectsPost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "GetProjectsPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_GetResumePost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "GetResumePost"
+        }
+      ]
+    },
+    "AMPLIFY_function_GetResumePost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "GetResumePost"
+        }
+      ]
+    },
     "AMPLIFY_function_MergeTimeline_deploymentBucketName": {
       "usedBy": [
         {
@@ -248,6 +396,70 @@
         {
           "category": "function",
           "resourceName": "Ping"
+        }
+      ]
+    },
+    "AMPLIFY_function_UpdateBlogPost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "UpdateBlogPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_UpdateBlogPost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "UpdateBlogPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_UpdatePicturePost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "UpdatePicturePost"
+        }
+      ]
+    },
+    "AMPLIFY_function_UpdatePicturePost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "UpdatePicturePost"
+        }
+      ]
+    },
+    "AMPLIFY_function_UpdateProjectsPost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "UpdateProjectsPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_UpdateProjectsPost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "UpdateProjectsPost"
+        }
+      ]
+    },
+    "AMPLIFY_function_UpdateResumePost_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "UpdateResumePost"
+        }
+      ]
+    },
+    "AMPLIFY_function_UpdateResumePost_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "UpdateResumePost"
         }
       ]
     }
