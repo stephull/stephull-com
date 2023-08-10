@@ -15,6 +15,10 @@ module.exports = {
       {
         test: /\.(md|txt)$/,
         type: 'asset/source'
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       }
     ],
   },
