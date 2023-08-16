@@ -32,7 +32,7 @@ const ContactPage = () => {
         body: formValues, headers: {}
       });
 
-      let responseBody = JSON.parse(response.data.body);
+      let responseBody = JSON.parse(response.body);
       let responseData = responseBody.data.createFormContact;
       if (responseData.success) {
         setSubmitDone(true);

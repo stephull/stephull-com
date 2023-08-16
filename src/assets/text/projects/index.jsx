@@ -104,7 +104,7 @@ export const PROJECTS_PERSONAL_TEXT = [
                 end: new Date(2022, 7)
             },
             {
-                start: new Date(2023, 5),
+                start: new Date(2023, 6),
                 end: null
             }
         ],
@@ -120,7 +120,8 @@ export const PROJECTS_PERSONAL_TEXT = [
         ],
         description: "Simple website to help users learn Korean and Chinese words using building-block style game for consonant/vowels or radicals.",
         skills: [
-            "Angular.js",
+            "React.js",
+            "React Native",
             "Node.js",
             "Java Spring Boot",
             "Photoshop/Illustrator",
@@ -161,6 +162,7 @@ export const PROJECTS_PERSONAL_TEXT = [
             "AWS Amplify",
             "AWS S3",
             "AWS CloudFront",
+            "AWS Lambda",
             "AWS API Gateway",
             "AWS DynamoDB",
             "AWS Route 53"
