@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 
-import { Amplify, API } from 'aws-amplify';
-import awsmobile from '../../aws-exports';
+import { API } from 'aws-amplify';
+import { API_NAME } from '../../config';
 
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 
 const CreateText = ({ function: funct }) => {
-  Amplify.configure(awsmobile);
-  const API_NAME = awsmobile.aws_cloud_logic_custom[0].name;
-
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
 

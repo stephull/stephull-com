@@ -14,16 +14,17 @@ import {
   RESUME_MAIN_TEXT,
   RESUME_SECONDARY_TEXT
 } from '../../assets/text/resume';
-
 import colors from '../../constants/colors';
+import { formatDate, getListOfDates } from '../../utils/formatDate';
+
 import { 
   s3ResumeLink, 
-  apiKeyApiGateway,
-  lambdaDownloadNotification, 
   apiIdentify, 
   apiIdentifyValue as value
 } from '../../envConfig';
-import { formatDate, getListOfDates } from '../../utils/formatDate';
+import { API } from 'aws-amplify';
+import { API_NAME } from '../../config';
+import { getDownloadFile } from '../../endpoints';
 
 const ResumePage = () => {
   const activeSectionStyle = { display: 'block' }, 
@@ -47,29 +48,26 @@ const ResumePage = () => {
     try {
       console.log("Starting resume download...");
       const address = (await axios.get(apiIdentify)).data;
-      const response = await axios.post(
-        lambdaDownloadNotification,
-        {
-          id: Date.now().toString(),
-          file: s3ResumeLink,
-          addr: address[value]
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': apiKeyApiGateway
-          }
-        }
-      );
+      
+      const params = {
+        id: Date.now().toString(),
+        file: s3ResumeLink,
+        addr: address[value]
+      };
+      const response = await API.post(API_NAME, getDownloadFile, {
+        body: params, headers: {}
+      });
 
-      let responseBody = JSON.parse(response.data.body);
+      let responseBody = JSON.parse(response.body);
       let resData = responseBody.data.formDownloadInstance;
+
       if (resData.success) {
-        console.log(resData);
-        confirmDownload(document.createElement('a'));
+        let aElement = document.createElement('a');
+        confirmDownload(aElement);
       } else {
         setDownloadError(true);
-      } 
+      }
+       
     } catch (err) {
       console.error(err);
       setDownloadError(true);
@@ -432,10 +430,7 @@ const ResumePage = () => {
               Warning: Please be aware that downloading this PDF file will notify the owner.
             </p>
             <br />
-            <DownloadButton
-              name={"Resume"}
-              onClick={handleResumeDownload}
-            >
+            <DownloadButton onClick={handleResumeDownload}>
               Download
             </DownloadButton>
             {

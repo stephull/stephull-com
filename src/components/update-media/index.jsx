@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Amplify, API } from 'aws-amplify';
-import awsmobile from '../../aws-exports';
+
+import { API } from 'aws-amplify';
+import { API_NAME } from '../../config';
+import { updateBlogPost, updatePicturePost } from '../../endpoints';
 
 const EditableMedia = ({ function: funct }) => {
-    Amplify.configure(awsmobile);
-
-    const API_NAME = awsmobile.aws_cloud_logic_custom[0].name;
-
     const [editingState, setEditingState] = useState(false);
 
     // more coming soon

@@ -1,29 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import axios from "axios";
+
+import { API } from 'aws-amplify';
+import { API_NAME } from '../../config';
+import { combineTimeline } from '../../endpoints';
 
 import TimelinePost from '../../components/timeline-post';
 import PageContainer from "../../components/page-container";
-
-import { apiKeyApiGateway, lambdaMergeTimeline } from "../../envConfig";
 
 const TimelinePage = () => {
   const [timelinePosts, setTimelinePosts] = useState([]);
   
   useEffect(() => {
-    const fetchTimelinePosts = async () => {
-      try {
-        const res = await axios.get(
-          lambdaMergeTimeline,
-          {
-            headers: { 'x-api-key': apiKeyApiGateway }
-          }
-        );
-        setTimelinePosts(res.data.body);
-      } catch (err) {
-        console.error('Timeline could not be fetched:', err);
-      }
-    };
-    fetchTimelinePosts();
+    API.get(API_NAME, combineTimeline, { response: true })
+      .then((res) => setTimelinePosts(res.data.body))
+      .catch((err) => console.error('Timeline could not be fetched:', err));
   }, []);
 
   return (

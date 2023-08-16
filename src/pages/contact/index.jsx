@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+
+import { API } from 'aws-amplify';
+import { API_NAME } from '../../config';
+import { createContact } from '../../endpoints';
 
 import FlexRow from '../../components/flex-row';
 import PageContainer from '../../components/page-container';
 
 import colors from '../../constants/colors';
-
-import { lambdaCreateContact, apiKeyApiGateway } from '../../envConfig';
 
 const ContactPage = () => {
   const MAX_TEXTAREA = '505px';
@@ -26,22 +27,10 @@ const ContactPage = () => {
       inquiry: elements.inquiry.value
     };
 
-    console.log(formValues);
-
     try {
-      const response = await axios.post(
-        lambdaCreateContact, 
-        {
-          id: Date.now().toString(),
-          ...formValues
-        },
-        {
-          headers: { 
-            'Content-Type': 'application/json',
-            'x-api-key': apiKeyApiGateway
-          }
-        }
-      );
+      const response = await API.post(API_NAME, createContact, {
+        body: formValues, headers: {}
+      });
 
       let responseBody = JSON.parse(response.data.body);
       let responseData = responseBody.data.createFormContact;
@@ -51,11 +40,11 @@ const ContactPage = () => {
       } else {
         setSubmitError(true);
       }
-    
     } catch (err) {
       setSubmitError(true);
       console.error(err);
     }
+  
   }
 
   const ContactForm = () => {

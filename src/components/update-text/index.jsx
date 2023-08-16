@@ -1,24 +1,31 @@
 import React, { useState, useEffect } from 'react';
 
-import { Amplify, API } from "aws-amplify";
-import awsmobile from "../../aws-exports";
+import { API } from "aws-amplify";
+import { API_NAME } from '../../config';
+import { updateProjectText, updateResumeText } from '../../endpoints';
 
 import { 
   ADDITIONAL_TEXT_PROPS, 
   INITIAL_TEXT_PROPS 
 } from '../../declaratives/text.index';
 
-const EditableText = ({ function: funct }) => {
-  Amplify.configure(awsmobile);
-  const API_NAME = awsmobile.aws_cloud_logic_custom[0].name;
-
+const EditableText = ({ type }) => {
   const [defaultTextComponent, setDefaultTextComponent] = useState(INITIAL_TEXT_PROPS);
   const [additionalTextProps, setAdditionalTextProps] = useState(ADDITIONAL_TEXT_PROPS);
 
   const [editingState, setEditingState] = useState(false);
 
   useEffect(() => {
-    API.get(API_NAME, funct)
+    API.get(API_NAME, () => {
+      switch(type) {
+        case "project":
+          return updateProjectText
+        case "resume":
+          return updateResumeText
+        default:
+          return;
+      }
+    })
       .then((res) => setText(res.text))
       .catch((err) => console.error(err));
   }, [funct]);

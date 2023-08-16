@@ -1,32 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import axios from "axios";
 
-import { apiKeyApiGateway, lambdaApiPing } from '../../envConfig';
+import { API } from 'aws-amplify';
+import { API_NAME } from '../../config';
+import { ping } from '../../endpoints';
 
 const ApiPingRequest = () => {
   const [data, setData] = useState({});
 
   useEffect(() => {
-    const fetch = async () => {
-      try {
-        const res = await axios.get(
-          lambdaApiPing,
-          {
-            headers: { 'x-api-key': apiKeyApiGateway }
-          }
-        );
-        setData(res.data);
-        console.log(res.data);
-      } catch (err) {
-        console.error('Error fetching API request for ping:', err);
-      }
-    }
-    fetch();
+    API.get(API_NAME, ping, { response: true })
+      .then((res) => setData(res.data))
+      .catch((err) => console.error('Error fetching test API request:', err))
   }, []);
 
   return (
     <span>
-      {data.statusCode == 200 ? `Message: ${data.body.message}` : `API is not working. Try again.`}
+      {
+        data.statusCode == 200 
+          ? `Message: ${data.body.message}` 
+          : `API is not working. Try again.`
+      }
     </span>
   )
 };
