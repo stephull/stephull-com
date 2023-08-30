@@ -9,7 +9,11 @@ import {
   INITIAL_TEXT_PROPS 
 } from '../../declaratives/text.index';
 
-const EditableText = ({ type }) => {
+import colors from '../../constants/colors';
+
+const EditableText = ({ function: funct }) => {
+  const IS_PROJECTS = (funct === 'project');
+
   const [defaultTextComponent, setDefaultTextComponent] = useState(INITIAL_TEXT_PROPS);
   const [additionalTextProps, setAdditionalTextProps] = useState(ADDITIONAL_TEXT_PROPS);
 
@@ -17,7 +21,7 @@ const EditableText = ({ type }) => {
 
   useEffect(() => {
     API.get(API_NAME, () => {
-      switch(type) {
+      switch(funct) {
         case "project":
           return updateProjectText
         case "resume":
@@ -41,8 +45,27 @@ const EditableText = ({ type }) => {
   }
 
   return (
-    <div>
-      <span>Edit Text</span>
+    <>
+      <b>
+
+      </b>
+      <form>
+        <br />
+        <button
+          type='submit'
+          className="btn btn-primary"
+          style={{
+            fontWeight: 'bold',
+            fontSize: "18px",
+            padding: "0.5em 1em",
+            backgroundColor: colors.goldenYellow,
+            color: colors.jetBlack,
+            borderColor: colors.jetBlack
+          }}
+        >
+          Update Post
+        </button>
+      </form>
       {
         editingState ?
           (
@@ -65,7 +88,7 @@ const EditableText = ({ type }) => {
             </>
           )
       }
-    </div>
+    </>
   );
 };
 

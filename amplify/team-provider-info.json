@@ -57,11 +57,11 @@
         },
         "CreateResumePost": {
           "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
-          "s3Key": "amplify-builds/CreateResumePost-425a6d38394b597a4942-build.zip"
+          "s3Key": "amplify-builds/CreateResumePost-4d494f70566171694133-build.zip"
         },
         "CreateProjectsPost": {
           "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",
-          "s3Key": "amplify-builds/CreateProjectsPost-54325738505a61624530-build.zip"
+          "s3Key": "amplify-builds/CreateProjectsPost-34796f2f305859797653-build.zip"
         },
         "GetResumePost": {
           "deploymentBucketName": "amplify-stephullcom-dev-172857-deployment",

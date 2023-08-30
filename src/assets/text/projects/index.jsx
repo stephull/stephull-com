@@ -100,10 +100,6 @@ export const PROJECTS_PERSONAL_TEXT = [
         purpose: "Independent Project",
         dates: [
             {
-                start: new Date(2022, 5),
-                end: new Date(2022, 7)
-            },
-            {
                 start: new Date(2023, 6),
                 end: null
             }
@@ -134,13 +130,13 @@ export const PROJECTS_PERSONAL_TEXT = [
     },
     {
         title: "Personal Website (Stephull.com)",
-        ongoing: true,
+        ongoing: false,
         complete: true,
         purpose: "Personal Portfolio",
         dates: [
             {
                 start: new Date(2023, 3),
-                end: null
+                end: new Date(2023, 7)
             }
         ],
         links: [
