@@ -7,12 +7,22 @@ import DatePicker, { CalendarContainer } from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 
 import { checkForChronologicalOrder } from '../../utils/checkForChronologicalOrder';
+
 import colors from '../../constants/colors';
 import { createProjectText, createResumeText } from '../../endpoints';
 
-const FormContext = createContext();
+import { 
+  TEXT_FIELD_WIDTH, 
+  TEXT_FIELD_HEIGHT, 
+  DATE_PICKER_WIDTH, 
+  delButtonStyles, 
+  calendarStyles, 
+  calendarContainerStyles 
+} from '../../constants/admin';
 
-const FormProvider = ({ children }) => {
+const TextFormContext = createContext();
+
+const TextFormProvider = ({ isProjects, children }) => {
   const [formData, setFormData] = useState({
     title: "",
     subtitle: "",
@@ -114,6 +124,7 @@ const FormProvider = ({ children }) => {
 
       let responseBody = JSON.parse(response.body);
       let responseData = responseBody.data.createTextComponent;
+
       if (responseData.success) {
         setSubmitDone(true);
         console.log(responseData);
@@ -138,9 +149,9 @@ const FormProvider = ({ children }) => {
   };
 
   return (
-    <FormContext.Provider value={formState}>
+    <TextFormContext.Provider value={formState}>
       { children }
-    </FormContext.Provider>
+    </TextFormContext.Provider>
   );
 }
 
@@ -157,39 +168,13 @@ const CreateTextFormComponent = ({ isProjects }) => {
     removeBullet,
     removeHyperlink,
     handleSubmit
-  } = useContext(FormContext);
-
-  const TEXT_FIELD_WIDTH = '300px';
-  const TEXT_FIELD_HEIGHT = '100px';
-  const DATE_PICKER_WIDTH = '240px';
-
-  const delButtonStyles = {
-    backgroundColor: colors.brightOrange,
-    color: colors.jetBlack,
-    fontWeight: 'bold',
-    padding: '2px',
-    marginLeft: '1em'
-  };
+  } = useContext(TextFormContext);
 
   const customizedCalendar = ({ className, children }) => {
-    const calendarStyles = {
-      padding: '3px', 
-      background: colors.brightBlue,
-      color: colors.snowWhite
-    };
-    
     return (
       <div style={calendarStyles}>
         <CalendarContainer className={className}>
-          <div style={{ 
-            background: colors.brightBlue,
-            color: colors.snowWhite,
-            fontWeight: 'bold',
-            display: 'flex',
-            justifyContent: 'space-around',
-            padding: '3px',
-            border: 'none'
-          }}>
+          <div style={calendarContainerStyles}>
             { className }
           </div>
           <div style={{ position: "relative" }}>
@@ -214,6 +199,12 @@ const CreateTextFormComponent = ({ isProjects }) => {
   // return the following
   return (
     <div>
+      <button onClick={() => {
+        window.open('/admin', '_self')
+      }}>
+        Back to Admin Dashboard
+      </button>
+      <br />
       <h4>
         { isProjects ? "Create Project" : "Create Resume" }
       </h4>
@@ -230,6 +221,7 @@ const CreateTextFormComponent = ({ isProjects }) => {
           style={{ width: TEXT_FIELD_WIDTH }}
         />
       </div>
+      <br />
       <div>
         <label htmlFor="subtitle">Subtitle</label>
         <br />
@@ -243,14 +235,15 @@ const CreateTextFormComponent = ({ isProjects }) => {
           style={{ width: TEXT_FIELD_WIDTH }}
         />
       </div>
+      <br />
       <div>
         <label htmlFor="startDate">
           Start Date
         </label>
         <br />
         <small style={{ fontWeight: 'bold' }}>
-            Need to pick a date before or no later than today.
-          </small>
+          Need to pick a date before or no later than today.
+        </small>
         <br/>
         <DatePicker 
           selected={formData.startDate}
@@ -264,6 +257,7 @@ const CreateTextFormComponent = ({ isProjects }) => {
           calendarContainer={customizedCalendar}
         />
       </div>
+      <br />
       <div>
         <label htmlFor="endDate">
           End Date
@@ -284,6 +278,7 @@ const CreateTextFormComponent = ({ isProjects }) => {
           calendarContainer={customizedCalendar}
         />
       </div>
+      <br />
       <div>
         <label htmlFor="bullets">
           Bullet points
@@ -322,6 +317,7 @@ const CreateTextFormComponent = ({ isProjects }) => {
           </ul>
         </div>
       </div>
+      <br />
       <div>
         <label htmlFor="links">
           Hyperlinks (references)
@@ -373,6 +369,7 @@ const CreateTextFormComponent = ({ isProjects }) => {
           </ul>
         </div>
       </div>
+      <br />
       {
         isProjects &&
         <>
@@ -442,11 +439,11 @@ const CreateTextFormComponent = ({ isProjects }) => {
 }
 
 const CreateText = ({ function: funct }) => {
-  const functCondition = (funct === "/projects")
+  const functCondition = (funct === "/projects");
   return (
-    <FormProvider>
+    <TextFormProvider isProjects={functCondition}>
       <CreateTextFormComponent isProjects={functCondition} />
-    </FormProvider>
+    </TextFormProvider>
   );
 };
 
