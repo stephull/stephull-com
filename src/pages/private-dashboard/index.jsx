@@ -2,12 +2,30 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const PrivateDashboardPage = () => {
+  const textBasedDisclaimer = (
+    <>
+      <br />
+      <b>TEXT-BASED</b>
+    </>
+  ), mediaBasedDisclaimer = (
+    <>
+      <br />
+      <b>MEDIA-BASED</b>
+    </>
+  ), otherDisclaimer = (
+    <>
+      <br />
+      <b>OTHER</b>
+    </>
+  );
+
   return (
     <>
       <h3>Admin Dashboard</h3>
       <nav>
         <span>Create</span>
         <ul>
+          { textBasedDisclaimer }
           <li>
             <Link to={`/admin/create/resume`}>
               Create Resume Post
@@ -18,6 +36,7 @@ const PrivateDashboardPage = () => {
               Create Project Post
             </Link>
           </li>
+          { mediaBasedDisclaimer }
           <li>
             <Link to={`/admin/create/blogs`}>
               Create Blog Post
@@ -28,6 +47,7 @@ const PrivateDashboardPage = () => {
               Create Picture Post
             </Link>
           </li>
+          { otherDisclaimer }
           <li>
             <Link to={`/admin/create/portfolio`}>
               Create Portfolio Post
@@ -37,6 +57,7 @@ const PrivateDashboardPage = () => {
         <br />
         <span>Update</span>
         <ul>
+          { textBasedDisclaimer }
           <li>
             <Link to={`/admin/edit/resume`}>
               Edit Resume Posts
@@ -47,6 +68,7 @@ const PrivateDashboardPage = () => {
               Edit Project Posts
             </Link>
           </li>
+          { mediaBasedDisclaimer }
           <li>
             <Link to={`/admin/edit/blogs`}>
               Edit Blog Posts
@@ -57,6 +79,7 @@ const PrivateDashboardPage = () => {
               Edit Picture Posts
             </Link>
           </li>
+          { otherDisclaimer }
           <li>
             <Link to={`/admin/edit/portfolio`}>
               Edit Portfolio Posts
@@ -66,6 +89,7 @@ const PrivateDashboardPage = () => {
         <br />
         <span>Delete</span>
         <ul>
+          { textBasedDisclaimer }
           <li>
             <Link to={`/admin/delete/resume`}>
               Delete Resume Post
@@ -76,6 +100,7 @@ const PrivateDashboardPage = () => {
               Delete Project Post
             </Link>
           </li>
+          { mediaBasedDisclaimer }
           <li>
             <Link to={`/admin/delete/blogs`}>
               Delete Blog Post
@@ -86,6 +111,7 @@ const PrivateDashboardPage = () => {
               Delete Picture Post
             </Link>
           </li>
+          { otherDisclaimer }
           <li>
             <Link to={`/admin/delete/portfolio`}>
               Delete Portfolio Post
